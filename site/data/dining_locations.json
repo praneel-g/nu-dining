@@ -170,7 +170,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "status": null,
       "url": "http://www.bostonshawarma.net/"
     },
@@ -484,7 +484,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "status": null,
       "url": "https://energizeboston.com/"
     },
@@ -884,7 +884,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "status": null,
       "url": "https://www.panerabread.com/en-us/home.html"
     },
@@ -958,7 +958,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "status": null,
       "url": "https://pokestationandkitchen.business.site/"
     },
@@ -1151,7 +1151,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "status": null,
       "url": "https://www.sproutboston.com/"
     },
@@ -1587,7 +1587,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "status": null,
       "url": "http://www.bostonuhop.com/"
     },
@@ -1671,7 +1671,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "status": null,
       "url": "http://www.cvs.com/"
     },
@@ -1712,7 +1712,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "status": null,
       "url": null
     },
