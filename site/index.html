@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Northeastern Dining</title>
+    <meta
+      name="description"
+      content="Where to eat at and around Northeastern: hours, meal swipes, and Dining Dollars."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23c8102e'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif'>N</text></svg>"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+      integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
+      integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./">Northeastern Dining</a>
+      <nav aria-label="Main navigation">
+        <a href="data/dining_locations.json">Raw JSON</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <section class="intro" id="intro">
+        <h1>Where to eat</h1>
+        <p id="sources">Loading dining data…</p>
+        <noscript><p>This site needs JavaScript to filter and show locations.</p></noscript>
+      </section>
+
+      <form class="filters" id="filters" hidden>
+        <fieldset class="filter-group">
+          <legend class="filter-label">Type</legend>
+          <label class="pill"><input type="radio" name="category" value="" />All</label>
+          <label class="pill"><input type="radio" name="category" value="restaurants" />Restaurants &amp; cafés</label>
+          <label class="pill"><input type="radio" name="category" value="markets" />Markets</label>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend class="filter-label">Pay with</legend>
+          <label class="pill"><input type="radio" name="payment" value="" />Anything</label>
+          <label class="pill"><input type="radio" name="payment" value="meal_swipes" />Meal swipes</label>
+          <label class="pill"><input type="radio" name="payment" value="dining_dollars" />Dining Dollars</label>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend class="filter-label">Hours</legend>
+          <label class="pill"><input type="radio" name="when" value="any" />Any time</label>
+          <label class="pill"><input type="radio" name="when" value="now" />Open now</label>
+          <label class="pill"><input type="radio" name="when" value="at" />Open at…</label>
+          <input
+            class="time-input"
+            type="datetime-local"
+            name="at"
+            step="900"
+            aria-label="Date and time"
+            disabled
+          />
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend class="filter-label">View</legend>
+          <label class="pill"><input type="radio" name="view" value="list" />List</label>
+          <label class="pill"><input type="radio" name="view" value="map" />Map</label>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend class="filter-label">Sort</legend>
+          <label class="pill"><input type="radio" name="sort" value="name" />A–Z</label>
+          <label class="pill"><input type="radio" name="sort" value="closing" />Closing time</label>
+          <label class="pill"><input type="radio" name="sort" value="distance" />Distance</label>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend class="filter-label">Clock</legend>
+          <label class="pill"><input type="radio" name="clock" value="12h" />12-hour</label>
+          <label class="pill"><input type="radio" name="clock" value="24h" />24-hour</label>
+        </fieldset>
+      </form>
+
+      <p class="summary" id="summary" aria-live="polite"></p>
+      <p class="notice" id="location-notice" role="status" hidden></p>
+
+      <div id="list-view"></div>
+
+      <section class="map-wrap" id="map-view" hidden>
+        <div id="map" aria-label="Map of matching locations"></div>
+        <p class="legend">
+          <span><i class="dot dot-restaurant"></i>Restaurants &amp; cafés</span>
+          <span><i class="dot dot-market"></i>Markets</span>
+          <span><i class="dot dot-you"></i>You</span>
+        </p>
+        <p class="muted map-note" id="map-note"></p>
+      </section>
+    </main>
+  </body>
+</html>

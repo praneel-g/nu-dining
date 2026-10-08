@@ -1,0 +1,2158 @@
+{
+  "retrieved_on": "2026-10-08",
+  "hours_for_date": "2026-10-08",
+  "sources": [
+    "https://dineoncampus.com/public/hours-of-operation",
+    "https://huskycard.northeastern.edu/off-campus-vendors/",
+    "https://huskycard.northeastern.edu/dining-halls/"
+  ],
+  "restaurants": [
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Amelia’s Cluck and Smash",
+      "category": "restaurant",
+      "address": "309 Huntington Ave",
+      "latitude": 42.341207318167,
+      "longitude": -71.087661204435,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "08:00-22:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "08:00-22:00"
+        ],
+        "Tuesday": [
+          "08:00-22:00"
+        ],
+        "Wednesday": [
+          "08:00-22:00"
+        ],
+        "Thursday": [
+          "08:00-22:00"
+        ],
+        "Friday": [
+          "08:00-22:00"
+        ],
+        "Saturday": [
+          "08:00-22:00"
+        ],
+        "Sunday": [
+          "10:00-20:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "vendor website (schema.org data)",
+      "status": null,
+      "url": "https://www.ameliacluckandsmash.com/"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "BaKala'O Kitchenette",
+      "category": "restaurant",
+      "address": "1002 Tremont St",
+      "latitude": 42.336839089327,
+      "longitude": -71.084560403174,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "08:00-22:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "08:00-22:00"
+        ],
+        "Tuesday": [
+          "08:00-22:00"
+        ],
+        "Wednesday": [
+          "08:00-22:00"
+        ],
+        "Thursday": [
+          "08:00-22:00"
+        ],
+        "Friday": [
+          "08:00-22:00"
+        ],
+        "Saturday": [
+          "08:00-22:00"
+        ],
+        "Sunday": []
+      },
+      "hours_text": null,
+      "hours_source": "vendor website (schema.org data)",
+      "status": null,
+      "url": "https://bakalaokitchenette.com/"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Bangkok Pinto",
+      "category": "restaurant",
+      "address": "1041 Tremont Street",
+      "latitude": 42.336616340249996,
+      "longitude": -71.085749208501,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "11:00-15:00",
+        "16:00-21:00"
+      ],
+      "weekly_hours": {
+        "Monday": [],
+        "Tuesday": [
+          "11:00-15:00",
+          "16:00-21:00"
+        ],
+        "Wednesday": [
+          "11:00-15:00",
+          "16:00-21:00"
+        ],
+        "Thursday": [
+          "11:00-15:00",
+          "16:00-21:00"
+        ],
+        "Friday": [
+          "11:00-15:00",
+          "16:00-21:00"
+        ],
+        "Saturday": [
+          "11:00-15:00",
+          "16:00-21:00"
+        ],
+        "Sunday": []
+      },
+      "hours_text": [
+        "Tue-Sat : 11 AM-3 PM, 4-9 PM",
+        "Sun-Mon : Closed"
+      ],
+      "hours_source": "vendor website (page text)",
+      "status": null,
+      "url": "http://www.bangkok-pinto.com/"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Boston Shawarma",
+      "category": "restaurant",
+      "address": "315 Huntington Ave",
+      "latitude": 42.34112131984,
+      "longitude": -71.087783161126,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "10:00-23:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "10:00-23:00"
+        ],
+        "Tuesday": [
+          "10:00-23:00"
+        ],
+        "Wednesday": [
+          "10:00-23:00"
+        ],
+        "Thursday": [
+          "10:00-23:00"
+        ],
+        "Friday": [
+          "10:00-23:00"
+        ],
+        "Saturday": [
+          "10:00-23:00"
+        ],
+        "Sunday": [
+          "10:00-23:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "vendor website (schema.org data)",
+      "status": null,
+      "url": "http://www.bostonshawarma.net/"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Campus Roots at 60 Belvidere",
+      "category": "restaurant",
+      "address": "60 Belvidere Street, Boston, MA, 02115",
+      "latitude": 42.3460429,
+      "longitude": -71.0834488,
+      "payment": [],
+      "hours": [
+        "08:00-10:00",
+        "16:00-20:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [
+          "10:00-14:00",
+          "16:00-20:00"
+        ],
+        "Monday": [
+          "08:00-10:00",
+          "16:00-20:00"
+        ],
+        "Tuesday": [
+          "08:00-10:00",
+          "16:00-20:00"
+        ],
+        "Wednesday": [
+          "08:00-10:00",
+          "16:00-20:00"
+        ],
+        "Thursday": [
+          "08:00-10:00",
+          "16:00-20:00"
+        ],
+        "Friday": [],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/campus-roots-at-60-belvidere"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Choolaah",
+      "category": "restaurant",
+      "address": "Curry Student Center, 360 Huntington Avenue, Boston, MA, 02115",
+      "latitude": 42.3403691,
+      "longitude": -71.089389,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "11:00-19:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "11:00-19:00"
+        ],
+        "Tuesday": [
+          "11:00-19:00"
+        ],
+        "Wednesday": [
+          "11:00-19:00"
+        ],
+        "Thursday": [
+          "11:00-19:00"
+        ],
+        "Friday": [
+          "11:00-16:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/choolaah"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "D'Angelo Grilled Sandwiches",
+      "category": "restaurant",
+      "address": "Curry Student Center, 360 Huntington Avenue, Boston, MA, 02115",
+      "latitude": 42.3403691,
+      "longitude": -71.089389,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "11:00-19:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "11:00-19:00"
+        ],
+        "Tuesday": [
+          "11:00-19:00"
+        ],
+        "Wednesday": [
+          "11:00-19:00"
+        ],
+        "Thursday": [
+          "11:00-19:00"
+        ],
+        "Friday": [
+          "11:00-19:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/d-angelo-grilled-sandwiches"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Da Vinci Gelato and Waffle",
+      "category": "restaurant",
+      "address": "297 Huntington Ave",
+      "latitude": 42.341387319537986,
+      "longitude": -71.087011187844,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "08:00-23:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "08:00-23:00"
+        ],
+        "Tuesday": [
+          "08:00-23:00"
+        ],
+        "Wednesday": [
+          "08:00-23:00"
+        ],
+        "Thursday": [
+          "08:00-23:00"
+        ],
+        "Friday": [
+          "08:00-23:00"
+        ],
+        "Saturday": [
+          "08:00-23:00"
+        ],
+        "Sunday": [
+          "08:00-23:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "vendor website (embedded hours data)",
+      "status": null,
+      "url": "https://www.davincigelatowaffle.com/"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Dunkin' Hayden Hall",
+      "category": "restaurant",
+      "address": "360 Huntington Avenue, Boston, MA, 02115",
+      "latitude": 42.3403691,
+      "longitude": -71.089389,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "07:00-17:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "07:00-17:00"
+        ],
+        "Tuesday": [
+          "07:00-17:00"
+        ],
+        "Wednesday": [
+          "07:00-17:00"
+        ],
+        "Thursday": [
+          "07:00-17:00"
+        ],
+        "Friday": [
+          "07:00-17:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/dunkin-hayden-hall"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Dunkin' Shillman",
+      "category": "restaurant",
+      "address": "115 Forsyth St, Boston, MA, 02115",
+      "latitude": 42.3375726,
+      "longitude": -71.0902306,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "07:30-15:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "07:30-15:00"
+        ],
+        "Tuesday": [
+          "07:30-15:00"
+        ],
+        "Wednesday": [
+          "07:30-15:00"
+        ],
+        "Thursday": [
+          "07:30-15:00"
+        ],
+        "Friday": [
+          "07:30-15:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/dunkin-shillman"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "El Jefe’s Taqueria",
+      "category": "restaurant",
+      "address": "269 Huntington Ave",
+      "latitude": 42.342196131284,
+      "longitude": -71.086241561494,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "08:00-03:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "08:00-03:00"
+        ],
+        "Tuesday": [
+          "08:00-03:00"
+        ],
+        "Wednesday": [
+          "08:00-03:00"
+        ],
+        "Thursday": [
+          "08:00-03:00"
+        ],
+        "Friday": [
+          "08:00-03:00"
+        ],
+        "Saturday": [
+          "08:00-03:00"
+        ],
+        "Sunday": [
+          "08:00-03:00"
+        ]
+      },
+      "hours_text": [
+        "Open Daily 8 am - 3 am"
+      ],
+      "hours_source": "vendor website (page text)",
+      "status": null,
+      "url": "https://www.eljefestaqueria.com/"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Energize",
+      "category": "restaurant",
+      "address": "265 Massachusetts Ave",
+      "latitude": 42.343837349835994,
+      "longitude": -71.086461167357,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "09:30-19:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "09:30-19:00"
+        ],
+        "Tuesday": [
+          "09:30-19:00"
+        ],
+        "Wednesday": [
+          "09:30-19:00"
+        ],
+        "Thursday": [
+          "09:30-19:00"
+        ],
+        "Friday": [
+          "09:30-19:00"
+        ],
+        "Saturday": [
+          "09:00-18:00"
+        ],
+        "Sunday": [
+          "09:00-18:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "OpenStreetMap",
+      "status": null,
+      "url": "https://energizeboston.com/"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Equator Coffees",
+      "category": "restaurant",
+      "address": "Snell Library, 306 Hunting Ave, Boston, MA, 02115",
+      "latitude": 42.3409148,
+      "longitude": -71.08699159999999,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "07:30-19:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "07:30-19:00"
+        ],
+        "Tuesday": [
+          "07:30-19:00"
+        ],
+        "Wednesday": [
+          "07:30-19:00"
+        ],
+        "Thursday": [
+          "07:30-19:00"
+        ],
+        "Friday": [
+          "07:30-17:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/equator-coffees"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Five Guys",
+      "category": "restaurant",
+      "address": "263 Huntington Ave",
+      "latitude": 42.342267335552,
+      "longitude": -71.086141230113,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "07:00-23:30"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "07:00-22:00"
+        ],
+        "Tuesday": [
+          "07:00-22:00"
+        ],
+        "Wednesday": [
+          "07:00-22:00"
+        ],
+        "Thursday": [
+          "07:00-23:30"
+        ],
+        "Friday": [
+          "07:00-23:30"
+        ],
+        "Saturday": [
+          "08:00-23:30"
+        ],
+        "Sunday": [
+          "08:00-22:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "vendor website (schema.org data)",
+      "status": null,
+      "url": "https://restaurants.fiveguys.com/263-huntington-ave"
+    },
+    {
+      "source": "Husky Card dining locations",
+      "name": "Fuel America",
+      "category": "restaurant",
+      "address": "ISEC, 805 Columbus Ave.",
+      "latitude": 42.33768771511399,
+      "longitude": -71.086869701318,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "07:00-19:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "07:00-19:00"
+        ],
+        "Tuesday": [
+          "07:00-19:00"
+        ],
+        "Wednesday": [
+          "07:00-19:00"
+        ],
+        "Thursday": [
+          "07:00-19:00"
+        ],
+        "Friday": [
+          "07:00-19:00"
+        ],
+        "Saturday": [
+          "08:00-16:00"
+        ],
+        "Sunday": []
+      },
+      "hours_text": null,
+      "hours_source": "vendor website (schema.org data)",
+      "status": null,
+      "url": "https://www.fuelamericacoffee.com/"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Gyroscope",
+      "category": "restaurant",
+      "address": "305 Huntington Ave",
+      "latitude": 42.341291346746,
+      "longitude": -71.087337160058,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "11:00-22:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "11:00-22:00"
+        ],
+        "Tuesday": [
+          "11:00-22:00"
+        ],
+        "Wednesday": [
+          "11:00-22:00"
+        ],
+        "Thursday": [
+          "11:00-22:00"
+        ],
+        "Friday": [
+          "11:00-22:00"
+        ],
+        "Saturday": [
+          "11:00-22:00"
+        ],
+        "Sunday": [
+          "11:00-22:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "vendor website (schema.org data)",
+      "status": null,
+      "url": "http://www.gyroscopeboston.com/"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "JUICYGREENS",
+      "category": "restaurant",
+      "address": "Curry Student Center, 1175 Tremont Street, Boston, MA, 02120",
+      "latitude": 42.3352444,
+      "longitude": -71.0889143,
+      "payment": [],
+      "hours": [
+        "09:00-16:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "09:00-16:00"
+        ],
+        "Tuesday": [
+          "09:00-16:00"
+        ],
+        "Wednesday": [
+          "09:00-16:00"
+        ],
+        "Thursday": [
+          "09:00-16:00"
+        ],
+        "Friday": [
+          "09:00-16:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/juicygreens"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "LUCIE drink + dine",
+      "category": "restaurant",
+      "address": "Colonnade Hotel, 120 Huntington Ave",
+      "latitude": 42.345527,
+      "longitude": -71.081071,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "07:00-10:30",
+        "17:00-22:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "07:00-10:30"
+        ],
+        "Tuesday": [
+          "07:00-10:30",
+          "17:00-22:00"
+        ],
+        "Wednesday": [
+          "07:00-10:30",
+          "17:00-22:00"
+        ],
+        "Thursday": [
+          "07:00-10:30",
+          "17:00-22:00"
+        ],
+        "Friday": [
+          "07:00-10:30",
+          "17:00-22:00"
+        ],
+        "Saturday": [
+          "08:00-14:00",
+          "17:00-22:00"
+        ],
+        "Sunday": [
+          "08:00-14:00"
+        ]
+      },
+      "hours_text": [
+        "Monday - Friday 7:00 AM - 10:30 AM",
+        "Saturday & Sunday 8:00 AM - 2:00 PM",
+        "Tuesday - Saturday 5:00 PM - 10:00 PM"
+      ],
+      "hours_source": "vendor website (page text)",
+      "status": null,
+      "url": "https://www.luciebackbay.com/"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Mamacita Mexican Eats",
+      "category": "restaurant",
+      "address": "329 Huntington Ave",
+      "latitude": 42.34094085746499,
+      "longitude": -71.088191695087,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "11:00-23:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "11:00-23:00"
+        ],
+        "Tuesday": [
+          "11:00-23:00"
+        ],
+        "Wednesday": [
+          "11:00-23:00"
+        ],
+        "Thursday": [
+          "11:00-23:00"
+        ],
+        "Friday": [
+          "11:00-23:00"
+        ],
+        "Saturday": [
+          "11:00-23:00"
+        ],
+        "Sunday": [
+          "11:00-23:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "vendor website (schema.org data)",
+      "status": null,
+      "url": "http://mamacitaboston.com/"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Modern Market",
+      "category": "restaurant",
+      "address": "Churchill Hall, 360 Huntington Avenue, Boston, MA, 02115",
+      "latitude": 42.3392591,
+      "longitude": -71.08681349999999,
+      "payment": [],
+      "hours": [
+        "07:00-14:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "07:00-14:00"
+        ],
+        "Tuesday": [
+          "07:00-14:00"
+        ],
+        "Wednesday": [
+          "07:00-14:00"
+        ],
+        "Thursday": [
+          "07:00-14:00"
+        ],
+        "Friday": [
+          "07:00-14:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/modern-market"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Nuba Cafe",
+      "category": "restaurant",
+      "address": "744 Columbus Avenue",
+      "latitude": 42.3372088,
+      "longitude": -71.0854168,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "07:00-21:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "07:00-21:00"
+        ],
+        "Tuesday": [
+          "07:00-21:00"
+        ],
+        "Wednesday": [
+          "07:00-21:00"
+        ],
+        "Thursday": [
+          "07:00-21:00"
+        ],
+        "Friday": [
+          "07:00-21:00"
+        ],
+        "Saturday": [
+          "08:00-21:00"
+        ],
+        "Sunday": []
+      },
+      "hours_text": null,
+      "hours_source": "vendor website (schema.org data)",
+      "status": null,
+      "url": "https://www.nubianmarkets.com/kitchen-cafe"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Panera Bread",
+      "category": "restaurant",
+      "address": "289 Huntington Ave",
+      "latitude": 42.341685905543756,
+      "longitude": -71.08660224653491,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "06:00-22:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "06:00-22:00"
+        ],
+        "Tuesday": [
+          "06:00-22:00"
+        ],
+        "Wednesday": [
+          "06:00-22:00"
+        ],
+        "Thursday": [
+          "06:00-22:00"
+        ],
+        "Friday": [
+          "06:00-22:00"
+        ],
+        "Saturday": [
+          "06:00-22:00"
+        ],
+        "Sunday": [
+          "07:00-22:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "OpenStreetMap",
+      "status": null,
+      "url": "https://www.panerabread.com/en-us/home.html"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Pizza To-Go",
+      "category": "restaurant",
+      "address": "60 Belvidere Street, Boston, MA, 02115",
+      "latitude": 42.3461167,
+      "longitude": -71.0855153,
+      "payment": [],
+      "hours": [
+        "11:00-19:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "11:00-19:00"
+        ],
+        "Tuesday": [
+          "11:00-19:00"
+        ],
+        "Wednesday": [
+          "11:00-19:00"
+        ],
+        "Thursday": [
+          "11:00-19:00"
+        ],
+        "Friday": [],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/pizza-to-go"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Poke Station",
+      "category": "restaurant",
+      "address": "313 Huntington Ave",
+      "latitude": 42.341156356196,
+      "longitude": -71.087685176678,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "11:00-22:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "11:00-22:00"
+        ],
+        "Tuesday": [
+          "11:00-22:00"
+        ],
+        "Wednesday": [
+          "11:00-22:00"
+        ],
+        "Thursday": [
+          "11:00-22:00"
+        ],
+        "Friday": [
+          "11:00-22:30"
+        ],
+        "Saturday": [
+          "11:00-22:30"
+        ],
+        "Sunday": [
+          "00:00-22:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "OpenStreetMap",
+      "status": null,
+      "url": "https://pokestationandkitchen.business.site/"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Popeyes",
+      "category": "restaurant",
+      "address": "Curry Student Center, 360 Huntington Ave, Boston, MA, 02115",
+      "latitude": 42.338333750000004,
+      "longitude": -71.08794163506803,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "12:00-19:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "11:00-19:00"
+        ],
+        "Tuesday": [
+          "11:00-19:00"
+        ],
+        "Wednesday": [],
+        "Thursday": [
+          "12:00-19:00"
+        ],
+        "Friday": [
+          "11:00-19:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/popeyes"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Qdoba",
+      "category": "restaurant",
+      "address": "279 Massachusetts Ave",
+      "latitude": 42.3437889,
+      "longitude": -71.0861705,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "10:30-23:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "10:30-23:00"
+        ],
+        "Tuesday": [
+          "10:30-23:00"
+        ],
+        "Wednesday": [
+          "10:30-23:00"
+        ],
+        "Thursday": [
+          "10:30-23:00"
+        ],
+        "Friday": [
+          "10:30-00:00"
+        ],
+        "Saturday": [
+          "10:30-00:00"
+        ],
+        "Sunday": [
+          "10:30-23:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "vendor website (schema.org data)",
+      "status": null,
+      "url": "https://locations.qdoba.com/us/ma/boston/279-massachusetts-ave"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Sal's Pizza",
+      "category": "restaurant",
+      "address": "Curry Student Center, 360 Huntington Avenue, Boston, MA, 02115",
+      "latitude": 42.33902973997924,
+      "longitude": -71.0872331703266,
+      "payment": [],
+      "hours": [
+        "11:00-18:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "11:00-18:00"
+        ],
+        "Tuesday": [
+          "11:00-18:00"
+        ],
+        "Wednesday": [
+          "11:00-18:00"
+        ],
+        "Thursday": [
+          "11:00-18:00"
+        ],
+        "Friday": [
+          "11:00-17:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/sal-s-pizza"
+    },
+    {
+      "source": "Husky Card dining locations",
+      "name": "Saxbys",
+      "category": "restaurant",
+      "address": "EXP, 815 Columbus Ave.",
+      "latitude": 42.33716878823443,
+      "longitude": -71.0875902149536,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "07:30-18:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "07:30-18:00"
+        ],
+        "Tuesday": [
+          "07:30-18:00"
+        ],
+        "Wednesday": [
+          "07:30-18:00"
+        ],
+        "Thursday": [
+          "07:30-18:00"
+        ],
+        "Friday": [
+          "07:30-16:00"
+        ],
+        "Saturday": [],
+        "Sunday": []
+      },
+      "hours_text": [
+        "Monday - Thursday: 7:30am - 6pm",
+        "Friday: 7:30am - 4pm",
+        "Saturday & Sunday: Closed"
+      ],
+      "hours_source": "vendor website (page text)",
+      "status": null,
+      "url": "https://www.saxbyscoffee.com/"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Sprout",
+      "category": "restaurant",
+      "address": "305 Huntington Ave",
+      "latitude": 42.341291346746,
+      "longitude": -71.087337160058,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "10:00-21:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "10:00-21:00"
+        ],
+        "Tuesday": [
+          "10:00-21:00"
+        ],
+        "Wednesday": [
+          "10:00-21:00"
+        ],
+        "Thursday": [
+          "10:00-21:00"
+        ],
+        "Friday": [
+          "10:00-21:00"
+        ],
+        "Saturday": [
+          "10:00-21:00"
+        ],
+        "Sunday": [
+          "10:00-21:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "vendor website (schema.org data)",
+      "status": null,
+      "url": "https://www.sproutboston.com/"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Starbucks at Churchill Hall",
+      "category": "restaurant",
+      "address": "360 Huntington Avenue, Boston, MA, 02115",
+      "latitude": 42.3392591,
+      "longitude": -71.08681349999999,
+      "payment": [],
+      "hours": [
+        "07:00-20:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "07:00-20:00"
+        ],
+        "Tuesday": [
+          "07:00-20:00"
+        ],
+        "Wednesday": [
+          "07:00-20:00"
+        ],
+        "Thursday": [
+          "07:00-20:00"
+        ],
+        "Friday": [
+          "07:00-20:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/starbucks-at-churchill-hall"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Starbucks at Curry Student Center",
+      "category": "restaurant",
+      "address": "360 Huntington Avenue, Boston, MA, 02115",
+      "latitude": 42.33902973997924,
+      "longitude": -71.0872331703266,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "09:00-17:30"
+      ],
+      "weekly_hours": {
+        "Sunday": [
+          "09:00-17:30"
+        ],
+        "Monday": [
+          "09:00-17:30"
+        ],
+        "Tuesday": [
+          "09:00-17:30"
+        ],
+        "Wednesday": [
+          "09:00-17:30"
+        ],
+        "Thursday": [
+          "09:00-17:30"
+        ],
+        "Friday": [
+          "09:00-17:30"
+        ],
+        "Saturday": [
+          "09:00-17:30"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/starbucks-at-curry-student-center"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Subway",
+      "category": "restaurant",
+      "address": "Ryder Hall, 151 Forsyth St, Boston, MA, 02115",
+      "latitude": 42.33660475831466,
+      "longitude": -71.09084727119861,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "11:00-18:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "11:00-18:00"
+        ],
+        "Tuesday": [
+          "11:00-18:00"
+        ],
+        "Wednesday": [
+          "11:00-18:00"
+        ],
+        "Thursday": [
+          "11:00-18:00"
+        ],
+        "Friday": [
+          "11:00-16:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/subway"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Subway",
+      "category": "restaurant",
+      "address": "393 Massachusetts Avenue",
+      "latitude": 42.3411693,
+      "longitude": -71.0838352,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "06:00-02:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "06:00-02:00"
+        ],
+        "Tuesday": [
+          "06:00-02:00"
+        ],
+        "Wednesday": [
+          "06:00-02:00"
+        ],
+        "Thursday": [
+          "06:00-02:00"
+        ],
+        "Friday": [
+          "06:00-02:00"
+        ],
+        "Saturday": [
+          "08:00-02:00"
+        ],
+        "Sunday": [
+          "09:00-02:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "vendor website (schema.org data)",
+      "status": null,
+      "url": "https://restaurants.subway.com/united-states/ma/boston/393-massachusetts-ave"
+    },
+    {
+      "source": "Husky Card dining locations",
+      "name": "Tatte Bakery and Cafe",
+      "category": "restaurant",
+      "address": "Marino Center, 369 Huntington Ave.",
+      "latitude": 42.340216592889945,
+      "longitude": -71.09024647674055,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "07:00-18:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "07:00-18:00"
+        ],
+        "Tuesday": [
+          "07:00-18:00"
+        ],
+        "Wednesday": [
+          "07:00-18:00"
+        ],
+        "Thursday": [
+          "07:00-18:00"
+        ],
+        "Friday": [
+          "07:00-18:00"
+        ],
+        "Saturday": [
+          "07:00-18:00"
+        ],
+        "Sunday": [
+          "08:00-18:00"
+        ]
+      },
+      "hours_text": [
+        "Sunday: 8AM-6PM",
+        "Monday: 7AM-6PM",
+        "Tuesday: 7AM-6PM",
+        "Wednesday: 7AM-6PM",
+        "Thursday: 7AM-6PM",
+        "Friday: 7AM-6PM",
+        "Saturday: 7AM-6PM"
+      ],
+      "hours_source": "vendor website (page text)",
+      "status": null,
+      "url": "https://tattebakery.com/menus/"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "TeaDo",
+      "category": "restaurant",
+      "address": "333 Huntington Ave",
+      "latitude": 42.340889057303,
+      "longitude": -71.088477434166,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "11:00-23:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "11:00-23:00"
+        ],
+        "Tuesday": [
+          "11:00-23:00"
+        ],
+        "Wednesday": [
+          "11:00-23:00"
+        ],
+        "Thursday": [
+          "11:00-23:00"
+        ],
+        "Friday": [
+          "11:00-23:00"
+        ],
+        "Saturday": [
+          "12:00-23:00"
+        ],
+        "Sunday": [
+          "12:00-23:00"
+        ]
+      },
+      "hours_text": [
+        "Mon–Fri: 11:00 AM – 11:00 PM",
+        "Sat–Sun: 12:00 PM – 11:00 PM"
+      ],
+      "hours_source": "vendor website (page text)",
+      "status": null,
+      "url": "https://www.teadocafe.com/"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "The Eatery at Stetson East",
+      "category": "restaurant",
+      "address": "11 Speare Place, Boston, Massachusetts, 02115",
+      "latitude": 42.341312482885435,
+      "longitude": -71.09019582275391,
+      "payment": [
+        "meal_swipes",
+        "dining_dollars"
+      ],
+      "hours": [
+        "07:00-22:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [
+          "08:00-22:00"
+        ],
+        "Monday": [
+          "07:00-22:00"
+        ],
+        "Tuesday": [
+          "07:00-22:00"
+        ],
+        "Wednesday": [
+          "07:00-22:00"
+        ],
+        "Thursday": [
+          "07:00-22:00"
+        ],
+        "Friday": [
+          "07:00-21:00"
+        ],
+        "Saturday": [
+          "08:00-21:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/the-eatery-at-stetson-east"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "The Faculty Club",
+      "category": "restaurant",
+      "address": null,
+      "latitude": null,
+      "longitude": null,
+      "payment": [],
+      "hours": [
+        "11:30-14:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "11:30-14:00"
+        ],
+        "Tuesday": [
+          "11:30-14:00"
+        ],
+        "Wednesday": [
+          "11:30-14:00"
+        ],
+        "Thursday": [
+          "11:30-14:00"
+        ],
+        "Friday": [
+          "11:30-14:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/the-faculty-club"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "The Halal Shack",
+      "category": "restaurant",
+      "address": "Curry Student Center, 360 Huntington Avenue, Boston, MA, 02115",
+      "latitude": 42.3403691,
+      "longitude": -71.089389,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "11:00-19:00"
+        ],
+        "Tuesday": [
+          "11:00-19:00"
+        ],
+        "Wednesday": [],
+        "Thursday": [],
+        "Friday": [],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/the-halal-shack"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "United Table at International Village",
+      "category": "restaurant",
+      "address": "1155 Tremont Street, Boston, Massachusetts, 02115",
+      "latitude": 42.33541640441942,
+      "longitude": -71.08892839573555,
+      "payment": [
+        "meal_swipes",
+        "dining_dollars"
+      ],
+      "hours": [
+        "08:00-22:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [
+          "08:00-21:00"
+        ],
+        "Monday": [
+          "08:00-22:00"
+        ],
+        "Tuesday": [
+          "08:00-22:00"
+        ],
+        "Wednesday": [
+          "08:00-22:00"
+        ],
+        "Thursday": [
+          "08:00-22:00"
+        ],
+        "Friday": [
+          "08:00-21:00"
+        ],
+        "Saturday": [
+          "08:00-21:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/united-table-at-international-village"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "University House of Pizza",
+      "category": "restaurant",
+      "address": "452 Huntington Ave",
+      "latitude": 42.338569952333,
+      "longitude": -71.092819511468,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "10:30-00:30"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "10:30-00:30"
+        ],
+        "Tuesday": [
+          "10:30-00:30"
+        ],
+        "Wednesday": [
+          "10:30-00:30"
+        ],
+        "Thursday": [
+          "10:30-00:30"
+        ],
+        "Friday": [
+          "10:30-00:30"
+        ],
+        "Saturday": [
+          "10:30-00:30"
+        ],
+        "Sunday": [
+          "12:00-21:30"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "vendor website (schema.org data)",
+      "status": null,
+      "url": "http://www.bostonuhop.com/"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Wings Over Boston",
+      "category": "restaurant",
+      "address": "325 Huntington Ave",
+      "latitude": 42.34095732790498,
+      "longitude": -71.088111228816,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "11:00-00:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "11:00-00:00"
+        ],
+        "Tuesday": [
+          "11:00-00:00"
+        ],
+        "Wednesday": [
+          "11:00-00:00"
+        ],
+        "Thursday": [
+          "11:00-00:00"
+        ],
+        "Friday": [
+          "11:00-02:00"
+        ],
+        "Saturday": [
+          "11:00-02:00"
+        ],
+        "Sunday": [
+          "11:00-00:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "vendor website (schema.org data)",
+      "status": null,
+      "url": "http://wingsover.com/locations/detail?location=52"
+    }
+  ],
+  "markets": [
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "CVS",
+      "category": "market",
+      "address": "231 Massachusetts Ave",
+      "latitude": 42.344329660919,
+      "longitude": -71.086741122923,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "09:00-20:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "09:00-20:00"
+        ],
+        "Tuesday": [
+          "09:00-20:00"
+        ],
+        "Wednesday": [
+          "09:00-20:00"
+        ],
+        "Thursday": [
+          "09:00-20:00"
+        ],
+        "Friday": [
+          "09:00-20:00"
+        ],
+        "Saturday": [
+          "09:00-19:00"
+        ],
+        "Sunday": [
+          "11:00-19:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "OpenStreetMap",
+      "status": null,
+      "url": "http://www.cvs.com/"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Giovanni’s Market",
+      "category": "market",
+      "address": "624 Columbus Ave",
+      "latitude": 42.339267326677,
+      "longitude": -71.083041183224,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "08:30-22:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "08:30-22:00"
+        ],
+        "Tuesday": [
+          "08:30-22:00"
+        ],
+        "Wednesday": [
+          "08:30-22:00"
+        ],
+        "Thursday": [
+          "08:30-22:00"
+        ],
+        "Friday": [
+          "08:30-22:00"
+        ],
+        "Saturday": [
+          "08:30-22:00"
+        ],
+        "Sunday": [
+          "08:30-22:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "OpenStreetMap",
+      "status": null,
+      "url": null
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "H Mart",
+      "category": "market",
+      "address": "1028 Beacon St",
+      "latitude": 42.34617820584499,
+      "longitude": -71.108278339313,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "09:00-21:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "09:00-21:00"
+        ],
+        "Tuesday": [
+          "09:00-21:00"
+        ],
+        "Wednesday": [
+          "09:00-21:00"
+        ],
+        "Thursday": [
+          "09:00-21:00"
+        ],
+        "Friday": [
+          "09:00-21:00"
+        ],
+        "Saturday": [
+          "09:00-09:00"
+        ],
+        "Sunday": [
+          "09:00-21:00"
+        ]
+      },
+      "hours_text": [
+        "Sunday: 09:00am - 9:00pm",
+        "Monday: 09:00am - 9:00pm",
+        "Tuesday: 09:00am - 9:00pm",
+        "Wednesday: 09:00am - 9:00pm",
+        "Thursday: 09:00am - 9:00pm",
+        "Friday: 09:00am - 9:00pm",
+        "Saturday: 09:00am - 09:00am"
+      ],
+      "hours_source": "vendor website (page text)",
+      "status": null,
+      "url": "https://www.hmart.com/store/brookline-ma-02446/3ad29903-231d-49b9-8ff2-d4b588c12256?has_food_court=true&message="
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Outtakes at Stetson West",
+      "category": "market",
+      "address": "15 Speare Place, Boston, MA, 02115",
+      "latitude": 42.340932344235156,
+      "longitude": -71.09056257920265,
+      "payment": [
+        "meal_swipes"
+      ],
+      "hours": [
+        "11:00-19:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "11:00-19:00"
+        ],
+        "Tuesday": [
+          "11:00-19:00"
+        ],
+        "Wednesday": [
+          "11:00-19:00"
+        ],
+        "Thursday": [
+          "11:00-19:00"
+        ],
+        "Friday": [
+          "11:00-19:00"
+        ],
+        "Saturday": [
+          "11:00-19:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/outtakes-at-stetson-west"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Star Market",
+      "category": "market",
+      "address": "53 Huntington Ave",
+      "latitude": 42.347787489345,
+      "longitude": -71.07965623544501,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "07:00-23:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "07:00-23:00"
+        ],
+        "Tuesday": [
+          "07:00-23:00"
+        ],
+        "Wednesday": [
+          "07:00-23:00"
+        ],
+        "Thursday": [
+          "07:00-23:00"
+        ],
+        "Friday": [
+          "07:00-23:00"
+        ],
+        "Saturday": [
+          "07:00-23:00"
+        ],
+        "Sunday": [
+          "07:00-23:00"
+        ]
+      },
+      "hours_text": [
+        "Thursday: 7:00 AM - 11:00 PM",
+        "Friday: 7:00 AM - 11:00 PM",
+        "Saturday: 7:00 AM - 11:00 PM",
+        "Sunday: 7:00 AM - 11:00 PM",
+        "Monday: 7:00 AM - 11:00 PM",
+        "Tuesday: 7:00 AM - 11:00 PM",
+        "Wednesday: 7:00 AM - 11:00 PM"
+      ],
+      "hours_source": "vendor website (page text)",
+      "status": null,
+      "url": "https://local.starmarket.com/ma/boston/53-huntington-ave.html"
+    },
+    {
+      "source": "Husky Card off-campus vendors",
+      "name": "Symphony Market",
+      "category": "market",
+      "address": "291 Huntington Ave",
+      "latitude": 42.341539576809,
+      "longitude": -71.086811782367,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "06:00-02:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "06:00-02:00"
+        ],
+        "Tuesday": [
+          "06:00-02:00"
+        ],
+        "Wednesday": [
+          "06:00-02:00"
+        ],
+        "Thursday": [
+          "06:00-02:00"
+        ],
+        "Friday": [
+          "06:00-02:00"
+        ],
+        "Saturday": [
+          "06:00-02:00"
+        ],
+        "Sunday": [
+          "07:00-02:00"
+        ]
+      },
+      "hours_text": [
+        "Monday to Saturday: 6:00 AM - 2:00 AM",
+        "Sunday: 7:00 AM - 2:00 AM"
+      ],
+      "hours_source": "archived copy of vendor website (page text), may be outdated",
+      "status": null,
+      "url": "http://www.symphonymarket.net/"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "the Market",
+      "category": "market",
+      "address": "Curry Student Center, 360 Huntington Avenue, Boston, MA, 02115",
+      "latitude": 42.339170849322564,
+      "longitude": -71.08785688877106,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "07:30-20:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [
+          "09:00-18:00"
+        ],
+        "Monday": [
+          "07:30-20:00"
+        ],
+        "Tuesday": [
+          "07:30-20:00"
+        ],
+        "Wednesday": [
+          "07:30-20:00"
+        ],
+        "Thursday": [
+          "07:30-20:00"
+        ],
+        "Friday": [
+          "07:30-20:00"
+        ],
+        "Saturday": [
+          "09:00-18:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/the-market"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "the Market at 60 Belvidere",
+      "category": "market",
+      "address": "60 Belvidere Street, Boston, MA, 02115",
+      "latitude": 42.3461167,
+      "longitude": -71.0855153,
+      "payment": [
+        "meal_swipes",
+        "dining_dollars"
+      ],
+      "hours": [
+        "10:00-20:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [
+          "10:00-20:00"
+        ],
+        "Monday": [
+          "10:00-20:00"
+        ],
+        "Tuesday": [
+          "10:00-20:00"
+        ],
+        "Wednesday": [
+          "10:00-20:00"
+        ],
+        "Thursday": [
+          "10:00-20:00"
+        ],
+        "Friday": [
+          "10:00-18:00"
+        ],
+        "Saturday": [
+          "10:00-18:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/the-market-at-60-belvidere"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "The Market Café",
+      "category": "market",
+      "address": "International Village, 1155 Tremont Street, Boston, Massachusetts, 02115",
+      "latitude": 42.33541640441942,
+      "longitude": -71.08892839573555,
+      "payment": [],
+      "hours": [
+        "07:30-14:30"
+      ],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [
+          "07:30-14:30"
+        ],
+        "Tuesday": [
+          "07:30-14:30"
+        ],
+        "Wednesday": [
+          "07:30-14:30"
+        ],
+        "Thursday": [
+          "07:30-14:30"
+        ],
+        "Friday": [
+          "07:30-14:30"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": "open",
+      "url": "https://dineoncampus.com/public/locations/the-market-cafe"
+    },
+    {
+      "source": "Husky Card dining locations",
+      "name": "Wollaston’s Market (Marino Center)",
+      "category": "market",
+      "address": "Marino Center, 369 Huntington Ave",
+      "latitude": 42.3405193345111,
+      "longitude": -71.09029207429366,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "07:00-01:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "07:00-01:00"
+        ],
+        "Tuesday": [
+          "07:00-01:00"
+        ],
+        "Wednesday": [
+          "07:00-01:00"
+        ],
+        "Thursday": [
+          "07:00-01:00"
+        ],
+        "Friday": [
+          "07:00-01:00"
+        ],
+        "Saturday": [
+          "07:00-01:00"
+        ],
+        "Sunday": [
+          "07:00-01:00"
+        ]
+      },
+      "hours_text": [
+        "7AM - 1AM"
+      ],
+      "hours_source": "vendor website (page text)",
+      "status": null,
+      "url": "https://www.wollastonsmarket.com/"
+    },
+    {
+      "source": "Husky Card dining locations",
+      "name": "Wollaston’s Market (West Village B)",
+      "category": "market",
+      "address": "West Village, 460 Parker St.",
+      "latitude": 42.3375878,
+      "longitude": -71.0920608,
+      "payment": [
+        "dining_dollars"
+      ],
+      "hours": [
+        "07:00-00:00"
+      ],
+      "weekly_hours": {
+        "Monday": [
+          "07:00-00:00"
+        ],
+        "Tuesday": [
+          "07:00-00:00"
+        ],
+        "Wednesday": [
+          "07:00-00:00"
+        ],
+        "Thursday": [
+          "07:00-00:00"
+        ],
+        "Friday": [
+          "07:00-00:00"
+        ],
+        "Saturday": [
+          "07:00-00:00"
+        ],
+        "Sunday": [
+          "07:00-00:00"
+        ]
+      },
+      "hours_text": [
+        "7AM - 12AM"
+      ],
+      "hours_source": "vendor website (page text)",
+      "status": null,
+      "url": "https://www.wollastonsmarket.com/"
+    }
+  ],
+  "by_payment": {
+    "meal_swipes": [
+      "Outtakes at Stetson West",
+      "The Eatery at Stetson East",
+      "the Market at 60 Belvidere",
+      "United Table at International Village"
+    ],
+    "dining_dollars": [
+      "Amelia’s Cluck and Smash",
+      "BaKala'O Kitchenette",
+      "Bangkok Pinto",
+      "Boston Shawarma",
+      "Choolaah",
+      "CVS",
+      "D'Angelo Grilled Sandwiches",
+      "Da Vinci Gelato and Waffle",
+      "Dunkin' Hayden Hall",
+      "Dunkin' Shillman",
+      "El Jefe’s Taqueria",
+      "Energize",
+      "Equator Coffees",
+      "Five Guys",
+      "Fuel America",
+      "Giovanni’s Market",
+      "Gyroscope",
+      "H Mart",
+      "LUCIE drink + dine",
+      "Mamacita Mexican Eats",
+      "Nuba Cafe",
+      "Panera Bread",
+      "Poke Station",
+      "Popeyes",
+      "Qdoba",
+      "Saxbys",
+      "Sprout",
+      "Star Market",
+      "Starbucks at Curry Student Center",
+      "Subway",
+      "Subway",
+      "Symphony Market",
+      "Tatte Bakery and Cafe",
+      "TeaDo",
+      "The Eatery at Stetson East",
+      "The Halal Shack",
+      "the Market",
+      "the Market at 60 Belvidere",
+      "United Table at International Village",
+      "University House of Pizza",
+      "Wings Over Boston",
+      "Wollaston’s Market (Marino Center)",
+      "Wollaston’s Market (West Village B)"
+    ]
+  }
+}

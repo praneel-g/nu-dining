@@ -1,0 +1,79 @@
+# Scrapes fresh dining data every 12 hours, commits it, and publishes the
+# static site in site/ to GitHub Pages. Pushes to main just redeploy.
+name: Update and deploy site
+
+on:
+  schedule:
+    - cron: "17 4,16 * * *" # 12:17 AM and 12:17 PM Boston time (EDT)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/update-site.yml"
+
+permissions: {}
+
+concurrency:
+  group: update-site
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # Firefox and geckodriver come preinstalled on GitHub's Ubuntu runners.
+      - run: python -m dining.scrape
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data/dining_locations.json
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "Update dining data"
+            # main may have moved during the scrape.
+            git pull --rebase
+            git push
+          fi
+
+  deploy:
+    needs: scrape
+    # Also runs when scrape is skipped (pushes), but not when it fails.
+    if: ${{ !cancelled() && needs.scrape.result != 'failure' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # The branch head, so a data commit from the scrape job is included.
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
