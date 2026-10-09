@@ -181,7 +181,10 @@
       "address": "60 Belvidere Street, Boston, MA, 02115",
       "latitude": 42.3460429,
       "longitude": -71.0834488,
-      "payment": [],
+      "payment": [
+        "meal_swipes",
+        "dining_dollars"
+      ],
       "hours": [
         "08:00-10:00",
         "16:00-20:00"
@@ -653,7 +656,9 @@
       "address": "Curry Student Center, 1175 Tremont Street, Boston, MA, 02120",
       "latitude": 42.3352444,
       "longitude": -71.0889143,
-      "payment": [],
+      "payment": [
+        "dining_dollars"
+      ],
       "hours": [
         "09:00-16:00"
       ],
@@ -780,7 +785,9 @@
       "address": "Churchill Hall, 360 Huntington Avenue, Boston, MA, 02115",
       "latitude": 42.3392591,
       "longitude": -71.08681349999999,
-      "payment": [],
+      "payment": [
+        "dining_dollars"
+      ],
       "hours": [
         "07:00-14:00"
       ],
@@ -895,7 +902,9 @@
       "address": "60 Belvidere Street, Boston, MA, 02115",
       "latitude": 42.3461167,
       "longitude": -71.0855153,
-      "payment": [],
+      "payment": [
+        "dining_dollars"
+      ],
       "hours": [
         "11:00-19:00"
       ],
@@ -1045,7 +1054,9 @@
       "address": "Curry Student Center, 360 Huntington Avenue, Boston, MA, 02115",
       "latitude": 42.33902973997924,
       "longitude": -71.0872331703266,
-      "payment": [],
+      "payment": [
+        "dining_dollars"
+      ],
       "hours": [
         "11:00-18:00"
       ],
@@ -1162,7 +1173,9 @@
       "address": "360 Huntington Avenue, Boston, MA, 02115",
       "latitude": 42.3392591,
       "longitude": -71.08681349999999,
-      "payment": [],
+      "payment": [
+        "dining_dollars"
+      ],
       "hours": [
         "07:00-20:00"
       ],
@@ -1451,7 +1464,9 @@
       "address": null,
       "latitude": null,
       "longitude": null,
-      "payment": [],
+      "payment": [
+        "dining_dollars"
+      ],
       "hours": [
         "11:30-14:00"
       ],
@@ -1987,7 +2002,9 @@
       "address": "International Village, 1155 Tremont Street, Boston, Massachusetts, 02115",
       "latitude": 42.33541640441942,
       "longitude": -71.08892839573555,
-      "payment": [],
+      "payment": [
+        "dining_dollars"
+      ],
       "hours": [
         "07:30-14:30"
       ],
@@ -2104,6 +2121,7 @@
   ],
   "by_payment": {
     "meal_swipes": [
+      "Campus Roots at 60 Belvidere",
       "Outtakes at Stetson West",
       "The Eatery at Stetson East",
       "the Market at 60 Belvidere",
@@ -2114,6 +2132,7 @@
       "BaKala'O Kitchenette",
       "Bangkok Pinto",
       "Boston Shawarma",
+      "Campus Roots at 60 Belvidere",
       "Choolaah",
       "CVS",
       "D'Angelo Grilled Sandwiches",
@@ -2128,16 +2147,21 @@
       "Giovanni’s Market",
       "Gyroscope",
       "H Mart",
+      "JUICYGREENS",
       "LUCIE drink + dine",
       "Mamacita Mexican Eats",
+      "Modern Market",
       "Nuba Cafe",
       "Panera Bread",
+      "Pizza To-Go",
       "Poke Station",
       "Popeyes",
       "Qdoba",
+      "Sal's Pizza",
       "Saxbys",
       "Sprout",
       "Star Market",
+      "Starbucks at Churchill Hall",
       "Starbucks at Curry Student Center",
       "Subway",
       "Subway",
@@ -2145,9 +2169,11 @@
       "Tatte Bakery and Cafe",
       "TeaDo",
       "The Eatery at Stetson East",
+      "The Faculty Club",
       "The Halal Shack",
       "the Market",
       "the Market at 60 Belvidere",
+      "The Market Café",
       "United Table at International Village",
       "University House of Pizza",
       "Wings Over Boston",

@@ -9,7 +9,7 @@ from datetime import date, datetime
 from zoneinfo import ZoneInfo
 from pathlib import Path
 
-from .models import DATA_FILE, WEEKDAYS, DiningData, Location, Payment
+from .models import DATA_FILE, PAYMENTS, WEEKDAYS, DiningData, Location, Payment
 from .net import FetchError
 from .sources import dine_on_campus, husky_campus, husky_vendors
 from .sources.geocode import geocode, in_boston
@@ -93,7 +93,7 @@ def build_dataset(day: date, use_browser: bool, previous: list[Location]) -> Din
         previous,
         day,
     )
-    print("Checking the Husky Card campus list for anything missing…")
+    print("Checking the Husky Card campus list for payments and anything missing…")
     known = list(locations)
     locations += scrape_source(
         husky_campus.SOURCE_NAME,
@@ -118,10 +118,7 @@ def build_dataset(day: date, use_browser: bool, previous: list[Location]) -> Din
         "sources": [dine_on_campus.PAGE_URL, husky_vendors.PAGE_URL, husky_campus.PAGE_URL],
         "restaurants": in_category("restaurant"),
         "markets": in_category("market"),
-        "by_payment": {
-            "meal_swipes": names_accepting("meal_swipes"),
-            "dining_dollars": names_accepting("dining_dollars"),
-        },
+        "by_payment": {payment: names_accepting(payment) for payment in PAYMENTS},
     }
 
 

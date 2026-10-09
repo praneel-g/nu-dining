@@ -1,7 +1,8 @@
 """Boston campus locations from the Husky Card "Dining Locations" page.
 
-Most of these are already in the Dine On Campus data; this only adds the ones
-that aren't, such as retail partners (Tatte, Saxbys, Fuel America).
+Most of these are already in the Dine On Campus data; this adds the ones that
+aren't, such as retail partners (Tatte, Saxbys, Fuel America), and fills in
+payment methods that Dine On Campus leaves out.
 """
 
 from __future__ import annotations
@@ -11,8 +12,8 @@ from datetime import date
 from html.parser import HTMLParser
 from typing import NamedTuple
 
-from ..matching import normalize_name, same_business, with_building
-from ..models import Category, Location, Payment
+from ..matching import GENERIC_WORDS, normalize_name, same_business, with_building
+from ..models import PAYMENTS, Category, Location, Payment
 from ..net import fetch_husky_card_page
 from .husky_map import MapPoint, fetch_map_points, find_point
 from .husky_vendors import Vendor, find_all_hours
@@ -44,7 +45,7 @@ class CampusItem(NamedTuple):
     name: str
     building: str | None
     url: str | None
-    residential: bool
+    payment: list[Payment]
 
 
 class CampusListParser(HTMLParser):
@@ -89,23 +90,60 @@ class CampusListParser(HTMLParser):
                 self._add_item(" ".join("".join(parts).split()), links[0] if links else None)
 
     def _add_item(self, text: str, link: str | None) -> None:
+        # Every location takes Dining Dollars, and dining halls also take meal
+        # swipes, except those marked "+ Meal swipes only".
+        payment: list[Payment] = ["dining_dollars"]
+        if self.section.startswith("Residential"):
+            payment = ["meal_swipes"] if text.endswith("+") else ["meal_swipes", *payment]
         # "Outtakes at Stetson West (10 points/meal)+" -> name and building.
         text = re.sub(r"\((?:[^)]*(?:meal|swipe)[^)]*)\)", "", text).rstrip(" *+")
         match = re.match(r"^(.*?)\s*\(([^)]*)\)\s*$", text)
         name, building = (match.group(1).strip(), match.group(2)) if match else (text, None)
         # Links that go through email "safe links" aren't useful.
         url = link if link and "safelinks" not in link else None
-        residential = self.section.startswith("Residential")
         # "Wollaston's Market (Marino Center, West Village B)" is two stores.
         buildings = [part.strip() for part in building.split(",")] if building else [None]
         for each in buildings:
             label = f"{name} ({each})" if len(buildings) > 1 else name
-            self.items.append(CampusItem(label, each, url, residential))
+            self.items.append(CampusItem(label, each, url, payment))
 
 
 def already_listed(name: str, existing: list[str]) -> bool:
     """Whether a name refers to one of the known locations."""
     return any(same_business(name, other) for other in existing)
+
+
+def listed_item(location: Location, items: list[CampusItem]) -> CampusItem | None:
+    """The page's entry for a known location: the same name, else the similar
+    name sharing the most distinctive words with the location's name and address.
+
+    "the Market" resembles several entries; "the Market at Curry Student
+    Center" is the one whose words match its Curry Student Center address.
+    """
+    wanted = normalize_name(location["name"])
+    similar = [item for item in items if same_business(item.name, location["name"])]
+    exact = [item for item in similar if normalize_name(item.name) == wanted]
+    if exact:
+        return exact[0]
+    text = set(normalize_name(f"{location['name']} {location['address'] or ''}").split())
+
+    def overlap(item: CampusItem) -> int:
+        words = set(normalize_name(f"{item.name} {item.building or ''}").split())
+        return len((words - GENERIC_WORDS) & text)
+
+    scores = sorted((overlap(item) for item in similar), reverse=True)
+    if not scores or (len(scores) > 1 and scores[0] == scores[1]):
+        return None  # No entry, or no single best one.
+    return max(similar, key=overlap)
+
+
+def add_listed_payments(locations: list[Location], items: list[CampusItem]) -> None:
+    """Add the payment methods the page lists to each location it mentions."""
+    for location in locations:
+        item = listed_item(location, items)
+        if item:
+            accepted = set(location["payment"]) | set(item.payment)
+            location["payment"] = [payment for payment in PAYMENTS if payment in accepted]
 
 
 def fetch_campus_items() -> list[CampusItem]:
@@ -159,9 +197,6 @@ def to_record(item: CampusItem, place: Place, found: VendorHours | None, day: da
     """Build the output record for one campus location."""
     lowered = item.name.lower()
     category: Category = "market" if "market" in lowered or "grocery" in lowered else "restaurant"
-    payment: list[Payment] = (
-        ["meal_swipes", "dining_dollars"] if item.residential else ["dining_dollars"]
-    )
     return {
         "source": SOURCE_NAME,
         "name": item.name,
@@ -169,7 +204,7 @@ def to_record(item: CampusItem, place: Place, found: VendorHours | None, day: da
         "address": place.address or None,
         "latitude": place.latitude,
         "longitude": place.longitude,
-        "payment": payment,
+        "payment": list(item.payment),
         **hours_fields(found, day),
         "status": None,
         "url": item.url,
@@ -179,13 +214,14 @@ def to_record(item: CampusItem, place: Place, found: VendorHours | None, day: da
 def scrape_campus_extras(
     existing: list[Location], day: date, use_browser: bool = True
 ) -> list[Location]:
-    """Boston campus locations on the page that ``existing`` doesn't already cover."""
+    """Boston campus locations on the page that ``existing`` doesn't already cover.
+
+    Also adds the page's payment methods to the ``existing`` locations it lists.
+    """
+    listed = [item for item in fetch_campus_items() if item.name not in CLOSED]
+    add_listed_payments(existing, listed)
     names = [location["name"] for location in existing]
-    items = [
-        item
-        for item in fetch_campus_items()
-        if item.name not in CLOSED and not already_listed(item.name, names)
-    ]
+    items = [item for item in listed if not already_listed(item.name, names)]
     if not items:
         return []
     print(f"  Adding {len(items)} campus locations: {', '.join(item.name for item in items)}")
