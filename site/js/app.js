@@ -353,3 +353,8 @@ fetch(DATA_URL, { cache: "no-cache" })
   .catch((error) => {
     elements.sources.textContent = `Couldn't load the dining data (${error.message}).`;
   });
+
+// Make the site installable and work offline.
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").catch(() => {});
+}
