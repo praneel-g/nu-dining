@@ -170,7 +170,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "status": null,
       "url": "http://www.bostonshawarma.net/"
     },
@@ -1157,7 +1157,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
+      "hours_source": "vendor website (schema.org data)",
       "status": null,
       "url": "https://www.sproutboston.com/"
     },
@@ -1597,7 +1597,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "status": null,
       "url": "http://www.bostonuhop.com/"
     },
