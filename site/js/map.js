@@ -15,7 +15,7 @@ export function createMap(element, noteElement) {
   const css = getComputedStyle(document.documentElement);
   const colors = {
     restaurant: css.getPropertyValue("--accent").trim(),
-    market: css.getPropertyValue("--off-campus").trim(),
+    market: css.getPropertyValue("--market").trim(),
   };
 
   let bounds = [];

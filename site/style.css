@@ -10,6 +10,7 @@
   --on-campus-soft: #e3f3ec;
   --off-campus: #3d4fa3;
   --off-campus-soft: #e7eafb;
+  --market: #1e8a4c;
   --code-bg: #e8ecf5;
   --soon: #8a5300;
   --soon-soft: #fdf0d9;
@@ -31,6 +32,7 @@
     --on-campus-soft: #183a2d;
     --off-campus: #9fb0ff;
     --off-campus-soft: #232a4d;
+    --market: #4cc48a;
     --code-bg: #262e3c;
     --soon: #ffc266;
     --soon-soft: #3d2c12;
@@ -472,7 +474,7 @@ th {
 }
 
 .dot-market {
-  background: var(--off-campus);
+  background: var(--market);
 }
 
 .dot-you {

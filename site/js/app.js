@@ -157,7 +157,7 @@ function cardHtml(item, day) {
   const distance = item.distance != null ? ` <span class="distance">· ${item.distance.toFixed(1)} mi</span>` : "";
   const payments = loc.payment.length
     ? `<ul class="payments">${loc.payment.map((method) => `<li>${escape(PAYMENTS[method])}</li>`).join("")}</ul>`
-    : "";
+    : '<p class="muted">Payment methods unknown</p>';
   const weekly = loc.weekly_hours
     ? `<details>
         <summary>Weekly hours</summary>
@@ -185,10 +185,9 @@ function popupHtml(item, day) {
   const name = loc.url
     ? `<a href="${escape(loc.url)}" target="_blank" rel="noopener">${escape(loc.name)}</a>`
     : escape(loc.name);
-  const payments = loc.payment.map((method) => PAYMENTS[method]).join(", ");
-  return `<strong>${name}</strong><br>${escape(loc.address)}<br>${hoursHtml(item, day)}${
-    payments ? `<br><small>${escape(payments)}</small>` : ""
-  }`;
+  const payments =
+    loc.payment.map((method) => PAYMENTS[method]).join(", ") || "Payment methods unknown";
+  return `<strong>${name}</strong><br>${escape(loc.address)}<br>${hoursHtml(item, day)}<br><small>${escape(payments)}</small>`;
 }
 
 /** Ask for the visitor's location once, the first time a view needs it. */

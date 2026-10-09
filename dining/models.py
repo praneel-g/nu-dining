@@ -22,6 +22,8 @@ WEEKDAYS = (
 
 Category = Literal["restaurant", "market"]
 Payment = Literal["meal_swipes", "dining_dollars"]
+# Every payment type, in display order.
+PAYMENTS: tuple[Payment, ...] = ("meal_swipes", "dining_dollars")
 WeeklyHours = dict[str, list[str]]
 
 
