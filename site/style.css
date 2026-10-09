@@ -294,6 +294,11 @@ nav a {
   color: var(--soon);
 }
 
+.status-opens {
+  background: var(--off-campus-soft);
+  color: var(--off-campus);
+}
+
 .day {
   color: var(--muted);
   font-weight: 500;

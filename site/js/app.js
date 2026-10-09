@@ -8,6 +8,7 @@ import {
   formatPeriod,
   formatTime,
   parseLocal,
+  periodStart,
   roundUp,
   statusAt,
   toLocalValue,
@@ -36,7 +37,7 @@ const FILTERS = {
   payment: ["", "meal_swipes", "dining_dollars"],
   when: ["now", "any", "at"],
   view: ["list", "map"],
-  sort: ["name", "closing", "distance"],
+  sort: ["name", "opening", "closing", "distance"],
   clock: ["12h", "24h"],
 };
 
@@ -104,6 +105,7 @@ function describe(location, reference) {
     location,
     status,
     changes,
+    opens: weekly ? periodStart(weekly, reference) : null,
     dayHours: weekly ? (weekly[weekdayName(reference)] ?? []) : null,
     distance:
       coords && hasCoords
@@ -116,6 +118,10 @@ function compare(a, b) {
   const byName = a.location.name.localeCompare(b.location.name, undefined, {
     sensitivity: "base",
   });
+  if (state.sort === "opening") {
+    // Open places by when they opened, then the rest by how soon they open.
+    return (a.opens ?? Infinity) - (b.opens ?? Infinity) || byName;
+  }
   if (state.sort === "closing") {
     // Open places by soonest closing, then ones opening soon, then the rest.
     const rank = (item) => ({ open: 0, closes_soon: 0, opens_soon: 1 })[item.status] ?? 2;
@@ -131,10 +137,15 @@ const periodsHtml = (periods) =>
   periods.map((period) => `<span class="period">${escape(formatPeriod(period, state.clock))}</span>`).join(", ");
 
 function hoursHtml(item, day) {
-  const statusTag =
-    item.status in STATUS_LABELS
-      ? `<span class="status status-${item.status}">${escape(STATUS_LABELS[item.status])} ${escape(formatTime(item.changes, state.clock))}</span> `
-      : "";
+  let statusTag = "";
+  if (item.status in STATUS_LABELS) {
+    statusTag = `<span class="status status-${item.status}">${escape(STATUS_LABELS[item.status])} ${escape(formatTime(item.changes, state.clock))}</span> `;
+  } else if (item.status === "closed" && item.opens && state.sort === "opening") {
+    // Name the day when it isn't the one whose hours are shown.
+    const opensDay = weekdayName(item.opens);
+    const when = `${opensDay === day ? "" : `${opensDay.slice(0, 3)} `}${formatTime(item.opens, state.clock)}`;
+    statusTag = `<span class="status status-opens">Opens ${escape(when)}</span> `;
+  }
   let hours;
   if (item.dayHours === null) {
     hours = item.location.hours_text
