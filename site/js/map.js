@@ -12,12 +12,6 @@ export function createMap(element, noteElement) {
   }).addTo(map);
   const markers = L.layerGroup().addTo(map);
 
-  const css = getComputedStyle(document.documentElement);
-  const colors = {
-    restaurant: css.getPropertyValue("--accent").trim(),
-    market: css.getPropertyValue("--market").trim(),
-  };
-
   let bounds = [];
   let you = null;
   let accuracy = null;
@@ -54,6 +48,12 @@ export function createMap(element, noteElement) {
      * the passing time don't keep moving it.
      */
     render(places, filterKey) {
+      // Read on every render so marker colors follow theme changes.
+      const css = getComputedStyle(document.documentElement);
+      const colors = {
+        restaurant: css.getPropertyValue("--accent").trim(),
+        market: css.getPropertyValue("--market").trim(),
+      };
       markers.clearLayers();
       bounds = [];
       let missing = 0;

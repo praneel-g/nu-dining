@@ -19,8 +19,30 @@
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
+/* Dark colors apply when chosen in the header, or by default ("auto") when
+   the system prefers dark. Keep the two copies below in sync. */
+:root[data-theme="dark"] {
+  --bg: #11151d;
+  --surface: #1a202b;
+  --text: #e8ecf4;
+  --muted: #9aa5ba;
+  --border: #2c3442;
+  --accent: #ff5a6e;
+  --accent-soft: #3a1d24;
+  --on-campus: #6fd3a8;
+  --on-campus-soft: #183a2d;
+  --off-campus: #9fb0ff;
+  --off-campus-soft: #232a4d;
+  --market: #4cc48a;
+  --code-bg: #262e3c;
+  --soon: #ffc266;
+  --soon-soft: #3d2c12;
+
+  color-scheme: dark;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #11151d;
     --surface: #1a202b;
     --text: #e8ecf4;
@@ -68,6 +90,8 @@ code {
 .site-header {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
   justify-content: space-between;
   margin: 0 auto;
   max-width: 1100px;
@@ -82,6 +106,124 @@ code {
 nav a {
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.header-tools {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  /* Stays on the right when the header wraps on narrow screens. */
+  margin-left: auto;
+}
+
+.settings {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+/* 12h/24h: a small switch with a label on each side. */
+.switch {
+  align-items: center;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 600;
+  gap: 0.35rem;
+}
+
+.switch input {
+  appearance: none;
+  background: var(--muted);
+  border-radius: 999px;
+  cursor: pointer;
+  height: 1.1rem;
+  margin: 0;
+  position: relative;
+  width: 2rem;
+}
+
+.switch input::before {
+  background: var(--surface);
+  border-radius: 50%;
+  content: "";
+  height: 0.8rem;
+  left: 0.15rem;
+  position: absolute;
+  top: 0.15rem;
+  transition: transform 0.15s;
+  width: 0.8rem;
+}
+
+.switch input:checked::before {
+  transform: translateX(0.9rem);
+}
+
+.switch:has(input:not(:checked)) .clock-12,
+.switch:has(input:checked) .clock-24 {
+  color: var(--text);
+}
+
+/* Light / auto / dark: three icon buttons in one rounded control. */
+.segmented {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  display: inline-flex;
+  margin: 0;
+  min-width: 0;
+  padding: 2px;
+}
+
+.segmented label {
+  align-items: center;
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  height: 1.7rem;
+  justify-content: center;
+  position: relative;
+  width: 1.7rem;
+}
+
+.segmented input {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.segmented label:has(input:checked) {
+  background: var(--code-bg);
+  color: var(--text);
+}
+
+.segmented svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.switch input:focus-visible,
+.segmented label:has(input:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .switch input::before {
+    transition: none;
+  }
+}
+
+.visually-hidden {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .page {
