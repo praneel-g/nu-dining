@@ -16,6 +16,7 @@ import {
 } from "./hours.js";
 import { watchLocation } from "./location.js";
 import { createMap } from "./map.js";
+import { initSettings, settings } from "./settings.js";
 
 const DATA_URL = "data/dining_locations.json";
 
@@ -38,7 +39,6 @@ const FILTERS = {
   when: ["now", "any", "at"],
   view: ["list", "map"],
   sort: ["name", "opening", "closing", "distance"],
-  clock: ["12h", "24h"],
 };
 
 const form = document.getElementById("filters");
@@ -134,16 +134,16 @@ function compare(a, b) {
 }
 
 const periodsHtml = (periods) =>
-  periods.map((period) => `<span class="period">${escape(formatPeriod(period, state.clock))}</span>`).join(", ");
+  periods.map((period) => `<span class="period">${escape(formatPeriod(period, settings.clock))}</span>`).join(", ");
 
 function hoursHtml(item, day) {
   let statusTag = "";
   if (item.status in STATUS_LABELS) {
-    statusTag = `<span class="status status-${item.status}">${escape(STATUS_LABELS[item.status])} ${escape(formatTime(item.changes, state.clock))}</span> `;
+    statusTag = `<span class="status status-${item.status}">${escape(STATUS_LABELS[item.status])} ${escape(formatTime(item.changes, settings.clock))}</span> `;
   } else if (item.status === "closed" && item.opens && state.sort === "opening") {
     // Name the day when it isn't the one whose hours are shown.
     const opensDay = weekdayName(item.opens);
-    const when = `${opensDay === day ? "" : `${opensDay.slice(0, 3)} `}${formatTime(item.opens, state.clock)}`;
+    const when = `${opensDay === day ? "" : `${opensDay.slice(0, 3)} `}${formatTime(item.opens, settings.clock)}`;
     statusTag = `<span class="status status-opens">Opens ${escape(when)}</span> `;
   }
   let hours;
@@ -258,7 +258,7 @@ function render() {
 
   // Summary line.
   let summary = moment
-    ? `Showing places open on <strong>${escape(formatMoment(moment, state.clock))}</strong>.`
+    ? `Showing places open on <strong>${escape(formatMoment(moment, settings.clock))}</strong>.`
     : `Showing all places, with ${escape(day)}'s hours.`;
   if (moment && unknownHours) {
     summary += ` ${unknownHours} with unknown hours hidden — <button type="button" class="link-button" data-show-all>show all</button>.`;
@@ -322,6 +322,8 @@ form.addEventListener("change", (event) => {
   render();
 });
 form.addEventListener("submit", (event) => event.preventDefault());
+
+initSettings(render);
 
 elements.summary.addEventListener("click", (event) => {
   if (!event.target.matches("[data-show-all]")) return;
