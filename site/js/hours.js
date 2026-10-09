@@ -109,6 +109,38 @@ export function openingTime(weekly, moment, withinMs) {
   return null;
 }
 
+/** Every period from the day before `moment` to a week after, as [start, end] times. */
+function periodsAround(weekly, moment) {
+  const periods = [];
+  for (let offset = -1; offset <= 7; offset += 1) {
+    const day = startOfDay(moment) + offset * DAY;
+    for (const period of weekly[weekdayName(new Date(day))] ?? []) {
+      if (period === ALWAYS_OPEN) {
+        periods.push([day, day + DAY]);
+        continue;
+      }
+      const [start, end] = parsePeriod(period);
+      periods.push([day + start * MINUTE, day + (end <= start ? DAY : 0) + end * MINUTE]);
+    }
+  }
+  return periods;
+}
+
+/**
+ * When the period covering `moment` opened, or else when the next one opens
+ * within a week; null if neither. Sorting by this puts open places first
+ * (earliest opened first), then closed ones by how soon they open.
+ */
+export function periodStart(weekly, moment) {
+  const now = moment.getTime();
+  let next = null;
+  for (const [start, end] of periodsAround(weekly, moment)) {
+    if (start <= now && now < end) return new Date(start);
+    if (start > now && (next === null || start < next)) next = start;
+  }
+  return next === null ? null : new Date(next);
+}
+
 /**
  * Status at `moment` and when it next changes:
  * "open" | "closes_soon" (with the closing time), "opens_soon" (with the
