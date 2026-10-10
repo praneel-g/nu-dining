@@ -1137,7 +1137,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "status": null,
       "url": "https://www.sproutboston.com/"
     },
@@ -2038,7 +2038,7 @@
       "hours_text": [
         "7AM - 1AM"
       ],
-      "hours_source": "vendor website (page text), kept from a previous scrape",
+      "hours_source": "vendor website (page text)",
       "status": null,
       "url": "https://www.wollastonsmarket.com/"
     },
@@ -2081,7 +2081,7 @@
       "hours_text": [
         "7AM - 12AM"
       ],
-      "hours_source": "vendor website (page text)",
+      "hours_source": "vendor website (page text), kept from a previous scrape",
       "status": null,
       "url": "https://www.wollastonsmarket.com/"
     }
