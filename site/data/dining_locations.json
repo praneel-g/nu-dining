@@ -2029,7 +2029,7 @@
       "hours_text": [
         "7AM - 1AM"
       ],
-      "hours_source": "vendor website (page text), kept from a previous scrape",
+      "hours_source": "vendor website (page text)",
       "status": null,
       "url": "https://www.wollastonsmarket.com/"
     },
@@ -2072,7 +2072,7 @@
       "hours_text": [
         "7AM - 12AM"
       ],
-      "hours_source": "vendor website (page text), kept from a previous scrape",
+      "hours_source": "vendor website (page text)",
       "status": null,
       "url": "https://www.wollastonsmarket.com/"
     }
