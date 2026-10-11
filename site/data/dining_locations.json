@@ -1,6 +1,6 @@
 {
-  "retrieved_on": "2026-10-10",
-  "hours_for_date": "2026-10-10",
+  "retrieved_on": "2026-10-11",
+  "hours_for_date": "2026-10-11",
   "sources": [
     "https://dineoncampus.com/public/hours-of-operation",
     "https://huskycard.northeastern.edu/off-campus-vendors/",
@@ -18,7 +18,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "08:00-22:00"
+        "10:00-20:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -58,9 +58,7 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "08:00-22:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Monday": [
           "08:00-22:00"
@@ -97,10 +95,7 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "11:00-15:00",
-        "16:00-21:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Monday": [],
         "Tuesday": [
@@ -185,7 +180,10 @@
         "meal_swipes",
         "dining_dollars"
       ],
-      "hours": [],
+      "hours": [
+        "10:00-14:00",
+        "16:00-20:00"
+      ],
       "weekly_hours": {
         "Sunday": [
           "10:00-14:00",
@@ -450,33 +448,33 @@
         "dining_dollars"
       ],
       "hours": [
-        "09:00-18:00"
+        "09:00-19:00"
       ],
       "weekly_hours": {
         "Monday": [
-          "09:30-19:00"
+          "08:30-19:00"
         ],
         "Tuesday": [
-          "09:30-19:00"
+          "08:30-19:00"
         ],
         "Wednesday": [
-          "09:30-19:00"
+          "08:30-19:00"
         ],
         "Thursday": [
-          "09:30-19:00"
+          "08:30-19:00"
         ],
         "Friday": [
-          "09:30-19:00"
+          "08:30-19:00"
         ],
         "Saturday": [
-          "09:00-18:00"
+          "09:00-19:00"
         ],
         "Sunday": [
-          "09:00-18:00"
+          "09:00-19:00"
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "vendor website (schema.org data)",
       "status": null,
       "url": "https://energizeboston.com/"
     },
@@ -526,7 +524,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "08:00-23:30"
+        "08:00-22:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -566,9 +564,7 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "08:00-16:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Monday": [
           "07:00-19:00"
@@ -682,8 +678,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "08:00-14:00",
-        "17:00-22:00"
+        "08:00-14:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -808,9 +803,7 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "08:00-21:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Monday": [
           "07:00-21:00"
@@ -848,7 +841,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "06:00-22:00"
+        "07:00-22:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -922,7 +915,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "11:00-22:30"
+        "00:00-22:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -996,7 +989,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "10:30-00:00"
+        "10:30-23:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1137,7 +1130,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
+      "hours_source": "vendor website (schema.org data)",
       "status": null,
       "url": "https://www.sproutboston.com/"
     },
@@ -1263,7 +1256,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "08:00-02:00"
+        "09:00-02:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1304,7 +1297,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "07:00-18:00"
+        "08:00-18:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1398,7 +1391,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "08:00-21:00"
+        "08:00-22:00"
       ],
       "weekly_hours": {
         "Sunday": [
@@ -1545,7 +1538,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "10:30-00:30"
+        "12:00-21:30"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1586,7 +1579,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "11:00-02:00"
+        "11:00-00:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1629,7 +1622,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "09:00-19:00"
+        "11:00-19:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1711,7 +1704,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "09:00-09:00"
+        "09:00-21:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1759,9 +1752,7 @@
       "payment": [
         "meal_swipes"
       ],
-      "hours": [
-        "11:00-19:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
         "Monday": [
@@ -1825,13 +1816,13 @@
         ]
       },
       "hours_text": [
-        "Saturday: 7:00 AM - 11:00 PM",
         "Sunday: 7:00 AM - 11:00 PM",
         "Monday: 7:00 AM - 11:00 PM",
         "Tuesday: 7:00 AM - 11:00 PM",
         "Wednesday: 7:00 AM - 11:00 PM",
         "Thursday: 7:00 AM - 11:00 PM",
-        "Friday: 7:00 AM - 11:00 PM"
+        "Friday: 7:00 AM - 11:00 PM",
+        "Saturday: 7:00 AM - 11:00 PM"
       ],
       "hours_source": "vendor website (page text)",
       "status": null,
@@ -1848,7 +1839,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "06:00-02:00"
+        "07:00-02:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1934,7 +1925,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "10:00-18:00"
+        "10:00-20:00"
       ],
       "weekly_hours": {
         "Sunday": [
@@ -2038,7 +2029,7 @@
       "hours_text": [
         "7AM - 1AM"
       ],
-      "hours_source": "vendor website (page text)",
+      "hours_source": "vendor website (page text), kept from a previous scrape",
       "status": null,
       "url": "https://www.wollastonsmarket.com/"
     },
