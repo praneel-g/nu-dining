@@ -657,6 +657,18 @@ th {
   text-decoration: underline;
 }
 
+/* A pin shared by several places lists them all; keep the popup in view. */
+.popup-group .leaflet-popup-content {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.popup-group hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 0.6rem 0;
+}
+
 .filters[hidden],
 .filter-group[hidden],
 .map-wrap[hidden] {

@@ -64,26 +64,38 @@ export function createMap(element, noteElement) {
         market: css.getPropertyValue("--market").trim(),
       };
       markers.clearLayers();
-      bounds = [];
+      // Places in one building share coordinates; give them a single pin
+      // whose popup lists them all, so none hides under another.
+      const spots = new Map();
       let missing = 0;
-      for (const { location, popupHtml } of places) {
-        if (location.latitude == null || location.longitude == null) {
+      for (const place of places) {
+        const { latitude, longitude } = place.location;
+        if (latitude == null || longitude == null) {
           missing += 1;
           continue;
         }
-        const position = [location.latitude, location.longitude];
-        bounds.push(position);
-        L.circleMarker(position, {
-          radius: 8,
+        const key = `${latitude},${longitude}`;
+        if (!spots.has(key)) spots.set(key, { position: [latitude, longitude], places: [] });
+        spots.get(key).places.push(place);
+      }
+      bounds = [...spots.values()].map(({ position }) => position);
+      for (const { position, places: here } of spots.values()) {
+        const allMarkets = here.every(({ location }) => location.category === "market");
+        const marker = L.circleMarker(position, {
+          radius: here.length > 1 ? 10 : 8,
           color: "#fff",
           weight: 2,
-          fillColor: colors[location.category],
+          fillColor: allMarkets ? colors.market : colors.restaurant,
           fillOpacity: 0.95,
         })
-          .bindPopup(popupHtml)
+          .bindPopup(here.map(({ popupHtml }) => popupHtml).join("<hr>"), {
+            className: here.length > 1 ? "popup-group" : "",
+          })
           .addTo(markers);
+        if (here.length > 1) marker.bindTooltip(`${here.length} places`);
       }
-      const notes = [`${bounds.length} location${bounds.length === 1 ? "" : "s"} on the map.`];
+      const shown = places.length - missing;
+      const notes = [`${shown} location${shown === 1 ? "" : "s"} on the map.`];
       if (missing) notes.push(`${missing} couldn't be placed (no coordinates).`);
       noteElement.textContent = notes.join(" ");
 
