@@ -827,8 +827,8 @@
       "name": "Nuba Cafe",
       "category": "restaurant",
       "address": "744 Columbus Avenue",
-      "latitude": 42.3374616,
-      "longitude": -71.0858682,
+      "latitude": 42.3372088,
+      "longitude": -71.0854168,
       "payment": [
         "dining_dollars"
       ],
@@ -1187,7 +1187,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "hours_checked_on": "2026-10-12",
       "status": null,
       "url": "https://www.sproutboston.com/",
@@ -1311,8 +1311,8 @@
       "name": "Subway",
       "category": "restaurant",
       "address": "393 Massachusetts Avenue",
-      "latitude": 42.3413362,
-      "longitude": -71.0834136,
+      "latitude": 42.3411693,
+      "longitude": -71.0838352,
       "payment": [
         "dining_dollars"
       ],
