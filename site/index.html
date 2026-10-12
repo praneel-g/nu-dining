@@ -38,10 +38,19 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="./">Northeastern Dining</a>
+      <div class="brand-group">
+        <a class="brand" href="./">Northeastern Dining</a>
+        <form class="campus-switch" id="campus">
+          <fieldset class="segmented segmented-text">
+            <legend class="visually-hidden">Campus</legend>
+            <label><input type="radio" name="campus" value="boston" />Boston</label>
+            <label><input type="radio" name="campus" value="oakland" />Oakland</label>
+          </fieldset>
+        </form>
+      </div>
       <div class="header-tools">
         <nav aria-label="Main navigation">
-          <a href="data/dining_locations.json">Raw JSON</a>
+          <a href="data/dining_locations.json" id="raw-json">Raw JSON</a>
         </nav>
         <form class="settings" id="settings">
           <label class="switch" title="12- or 24-hour clock">
@@ -84,14 +93,14 @@
       </section>
 
       <form class="filters" id="filters" hidden>
-        <fieldset class="filter-group">
+        <fieldset class="filter-group" id="category-filter">
           <legend class="filter-label">Type</legend>
           <label class="pill"><input type="radio" name="category" value="" />All</label>
           <label class="pill"><input type="radio" name="category" value="restaurants" />Restaurants &amp; cafés</label>
           <label class="pill"><input type="radio" name="category" value="markets" />Markets</label>
         </fieldset>
 
-        <fieldset class="filter-group">
+        <fieldset class="filter-group" id="payment-filter">
           <legend class="filter-label">Pay with</legend>
           <label class="pill"><input type="radio" name="payment" value="" />Anything</label>
           <label class="pill"><input type="radio" name="payment" value="meal_swipes" />Meal swipes</label>
@@ -138,7 +147,7 @@
         <div id="map" aria-label="Map of matching locations"></div>
         <p class="legend">
           <span><i class="dot dot-restaurant"></i>Restaurants &amp; cafés</span>
-          <span><i class="dot dot-market"></i>Markets</span>
+          <span id="market-legend"><i class="dot dot-market"></i>Markets</span>
           <span><i class="dot dot-you"></i>You</span>
         </p>
         <p class="muted map-note" id="map-note"></p>

@@ -1,4 +1,7 @@
-"""Collect Northeastern dining locations, payment options, and hours as JSON."""
+"""Collect Northeastern dining locations, payment options, and hours as JSON.
+
+Writes one file for the Boston campus and one for the Oakland campus.
+"""
 
 from __future__ import annotations
 
@@ -9,7 +12,7 @@ from datetime import date, datetime
 from zoneinfo import ZoneInfo
 from pathlib import Path
 
-from .models import DATA_FILE, PAYMENTS, WEEKDAYS, DiningData, Location, Payment
+from .models import DATA_FILE, OAKLAND_DATA_FILE, PAYMENTS, WEEKDAYS, DiningData, Location, Payment
 from .net import FetchError
 from .sources import dine_on_campus, husky_campus, husky_vendors
 from .sources.geocode import geocode, in_boston
@@ -105,6 +108,33 @@ def build_dataset(day: date, use_browser: bool, previous: list[Location]) -> Din
     add_coordinates(locations)
     # Only after geocoding, so a stale pin never overrides a fresh lookup.
     keep_previous_data(locations, previous, day)
+    return group_locations(
+        locations,
+        day,
+        [dine_on_campus.PAGE_URL, husky_vendors.PAGE_URL, husky_campus.PAGE_URL],
+    )
+
+
+def build_oakland_dataset(day: date, previous: list[Location]) -> DiningData:
+    """Scrape the Oakland campus, which only has Dine On Campus data.
+
+    Its records already carry coordinates, and the geocoder is limited to
+    Boston, so there is no geocoding step.
+    """
+    print("Fetching Oakland campus locations…")
+    locations = scrape_source(
+        dine_on_campus.SOURCE_NAME,
+        lambda: dine_on_campus.scrape_on_campus(day, "oakland"),
+        previous,
+        day,
+    )
+    locations.sort(key=lambda location: location["name"].casefold())
+    keep_previous_data(locations, previous, day)
+    return group_locations(locations, day, [dine_on_campus.page_url("oakland")])
+
+
+def group_locations(locations: list[Location], day: date, sources: list[str]) -> DiningData:
+    """Group scraped locations into the JSON layout the website reads."""
 
     def names_accepting(payment: Payment) -> list[str]:
         return [loc["name"] for loc in locations if payment in loc["payment"]]
@@ -115,11 +145,19 @@ def build_dataset(day: date, use_browser: bool, previous: list[Location]) -> Din
     return {
         "retrieved_on": boston_today().isoformat(),
         "hours_for_date": day.isoformat(),
-        "sources": [dine_on_campus.PAGE_URL, husky_vendors.PAGE_URL, husky_campus.PAGE_URL],
+        "sources": sources,
         "restaurants": in_category("restaurant"),
         "markets": in_category("market"),
         "by_payment": {payment: names_accepting(payment) for payment in PAYMENTS},
     }
+
+
+def write_dataset(data: DiningData, path: Path) -> None:
+    """Write one campus's JSON file."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    total = len(data["restaurants"]) + len(data["markets"])
+    print(f"Wrote {total} locations to {path}")
 
 
 def main() -> None:
@@ -129,7 +167,13 @@ def main() -> None:
         "--output",
         type=Path,
         default=DATA_FILE,
-        help="JSON file to write (default: site/data/dining_locations.json)",
+        help="Boston JSON file to write (default: site/data/dining_locations.json)",
+    )
+    parser.add_argument(
+        "--oakland-output",
+        type=Path,
+        default=OAKLAND_DATA_FILE,
+        help="Oakland JSON file to write (default: site/data/oakland_dining_locations.json)",
     )
     parser.add_argument(
         "--date",
@@ -144,13 +188,10 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    data = build_dataset(args.date, not args.no_browser, load_previous(args.output))
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(
-        json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
-    total = len(data["restaurants"]) + len(data["markets"])
-    print(f"Wrote {total} locations to {args.output}")
+    boston = build_dataset(args.date, not args.no_browser, load_previous(args.output))
+    write_dataset(boston, args.output)
+    oakland = build_oakland_dataset(args.date, load_previous(args.oakland_output))
+    write_dataset(oakland, args.oakland_output)
 
 
 if __name__ == "__main__":

@@ -5,7 +5,9 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Literal, TypedDict
 
-DATA_FILE = Path(__file__).resolve().parent.parent / "site" / "data" / "dining_locations.json"
+DATA_DIR = Path(__file__).resolve().parent.parent / "site" / "data"
+DATA_FILE = DATA_DIR / "dining_locations.json"
+OAKLAND_DATA_FILE = DATA_DIR / "oakland_dining_locations.json"
 
 
 # Full weekday names indexed like ``date.weekday()`` (Monday is 0).

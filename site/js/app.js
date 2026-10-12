@@ -1,9 +1,9 @@
 // Loads the scraped data and renders the list or map for the chosen filters.
-// Filters live in the URL query string, so filtered views can be shared.
+// The campus and filters live in the URL query string, so views can be shared.
 
 import {
   WEEKDAYS,
-  bostonNow,
+  campusNow,
   formatMoment,
   formatPeriod,
   formatTime,
@@ -18,7 +18,20 @@ import { watchLocation } from "./location.js";
 import { createMap } from "./map.js";
 import { initSettings, settings } from "./settings.js";
 
-const DATA_URL = "data/dining_locations.json";
+// Each campus has its own data file and keeps its hours in its own time zone.
+const CAMPUSES = {
+  boston: {
+    data: "data/dining_locations.json",
+    timeZone: "America/New_York",
+    center: [42.3398, -71.0892],
+  },
+  oakland: {
+    data: "data/oakland_dining_locations.json",
+    timeZone: "America/Los_Angeles",
+    center: [37.7802, -122.1809],
+  },
+};
+const CAMPUS_KEY = "campus";
 
 const CATEGORIES = { restaurants: "Restaurants & cafés", markets: "Markets" };
 const PAYMENTS = { meal_swipes: "Meal swipes", dining_dollars: "Dining Dollars" };
@@ -42,8 +55,13 @@ const FILTERS = {
 };
 
 const form = document.getElementById("filters");
+const campusForm = document.getElementById("campus");
 const elements = {
   intro: document.getElementById("intro"),
+  rawJson: document.getElementById("raw-json"),
+  paymentFilter: document.getElementById("payment-filter"),
+  categoryFilter: document.getElementById("category-filter"),
+  marketLegend: document.getElementById("market-legend"),
   sources: document.getElementById("sources"),
   summary: document.getElementById("summary"),
   list: document.getElementById("list-view"),
@@ -52,6 +70,8 @@ const elements = {
   mapNote: document.getElementById("map-note"),
 };
 
+// Loaded data per campus, so switching back doesn't refetch.
+const loaded = {};
 let data = null;
 let map = null;
 let coords = null;
@@ -68,11 +88,32 @@ function readState() {
     result[name] = allowed.includes(value) ? value : allowed[0];
   }
   result.at = params.get("at") ?? "";
+  // A shared link names its campus; otherwise use the one chosen last time.
+  const campus = params.get("campus") ?? readSaved(CAMPUS_KEY);
+  result.campus = campus in CAMPUSES ? campus : "boston";
   return result;
+}
+
+function readSaved(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function saveCampus() {
+  try {
+    if (state.campus === "boston") localStorage.removeItem(CAMPUS_KEY);
+    else localStorage.setItem(CAMPUS_KEY, state.campus);
+  } catch {
+    // Storage unavailable: the choice lasts only as long as the URL.
+  }
 }
 
 function writeState() {
   const params = new URLSearchParams();
+  if (state.campus !== "boston") params.set("campus", state.campus);
   for (const [name, allowed] of Object.entries(FILTERS)) {
     if (state[name] !== allowed[0]) params.set(name, state[name]);
   }
@@ -166,9 +207,12 @@ function cardHtml(item, day) {
     ? `<a href="${escape(loc.url)}" target="_blank" rel="noopener">${escape(loc.name)}</a>`
     : escape(loc.name);
   const distance = item.distance != null ? ` <span class="distance">· ${item.distance.toFixed(1)} mi</span>` : "";
-  const payments = loc.payment.length
-    ? `<ul class="payments">${loc.payment.map((method) => `<li>${escape(PAYMENTS[method])}</li>`).join("")}</ul>`
-    : '<p class="muted">Payment methods unknown</p>';
+  let payments = "";
+  if (loc.payment.length) {
+    payments = `<ul class="payments">${loc.payment.map((method) => `<li>${escape(PAYMENTS[method])}</li>`).join("")}</ul>`;
+  } else if (hasPayments()) {
+    payments = '<p class="muted">Payment methods unknown</p>';
+  }
   const weekly = loc.weekly_hours
     ? `<details>
         <summary>Weekly hours</summary>
@@ -197,9 +241,16 @@ function popupHtml(item, day) {
     ? `<a href="${escape(loc.url)}" target="_blank" rel="noopener">${escape(loc.name)}</a>`
     : escape(loc.name);
   const payments =
-    loc.payment.map((method) => PAYMENTS[method]).join(", ") || "Payment methods unknown";
-  return `<strong>${name}</strong><br>${escape(loc.address)}<br>${hoursHtml(item, day)}<br><small>${escape(payments)}</small>`;
+    loc.payment.map((method) => PAYMENTS[method]).join(", ") ||
+    (hasPayments() ? "Payment methods unknown" : "");
+  return `<strong>${name}</strong><br>${escape(loc.address)}<br>${hoursHtml(item, day)}${payments ? `<br><small>${escape(payments)}</small>` : ""}`;
 }
+
+/** Whether this campus's data says anything about payments (Oakland's doesn't). */
+const hasPayments = () => Object.values(data.by_payment).some((names) => names.length);
+
+/** Whether this campus has any markets (Oakland doesn't). */
+const hasMarkets = () => data.markets.length > 0;
 
 /** Ask for the visitor's location once, the first time a view needs it. */
 function ensureLocation() {
@@ -227,11 +278,16 @@ function syncForm(reference) {
   const timeInput = form.elements.at;
   timeInput.disabled = state.when !== "at";
   if (document.activeElement !== timeInput) timeInput.value = toLocalValue(reference);
+  campusForm.elements.campus.value = state.campus;
+  elements.paymentFilter.hidden = !hasPayments();
+  // With no markets, "Restaurants & cafés" is the same as "All".
+  elements.categoryFilter.hidden = !hasMarkets();
+  elements.marketLegend.hidden = !hasMarkets();
 }
 
 function render() {
   if (!data) return;
-  const now = roundUp(bostonNow());
+  const now = roundUp(campusNow(CAMPUSES[state.campus].timeZone));
   const reference = state.when === "at" ? (parseLocal(state.at) ?? now) : now;
   const moment = state.when === "any" ? null : reference;
   const day = weekdayName(reference);
@@ -241,10 +297,11 @@ function render() {
   const sections = [];
   let unknownHours = 0;
   for (const [key, label] of Object.entries(CATEGORIES)) {
-    if (state.category && state.category !== key) continue;
+    if (key === "markets" && !hasMarkets()) continue;
+    if (state.category && hasMarkets() && state.category !== key) continue;
     const items = [];
     for (const location of data[key]) {
-      if (state.payment && !location.payment.includes(state.payment)) continue;
+      if (state.payment && hasPayments() && !location.payment.includes(state.payment)) continue;
       const item = describe(location, reference);
       if (moment && !OPEN_STATUSES.has(item.status)) {
         if (item.status === null) unknownHours += 1;
@@ -289,7 +346,7 @@ function render() {
     const places = sections.flatMap(({ items }) =>
       items.map((item) => ({ location: item.location, popupHtml: popupHtml(item, day) })),
     );
-    map.render(places, JSON.stringify(state));
+    map.render(places, JSON.stringify(state), CAMPUSES[state.campus].center);
   }
 }
 
@@ -323,6 +380,14 @@ form.addEventListener("change", (event) => {
 });
 form.addEventListener("submit", (event) => event.preventDefault());
 
+campusForm.addEventListener("change", (event) => {
+  state.campus = event.target.value;
+  saveCampus();
+  writeState();
+  loadCampus();
+});
+campusForm.addEventListener("submit", (event) => event.preventDefault());
+
 initSettings(render);
 
 elements.summary.addEventListener("click", (event) => {
@@ -334,22 +399,46 @@ elements.summary.addEventListener("click", (event) => {
 
 // "Now" moves on: re-render when the rounded current time changes.
 setInterval(() => {
-  if (state.when === "now" && roundUp(bostonNow()).getTime() !== lastReference) {
+  const now = roundUp(campusNow(CAMPUSES[state.campus].timeZone));
+  if (state.when === "now" && now.getTime() !== lastReference) {
     render();
   }
 }, 60 * 1000);
 
-fetch(DATA_URL, { cache: "no-cache" })
-  .then((response) => {
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    return response.json();
-  })
-  .then((loaded) => {
-    data = loaded;
-    elements.sources.innerHTML = `Data scraped ${escape(data.retrieved_on)} from ${sourceLinks(data.sources)}.`;
-    form.hidden = false;
-    render();
-  })
-  .catch((error) => {
-    elements.sources.textContent = `Couldn't load the dining data (${error.message}).`;
-  });
+/** Show the chosen campus, fetching its data the first time. */
+function loadCampus() {
+  const campus = state.campus;
+  const url = CAMPUSES[campus].data;
+  elements.rawJson.href = url;
+  campusForm.elements.campus.value = campus;
+  if (loaded[campus]) {
+    showData(loaded[campus]);
+    return;
+  }
+  data = null;
+  elements.sources.textContent = "Loading dining data…";
+  fetch(url, { cache: "no-cache" })
+    .then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    })
+    .then((result) => {
+      loaded[campus] = result;
+      // Ignore a slow response for a campus the visitor has since switched away from.
+      if (state.campus === campus) showData(result);
+    })
+    .catch((error) => {
+      if (state.campus === campus) {
+        elements.sources.textContent = `Couldn't load the dining data (${error.message}).`;
+      }
+    });
+}
+
+function showData(result) {
+  data = result;
+  elements.sources.innerHTML = `Data scraped ${escape(data.retrieved_on)} from ${sourceLinks(data.sources)}.`;
+  form.hidden = false;
+  render();
+}
+
+loadCampus();
