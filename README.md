@@ -10,6 +10,10 @@ filtering, a map, and which places take meal swipes or Dining Dollars.
 - `site/` is the static front end (plain HTML/JS + Leaflet) that reads that file.
 - `.github/workflows/update-site.yml` re-scrapes every 12 hours, commits the
   new data, and deploys `site/` to GitHub Pages.
+- `.github/workflows/check-links.yml` checks every website and menu link
+  weekly (`python -m dining.check_links`) and fails when one is broken,
+  parked, or looks hacked. Fix links in `WEBSITE_FIXES`
+  (`dining/sources/husky_vendors.py`) or the tables in `dining/sources/menus.py`.
 
 ## Running locally
 
