@@ -1,6 +1,6 @@
 {
-  "retrieved_on": "2026-10-09",
-  "hours_for_date": "2026-10-09",
+  "retrieved_on": "2026-10-11",
+  "hours_for_date": "2026-10-11",
   "sources": [
     "https://dineoncampus.com/public/hours-of-operation",
     "https://huskycard.northeastern.edu/off-campus-vendors/",
@@ -18,7 +18,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "08:00-22:00"
+        "10:00-20:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -46,7 +46,8 @@
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
       "status": null,
-      "url": "https://www.ameliacluckandsmash.com/"
+      "url": "https://www.ameliacluckandsmash.com/",
+      "menu_url": "https://www.ameliacluckandsmash.com/menu"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -58,9 +59,7 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "08:00-22:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Monday": [
           "08:00-22:00"
@@ -85,7 +84,8 @@
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
       "status": null,
-      "url": "https://bakalaokitchenette.com/"
+      "url": "https://bakalaokitchenette.com/",
+      "menu_url": "https://bakalaokitchenette.com/menu/"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -97,10 +97,7 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "11:00-15:00",
-        "16:00-21:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Monday": [],
         "Tuesday": [
@@ -131,7 +128,8 @@
       ],
       "hours_source": "vendor website (page text)",
       "status": null,
-      "url": "http://www.bangkok-pinto.com/"
+      "url": "http://www.bangkok-pinto.com/",
+      "menu_url": "https://ordering.chownow.com/order/4168/locations"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -172,7 +170,8 @@
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
       "status": null,
-      "url": "http://www.bostonshawarma.net/"
+      "url": "http://www.bostonshawarma.net/",
+      "menu_url": "http://www.bostonshawarma.net/menu"
     },
     {
       "source": "Dine On Campus",
@@ -185,10 +184,11 @@
         "meal_swipes",
         "dining_dollars"
       ],
-      "hours": [],
+      "hours": [
+        "16:00-20:00"
+      ],
       "weekly_hours": {
         "Sunday": [
-          "10:00-14:00",
           "16:00-20:00"
         ],
         "Monday": [
@@ -213,7 +213,8 @@
       "hours_text": null,
       "hours_source": "Dine On Campus",
       "status": "closed",
-      "url": "https://dineoncampus.com/public/locations/campus-roots-at-60-belvidere"
+      "url": "https://dineoncampus.com/public/locations/campus-roots-at-60-belvidere",
+      "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/campus-roots-at-60-belvidere"
     },
     {
       "source": "Dine On Campus",
@@ -225,14 +226,10 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "11:00-16:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
-        "Monday": [
-          "11:00-19:00"
-        ],
+        "Monday": [],
         "Tuesday": [
           "11:00-19:00"
         ],
@@ -249,8 +246,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/choolaah"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/choolaah",
+      "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/choolaah"
     },
     {
       "source": "Dine On Campus",
@@ -262,14 +260,10 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "11:00-19:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
-        "Monday": [
-          "11:00-19:00"
-        ],
+        "Monday": [],
         "Tuesday": [
           "11:00-19:00"
         ],
@@ -286,8 +280,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/d-angelo-grilled-sandwiches"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/d-angelo-grilled-sandwiches",
+      "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/d-angelo-grilled-sandwiches"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -328,7 +323,8 @@
       "hours_text": null,
       "hours_source": "vendor website (embedded hours data)",
       "status": null,
-      "url": "https://www.davincigelatowaffle.com/"
+      "url": "https://www.davincigelatowaffle.com/",
+      "menu_url": "https://www.davincigelatowaffle.com/menu"
     },
     {
       "source": "Dine On Campus",
@@ -340,14 +336,10 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "07:00-17:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
-        "Monday": [
-          "07:00-17:00"
-        ],
+        "Monday": [],
         "Tuesday": [
           "07:00-17:00"
         ],
@@ -364,8 +356,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/dunkin-hayden-hall"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/dunkin-hayden-hall",
+      "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/dunkin-hayden-hall"
     },
     {
       "source": "Dine On Campus",
@@ -377,14 +370,10 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "07:30-15:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
-        "Monday": [
-          "07:30-15:00"
-        ],
+        "Monday": [],
         "Tuesday": [
           "07:30-15:00"
         ],
@@ -401,8 +390,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/dunkin-shillman"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/dunkin-shillman",
+      "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/dunkin-shillman"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -445,7 +435,8 @@
       ],
       "hours_source": "vendor website (page text)",
       "status": null,
-      "url": "https://www.eljefestaqueria.com/"
+      "url": "https://www.eljefestaqueria.com/",
+      "menu_url": "https://eljefestaqueria.com/menu/"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -458,35 +449,36 @@
         "dining_dollars"
       ],
       "hours": [
-        "09:30-19:00"
+        "09:00-19:00"
       ],
       "weekly_hours": {
         "Monday": [
-          "09:30-19:00"
+          "08:30-19:00"
         ],
         "Tuesday": [
-          "09:30-19:00"
+          "08:30-19:00"
         ],
         "Wednesday": [
-          "09:30-19:00"
+          "08:30-19:00"
         ],
         "Thursday": [
-          "09:30-19:00"
+          "08:30-19:00"
         ],
         "Friday": [
-          "09:30-19:00"
+          "08:30-19:00"
         ],
         "Saturday": [
-          "09:00-18:00"
+          "09:00-19:00"
         ],
         "Sunday": [
-          "09:00-18:00"
+          "09:00-19:00"
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "vendor website (schema.org data)",
       "status": null,
-      "url": "https://energizeboston.com/"
+      "url": "https://energizeboston.com/",
+      "menu_url": null
     },
     {
       "source": "Dine On Campus",
@@ -498,14 +490,10 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "07:30-17:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
-        "Monday": [
-          "07:30-19:00"
-        ],
+        "Monday": [],
         "Tuesday": [
           "07:30-19:00"
         ],
@@ -522,8 +510,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/equator-coffees"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/equator-coffees",
+      "menu_url": null
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -536,7 +525,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "07:00-23:30"
+        "08:00-22:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -564,7 +553,8 @@
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
       "status": null,
-      "url": "https://restaurants.fiveguys.com/263-huntington-ave"
+      "url": "https://restaurants.fiveguys.com/263-huntington-ave",
+      "menu_url": "https://www.fiveguys.com/menu/"
     },
     {
       "source": "Husky Card dining locations",
@@ -576,9 +566,7 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "07:00-19:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Monday": [
           "07:00-19:00"
@@ -603,7 +591,8 @@
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
       "status": null,
-      "url": "https://www.fuelamericacoffee.com/"
+      "url": "https://www.fuelamericacoffee.com/",
+      "menu_url": "https://www.fuelamericacoffee.com/menu/"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -644,7 +633,8 @@
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
       "status": null,
-      "url": "http://www.gyroscopeboston.com/"
+      "url": "http://www.gyroscopeboston.com/",
+      "menu_url": "https://gyroscopeboston.com/menu/"
     },
     {
       "source": "Dine On Campus",
@@ -656,14 +646,10 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "09:00-16:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
-        "Monday": [
-          "09:00-16:00"
-        ],
+        "Monday": [],
         "Tuesday": [
           "09:00-16:00"
         ],
@@ -680,8 +666,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/juicygreens"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/juicygreens",
+      "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/juicygreens"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -694,8 +681,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "07:00-10:30",
-        "17:00-22:00"
+        "08:00-14:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -732,7 +718,8 @@
       ],
       "hours_source": "vendor website (page text)",
       "status": null,
-      "url": "https://www.luciebackbay.com/"
+      "url": "https://www.luciebackbay.com/",
+      "menu_url": "https://www.luciebackbay.com/menu"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -771,9 +758,10 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "status": null,
-      "url": "http://mamacitaboston.com/"
+      "url": null,
+      "menu_url": null
     },
     {
       "source": "Dine On Campus",
@@ -785,14 +773,10 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "07:00-14:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
-        "Monday": [
-          "07:00-14:00"
-        ],
+        "Monday": [],
         "Tuesday": [
           "07:00-14:00"
         ],
@@ -810,7 +794,8 @@
       "hours_text": null,
       "hours_source": "Dine On Campus",
       "status": "closed",
-      "url": "https://dineoncampus.com/public/locations/modern-market"
+      "url": "https://dineoncampus.com/public/locations/modern-market",
+      "menu_url": "https://modernmarket.com/menus/restaurant-menu/"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -822,9 +807,7 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "07:00-21:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Monday": [
           "07:00-21:00"
@@ -849,7 +832,8 @@
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
       "status": null,
-      "url": "https://www.nubianmarkets.com/kitchen-cafe"
+      "url": "https://www.nubianmarkets.com/kitchen-cafe",
+      "menu_url": null
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -862,7 +846,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "06:00-22:00"
+        "07:00-22:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -890,7 +874,8 @@
       "hours_text": null,
       "hours_source": "OpenStreetMap",
       "status": null,
-      "url": "https://www.panerabread.com/en-us/home.html"
+      "url": "https://www.panerabread.com/en-us/home.html",
+      "menu_url": "https://www.panerabread.com/en-us/menu.html"
     },
     {
       "source": "Dine On Campus",
@@ -922,8 +907,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/pizza-to-go"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/pizza-to-go",
+      "menu_url": null
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -936,7 +922,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "11:00-22:30"
+        "00:00-22:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -964,7 +950,8 @@
       "hours_text": null,
       "hours_source": "OpenStreetMap",
       "status": null,
-      "url": "https://pokestationandkitchen.business.site/"
+      "url": null,
+      "menu_url": "https://places.singleplatform.com/poke-station-and-kitchen/menu"
     },
     {
       "source": "Dine On Campus",
@@ -976,20 +963,20 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "11:00-19:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
         "Monday": [
-          "11:00-19:00"
+          "11:00-15:00"
         ],
         "Tuesday": [
           "11:00-19:00"
         ],
-        "Wednesday": [],
+        "Wednesday": [
+          "11:00-19:00"
+        ],
         "Thursday": [
-          "12:00-19:00"
+          "11:00-19:00"
         ],
         "Friday": [
           "11:00-19:00"
@@ -998,8 +985,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/popeyes"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/popeyes",
+      "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/popeyes"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -1012,7 +1000,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "10:30-00:00"
+        "10:30-23:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1040,7 +1028,8 @@
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
       "status": null,
-      "url": "https://locations.qdoba.com/us/ma/boston/279-massachusetts-ave"
+      "url": "https://locations.qdoba.com/us/ma/boston/279-massachusetts-ave",
+      "menu_url": "https://www.qdoba.com/menu"
     },
     {
       "source": "Dine On Campus",
@@ -1052,13 +1041,11 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "11:00-17:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
         "Monday": [
-          "11:00-18:00"
+          "11:00-15:00"
         ],
         "Tuesday": [
           "11:00-18:00"
@@ -1076,8 +1063,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/sal-s-pizza"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/sal-s-pizza",
+      "menu_url": null
     },
     {
       "source": "Husky Card dining locations",
@@ -1089,9 +1077,7 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "07:30-16:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Monday": [
           "07:30-18:00"
@@ -1118,7 +1104,8 @@
       ],
       "hours_source": "vendor website (page text)",
       "status": null,
-      "url": "https://www.saxbyscoffee.com/"
+      "url": "https://www.saxbyscoffee.com/",
+      "menu_url": "https://www.saxbyscoffee.com/menus/"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -1157,9 +1144,10 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
+      "hours_source": "vendor website (schema.org data)",
       "status": null,
-      "url": "https://www.sproutboston.com/"
+      "url": "https://www.sproutboston.com/",
+      "menu_url": "https://www.sproutboston.com/menu"
     },
     {
       "source": "Dine On Campus",
@@ -1171,14 +1159,10 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "07:00-20:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
-        "Monday": [
-          "07:00-20:00"
-        ],
+        "Monday": [],
         "Tuesday": [
           "07:00-20:00"
         ],
@@ -1195,8 +1179,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/starbucks-at-churchill-hall"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/starbucks-at-churchill-hall",
+      "menu_url": "https://www.starbucks.com/menu"
     },
     {
       "source": "Dine On Campus",
@@ -1216,7 +1201,7 @@
           "09:00-17:30"
         ],
         "Monday": [
-          "09:00-17:30"
+          "09:00-15:00"
         ],
         "Tuesday": [
           "09:00-17:30"
@@ -1236,8 +1221,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/starbucks-at-curry-student-center"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/starbucks-at-curry-student-center",
+      "menu_url": "https://www.starbucks.com/menu"
     },
     {
       "source": "Dine On Campus",
@@ -1249,14 +1235,10 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "11:00-16:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
-        "Monday": [
-          "11:00-18:00"
-        ],
+        "Monday": [],
         "Tuesday": [
           "11:00-18:00"
         ],
@@ -1273,8 +1255,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/subway"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/subway",
+      "menu_url": "https://www.subway.com/en-us/menunutrition/menu"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -1287,7 +1270,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "06:00-02:00"
+        "09:00-02:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1315,7 +1298,8 @@
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
       "status": null,
-      "url": "https://restaurants.subway.com/united-states/ma/boston/393-massachusetts-ave"
+      "url": "https://restaurants.subway.com/united-states/ma/boston/393-massachusetts-ave",
+      "menu_url": "https://www.subway.com/en-us/menunutrition/menu"
     },
     {
       "source": "Husky Card dining locations",
@@ -1328,7 +1312,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "07:00-18:00"
+        "08:00-18:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1364,7 +1348,8 @@
       ],
       "hours_source": "vendor website (page text)",
       "status": null,
-      "url": "https://tattebakery.com/menus/"
+      "url": "https://tattebakery.com/menus/",
+      "menu_url": "https://tattebakery.com/menus/"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -1377,7 +1362,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "11:00-23:00"
+        "12:00-23:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1408,7 +1393,8 @@
       ],
       "hours_source": "vendor website (page text)",
       "status": null,
-      "url": "https://www.teadocafe.com/"
+      "url": "https://www.teadocafe.com/",
+      "menu_url": null
     },
     {
       "source": "Dine On Campus",
@@ -1422,7 +1408,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "07:00-21:00"
+        "08:00-22:00"
       ],
       "weekly_hours": {
         "Sunday": [
@@ -1449,8 +1435,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/the-eatery-at-stetson-east"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/the-eatery-at-stetson-east",
+      "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/the-eatery-at-stetson-east"
     },
     {
       "source": "Dine On Campus",
@@ -1462,14 +1449,10 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "11:30-14:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
-        "Monday": [
-          "11:30-14:00"
-        ],
+        "Monday": [],
         "Tuesday": [
           "11:30-14:00"
         ],
@@ -1487,7 +1470,8 @@
       "hours_text": null,
       "hours_source": "Dine On Campus",
       "status": "closed",
-      "url": "https://dineoncampus.com/public/locations/the-faculty-club"
+      "url": "https://dineoncampus.com/public/locations/the-faculty-club",
+      "menu_url": null
     },
     {
       "source": "Dine On Campus",
@@ -1502,21 +1486,26 @@
       "hours": [],
       "weekly_hours": {
         "Sunday": [],
-        "Monday": [
-          "11:00-19:00"
-        ],
+        "Monday": [],
         "Tuesday": [
           "11:00-19:00"
         ],
-        "Wednesday": [],
-        "Thursday": [],
-        "Friday": [],
+        "Wednesday": [
+          "11:00-19:00"
+        ],
+        "Thursday": [
+          "11:00-19:00"
+        ],
+        "Friday": [
+          "11:00-16:00"
+        ],
         "Saturday": []
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
       "status": "closed",
-      "url": "https://dineoncampus.com/public/locations/the-halal-shack"
+      "url": "https://dineoncampus.com/public/locations/the-halal-shack",
+      "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/the-halal-shack"
     },
     {
       "source": "Dine On Campus",
@@ -1557,8 +1546,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/united-table-at-international-village"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/united-table-at-international-village",
+      "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/united-table-at-international-village"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -1571,7 +1561,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "10:30-00:30"
+        "12:00-21:30"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1599,7 +1589,8 @@
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
       "status": null,
-      "url": "http://www.bostonuhop.com/"
+      "url": "http://www.bostonuhop.com/",
+      "menu_url": "http://www.bostonuhop.com/menu"
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -1612,7 +1603,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "11:00-02:00"
+        "11:00-00:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1640,7 +1631,8 @@
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
       "status": null,
-      "url": "http://wingsover.com/locations/detail?location=52"
+      "url": "https://wingsover.com/location/ma-boston/",
+      "menu_url": "https://wingsover.com/menu/"
     }
   ],
   "markets": [
@@ -1655,7 +1647,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "09:00-20:00"
+        "11:00-19:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1683,7 +1675,8 @@
       "hours_text": null,
       "hours_source": "OpenStreetMap",
       "status": null,
-      "url": "http://www.cvs.com/"
+      "url": "http://www.cvs.com/",
+      "menu_url": null
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -1724,7 +1717,8 @@
       "hours_text": null,
       "hours_source": "OpenStreetMap",
       "status": null,
-      "url": null
+      "url": null,
+      "menu_url": null
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -1773,7 +1767,8 @@
       ],
       "hours_source": "vendor website (page text)",
       "status": null,
-      "url": "https://www.hmart.com/store/brookline-ma-02446/3ad29903-231d-49b9-8ff2-d4b588c12256?has_food_court=true&message="
+      "url": "https://www.hmart.com/store/brookline-ma-02446/3ad29903-231d-49b9-8ff2-d4b588c12256?has_food_court=true&message=",
+      "menu_url": null
     },
     {
       "source": "Dine On Campus",
@@ -1785,14 +1780,10 @@
       "payment": [
         "meal_swipes"
       ],
-      "hours": [
-        "11:00-19:00"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
-        "Monday": [
-          "11:00-19:00"
-        ],
+        "Monday": [],
         "Tuesday": [
           "11:00-19:00"
         ],
@@ -1811,8 +1802,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/outtakes-at-stetson-west"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/outtakes-at-stetson-west",
+      "menu_url": null
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -1851,17 +1843,18 @@
         ]
       },
       "hours_text": [
-        "Friday: 7:00 AM - 11:00 PM",
-        "Saturday: 7:00 AM - 11:00 PM",
         "Sunday: 7:00 AM - 11:00 PM",
         "Monday: 7:00 AM - 11:00 PM",
         "Tuesday: 7:00 AM - 11:00 PM",
         "Wednesday: 7:00 AM - 11:00 PM",
-        "Thursday: 7:00 AM - 11:00 PM"
+        "Thursday: 7:00 AM - 11:00 PM",
+        "Friday: 7:00 AM - 11:00 PM",
+        "Saturday: 7:00 AM - 11:00 PM"
       ],
       "hours_source": "vendor website (page text)",
       "status": null,
-      "url": "https://local.starmarket.com/ma/boston/53-huntington-ave.html"
+      "url": "https://local.starmarket.com/ma/boston/53-huntington-ave.html",
+      "menu_url": null
     },
     {
       "source": "Husky Card off-campus vendors",
@@ -1874,7 +1867,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "06:00-02:00"
+        "07:00-02:00"
       ],
       "weekly_hours": {
         "Monday": [
@@ -1905,7 +1898,8 @@
       ],
       "hours_source": "archived copy of vendor website (page text), may be outdated",
       "status": null,
-      "url": "http://www.symphonymarket.net/"
+      "url": "http://www.symphonymarket.net/",
+      "menu_url": null
     },
     {
       "source": "Dine On Campus",
@@ -1918,14 +1912,14 @@
         "dining_dollars"
       ],
       "hours": [
-        "07:30-20:00"
+        "09:00-18:00"
       ],
       "weekly_hours": {
         "Sunday": [
           "09:00-18:00"
         ],
         "Monday": [
-          "07:30-20:00"
+          "07:30-15:00"
         ],
         "Tuesday": [
           "07:30-20:00"
@@ -1945,8 +1939,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/the-market"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/the-market",
+      "menu_url": null
     },
     {
       "source": "Dine On Campus",
@@ -1960,7 +1955,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "10:00-18:00"
+        "10:00-20:00"
       ],
       "weekly_hours": {
         "Sunday": [
@@ -1987,8 +1982,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/the-market-at-60-belvidere"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/the-market-at-60-belvidere",
+      "menu_url": null
     },
     {
       "source": "Dine On Campus",
@@ -2000,14 +1996,10 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [
-        "07:30-14:30"
-      ],
+      "hours": [],
       "weekly_hours": {
         "Sunday": [],
-        "Monday": [
-          "07:30-14:30"
-        ],
+        "Monday": [],
         "Tuesday": [
           "07:30-14:30"
         ],
@@ -2024,8 +2016,9 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
-      "status": "open",
-      "url": "https://dineoncampus.com/public/locations/the-market-cafe"
+      "status": "closed",
+      "url": "https://dineoncampus.com/public/locations/the-market-cafe",
+      "menu_url": null
     },
     {
       "source": "Husky Card dining locations",
@@ -2068,7 +2061,8 @@
       ],
       "hours_source": "vendor website (page text)",
       "status": null,
-      "url": "https://www.wollastonsmarket.com/"
+      "url": "https://www.wollastonsmarket.com/",
+      "menu_url": null
     },
     {
       "source": "Husky Card dining locations",
@@ -2111,7 +2105,8 @@
       ],
       "hours_source": "vendor website (page text)",
       "status": null,
-      "url": "https://www.wollastonsmarket.com/"
+      "url": "https://www.wollastonsmarket.com/",
+      "menu_url": null
     }
   ],
   "by_payment": {

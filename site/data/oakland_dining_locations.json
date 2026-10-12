@@ -1,0 +1,456 @@
+{
+  "retrieved_on": "2026-10-11",
+  "hours_for_date": "2026-10-11",
+  "sources": [
+    "https://dineoncampus.com/dining/hours-of-operation"
+  ],
+  "restaurants": [
+    {
+      "source": "Dine On Campus",
+      "name": "Burger 510",
+      "category": "restaurant",
+      "address": "Tea Shop, 5000 MacArthur Blvd, Oakland, California, 94613",
+      "latitude": 37.780854,
+      "longitude": -122.1816,
+      "payment": [],
+      "hours": [
+        "11:00-21:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [
+          "11:00-21:00"
+        ],
+        "Monday": [
+          "11:00-21:00"
+        ],
+        "Tuesday": [
+          "11:00-22:00"
+        ],
+        "Wednesday": [
+          "11:00-22:00"
+        ],
+        "Thursday": [
+          "11:00-22:00"
+        ],
+        "Friday": [
+          "11:00-20:00"
+        ],
+        "Saturday": [
+          "11:00-21:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": null,
+      "url": "https://dineoncampus.com/dining/locations/burger-510",
+      "menu_url": "https://dineoncampus.com/dining/whats-on-the-menu/burger-510"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Café Suzie",
+      "category": "restaurant",
+      "address": "Adams Plaza, 5000 MacArthur Blvd, Oakland, CA, 94613",
+      "latitude": 37.780884,
+      "longitude": -122.181387,
+      "payment": [],
+      "hours": [
+        "15:00-23:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [
+          "15:00-23:00"
+        ],
+        "Monday": [
+          "11:00-22:00"
+        ],
+        "Tuesday": [
+          "10:00-23:00"
+        ],
+        "Wednesday": [
+          "10:00-23:00"
+        ],
+        "Thursday": [
+          "10:00-23:00"
+        ],
+        "Friday": [
+          "10:00-22:00"
+        ],
+        "Saturday": [
+          "15:00-23:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": null,
+      "url": "https://dineoncampus.com/dining/locations/cafe-suzie",
+      "menu_url": null
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Ciao Bella",
+      "category": "restaurant",
+      "address": "5000 MacArthur Blvd, Oakland, CA, 94613",
+      "latitude": null,
+      "longitude": null,
+      "payment": [],
+      "hours": [],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [],
+        "Tuesday": [],
+        "Wednesday": [],
+        "Thursday": [],
+        "Friday": [],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": null,
+      "url": "https://dineoncampus.com/dining/locations/ciao-bella",
+      "menu_url": null
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Egglandish",
+      "category": "restaurant",
+      "address": "Tea Shop, 5000 MacArthur Blvd, Oakland, California, 94613",
+      "latitude": 37.780854,
+      "longitude": -122.1816,
+      "payment": [],
+      "hours": [
+        "09:00-10:30"
+      ],
+      "weekly_hours": {
+        "Sunday": [
+          "09:00-10:30"
+        ],
+        "Monday": [
+          "07:00-10:30"
+        ],
+        "Tuesday": [
+          "07:00-10:30"
+        ],
+        "Wednesday": [
+          "07:00-10:30"
+        ],
+        "Thursday": [
+          "07:00-10:30"
+        ],
+        "Friday": [
+          "07:00-10:30"
+        ],
+        "Saturday": [
+          "09:00-10:30"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": null,
+      "url": "https://dineoncampus.com/dining/locations/egglandish",
+      "menu_url": "https://dineoncampus.com/dining/whats-on-the-menu/egglandish"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Equator Coffees",
+      "category": "restaurant",
+      "address": "Tea Shop, 5000 MacArthur Blvd, Oakland, California, 94613",
+      "latitude": 37.780854,
+      "longitude": -122.1816,
+      "payment": [],
+      "hours": [
+        "09:00-21:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [
+          "09:00-21:00"
+        ],
+        "Monday": [
+          "09:00-21:00"
+        ],
+        "Tuesday": [
+          "07:00-21:00"
+        ],
+        "Wednesday": [
+          "07:00-21:00"
+        ],
+        "Thursday": [
+          "07:00-21:00"
+        ],
+        "Friday": [
+          "07:00-21:00"
+        ],
+        "Saturday": [
+          "09:00-21:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": null,
+      "url": "https://dineoncampus.com/dining/locations/equator-coffees",
+      "menu_url": null
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Founders Commons",
+      "category": "restaurant",
+      "address": "5000 MacArthur Blvd, Oakland, CA, 94613",
+      "latitude": 37.781278,
+      "longitude": -122.179237,
+      "payment": [],
+      "hours": [
+        "10:00-20:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [
+          "10:00-20:00"
+        ],
+        "Monday": [
+          "10:00-20:00"
+        ],
+        "Tuesday": [
+          "07:00-20:30"
+        ],
+        "Wednesday": [
+          "07:00-20:30"
+        ],
+        "Thursday": [
+          "07:00-20:30"
+        ],
+        "Friday": [
+          "07:00-20:00"
+        ],
+        "Saturday": [
+          "10:00-20:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": null,
+      "url": "https://dineoncampus.com/dining/locations/founders-commons",
+      "menu_url": "https://dineoncampus.com/dining/whats-on-the-menu/founders-commons"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Innovation Kitchen",
+      "category": "restaurant",
+      "address": "Tea Shop, 5000 MacArthur Blvd, Oakland, California, 94613",
+      "latitude": 37.780854,
+      "longitude": -122.1816,
+      "payment": [],
+      "hours": [],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [],
+        "Tuesday": [
+          "11:00-20:00"
+        ],
+        "Wednesday": [
+          "11:00-20:00"
+        ],
+        "Thursday": [
+          "11:00-20:00"
+        ],
+        "Friday": [
+          "11:00-20:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": null,
+      "url": "https://dineoncampus.com/dining/locations/innovation-kitchen",
+      "menu_url": null
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "La Mesa",
+      "category": "restaurant",
+      "address": "Tea Shop, 5000 MacArthur Blvd, Oakland, California, 94613",
+      "latitude": 37.780854,
+      "longitude": -122.1816,
+      "payment": [],
+      "hours": [],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [],
+        "Tuesday": [
+          "11:00-20:00"
+        ],
+        "Wednesday": [
+          "11:00-20:00"
+        ],
+        "Thursday": [
+          "11:00-20:00"
+        ],
+        "Friday": [
+          "11:00-20:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": null,
+      "url": "https://dineoncampus.com/dining/locations/la-mesa",
+      "menu_url": "https://dineoncampus.com/dining/whats-on-the-menu/la-mesa"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Late Night Bites Innovation Kitchen",
+      "category": "restaurant",
+      "address": "Tea Shop, 5000 MacArthur Blvd, Oakland, California, 94613",
+      "latitude": 37.780854,
+      "longitude": -122.1816,
+      "payment": [],
+      "hours": [],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [],
+        "Tuesday": [
+          "20:00-23:00"
+        ],
+        "Wednesday": [
+          "20:00-23:00"
+        ],
+        "Thursday": [
+          "20:00-23:00"
+        ],
+        "Friday": [],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": null,
+      "url": "https://dineoncampus.com/dining/locations/late-night-bites-innovation-kitchen",
+      "menu_url": "https://dineoncampus.com/dining/whats-on-the-menu/late-night-bites-innovation-kitchen"
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Late Night Food Trucks",
+      "category": "restaurant",
+      "address": "5000 MacArthur Blvd, Oakland, CA, 94613",
+      "latitude": null,
+      "longitude": null,
+      "payment": [],
+      "hours": [],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [],
+        "Tuesday": [],
+        "Wednesday": [],
+        "Thursday": [],
+        "Friday": [],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": null,
+      "url": "https://dineoncampus.com/dining/locations/late-night-food-trucks",
+      "menu_url": null
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Lulu Fresh",
+      "category": "restaurant",
+      "address": "Tea Shop, 5000 MacArthur Blvd, Oakland, California, 94613",
+      "latitude": 37.780854,
+      "longitude": -122.1816,
+      "payment": [],
+      "hours": [],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [],
+        "Tuesday": [
+          "11:00-20:00"
+        ],
+        "Wednesday": [
+          "11:00-20:00"
+        ],
+        "Thursday": [
+          "11:00-20:00"
+        ],
+        "Friday": [
+          "11:00-20:00"
+        ],
+        "Saturday": []
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": null,
+      "url": "https://dineoncampus.com/dining/locations/lulu-fresh",
+      "menu_url": null
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "Tea Shop After Dark",
+      "category": "restaurant",
+      "address": "5000 MacArthur Blvd, Oakland, California, 94613",
+      "latitude": 37.780854,
+      "longitude": -122.1816,
+      "payment": [],
+      "hours": [],
+      "weekly_hours": {
+        "Sunday": [],
+        "Monday": [],
+        "Tuesday": [],
+        "Wednesday": [],
+        "Thursday": [],
+        "Friday": [
+          "21:00-01:00"
+        ],
+        "Saturday": [
+          "21:00-01:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": null,
+      "url": "https://dineoncampus.com/dining/locations/tea-shop-after-dark",
+      "menu_url": null
+    },
+    {
+      "source": "Dine On Campus",
+      "name": "The Melt Lab",
+      "category": "restaurant",
+      "address": "Tea Shop, 5000 MacArthur Blvd, Oakland, California, 94613",
+      "latitude": 37.780854,
+      "longitude": -122.1816,
+      "payment": [],
+      "hours": [
+        "10:30-21:00"
+      ],
+      "weekly_hours": {
+        "Sunday": [
+          "10:30-21:00"
+        ],
+        "Monday": [
+          "10:30-21:00"
+        ],
+        "Tuesday": [
+          "10:30-22:00"
+        ],
+        "Wednesday": [
+          "10:30-22:00"
+        ],
+        "Thursday": [
+          "10:30-22:00"
+        ],
+        "Friday": [
+          "10:30-20:00"
+        ],
+        "Saturday": [
+          "10:30-21:00"
+        ]
+      },
+      "hours_text": null,
+      "hours_source": "Dine On Campus",
+      "status": null,
+      "url": "https://dineoncampus.com/dining/locations/the-melt-lab",
+      "menu_url": "https://dineoncampus.com/dining/whats-on-the-menu/the-melt-lab"
+    }
+  ],
+  "markets": [],
+  "by_payment": {
+    "meal_swipes": [],
+    "dining_dollars": []
+  }
+}
