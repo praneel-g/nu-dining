@@ -1,8 +1,8 @@
 // Opening-hours logic: open/closed status, closing and opening times, and
 // formatting for 12- and 24-hour clocks.
 //
-// Times are Date objects whose UTC fields hold Boston wall-clock time
-// ("naive" times). Hours in the data are Boston-local, so this keeps every
+// Times are Date objects whose UTC fields hold the campus's wall-clock time
+// ("naive" times). Hours in the data are campus-local, so this keeps every
 // calculation independent of the visitor's own time zone and DST rules.
 
 export const WEEKDAYS = [
@@ -19,11 +19,11 @@ export const ALWAYS_OPEN = "Open 24 hours";
 const MINUTE = 60 * 1000;
 const DAY = 24 * 60 * MINUTE;
 
-/** The current time in Boston, to the minute. */
-export function bostonNow() {
+/** The current wall-clock time in `timeZone`, to the minute. */
+export function campusNow(timeZone) {
   const parts = Object.fromEntries(
     new Intl.DateTimeFormat("en-US", {
-      timeZone: "America/New_York",
+      timeZone,
       year: "numeric",
       month: "2-digit",
       day: "2-digit",

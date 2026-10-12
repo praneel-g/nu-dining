@@ -103,6 +103,17 @@ code {
   text-decoration: none;
 }
 
+.brand-group {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.9rem;
+}
+
+.campus-switch {
+  margin: 0;
+}
+
 nav a {
   color: var(--muted);
   font-size: 0.95rem;
@@ -198,6 +209,14 @@ nav a {
 .segmented label:has(input:checked) {
   background: var(--code-bg);
   color: var(--text);
+}
+
+/* Text options (the campus switch) size to their labels. */
+.segmented-text label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0 0.75rem;
+  width: auto;
 }
 
 .segmented svg {
@@ -421,6 +440,25 @@ nav a {
   color: var(--accent);
 }
 
+.menu {
+  margin: 0 0 0.5rem;
+}
+
+.stale {
+  color: var(--soon);
+  font-size: 0.8rem;
+  margin: -0.25rem 0 0.5rem;
+}
+
+.menu-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.menu-link::after {
+  content: " ↗";
+}
+
 .status {
   background: var(--on-campus-soft);
   border-radius: 0.4rem;
@@ -638,7 +676,20 @@ th {
   text-decoration: underline;
 }
 
+/* A pin shared by several places lists them all; keep the popup in view. */
+.popup-group .leaflet-popup-content {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.popup-group hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 0.6rem 0;
+}
+
 .filters[hidden],
+.filter-group[hidden],
 .map-wrap[hidden] {
   display: none;
 }

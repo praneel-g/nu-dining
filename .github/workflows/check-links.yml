@@ -1,0 +1,26 @@
+# Checks every website and menu link in the dining data once a week. It only
+# reports: a failed run (and GitHub's failure email) means a link is broken,
+# parked, or looks hacked. The run summary lists what to fix.
+name: Check links
+
+on:
+  schedule:
+    - cron: "43 13 * * 1" # Mondays, 9:43 AM Boston time (EDT)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      # Standard library only, so no dependencies to install.
+      - run: python -m dining.check_links
