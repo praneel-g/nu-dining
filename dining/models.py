@@ -43,6 +43,9 @@ class Location(TypedDict):
     weekly_hours: WeeklyHours | None
     hours_text: list[str] | None
     hours_source: str | None
+    # When a scrape last found these hours (ISO date); older than the file's
+    # retrieved_on when they were kept from a previous scrape.
+    hours_checked_on: str | None
     status: str | None
     url: str | None
     menu_url: str | None

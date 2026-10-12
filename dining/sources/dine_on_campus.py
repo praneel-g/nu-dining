@@ -196,6 +196,7 @@ def scrape_on_campus(day: date, campus: str = "boston") -> list[Location]:
                 "weekly_hours": weekly or None,
                 "hours_text": None,
                 "hours_source": SOURCE_NAME,
+                "hours_checked_on": None,
                 "status": (location.get("status") or {}).get("label"),
                 "url": f"https://dineoncampus.com/{slug}/locations/{location['slug']}",
                 # Without a date, the menu page opens on today's menu.

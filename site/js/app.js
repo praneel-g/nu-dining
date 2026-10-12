@@ -200,6 +200,17 @@ function hoursHtml(item, day) {
   return `${statusTag}<span class="day">${escape(day.slice(0, 3))}</span> ${hours}`;
 }
 
+/** A note for hours kept from an earlier scrape, which may be out of date. */
+function staleHoursHtml(loc) {
+  if (!loc.hours_checked_on || loc.hours_checked_on >= data.retrieved_on) return "";
+  const checked = new Date(`${loc.hours_checked_on}T00:00Z`).toLocaleDateString("en-US", {
+    timeZone: "UTC",
+    month: "short",
+    day: "numeric",
+  });
+  return `<p class="stale">Hours last confirmed ${escape(checked)}; they may have changed.</p>`;
+}
+
 const menuLink = (loc) =>
   loc.menu_url
     ? `<a class="menu-link" href="${escape(loc.menu_url)}" target="_blank" rel="noopener">Menu</a>`
@@ -235,6 +246,7 @@ function cardHtml(item, day) {
     </div>
     ${loc.address || distance ? `<p class="address">${escape(loc.address)}${distance}</p>` : ""}
     <p class="today">${hoursHtml(item, day)}</p>
+    ${staleHoursHtml(loc)}
     ${loc.menu_url ? `<p class="menu">${menuLink(loc)}</p>` : ""}
     ${payments}
     ${weekly}

@@ -8,7 +8,7 @@ from __future__ import annotations
 import argparse
 import json
 from collections.abc import Callable
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 from pathlib import Path
 
@@ -17,6 +17,11 @@ from .net import FetchError
 from .sources import dine_on_campus, husky_campus, husky_vendors
 from .sources.menus import add_menu_links
 from .sources.geocode import geocode, in_boston
+
+
+# Hours kept from previous scrapes are dropped once they are this old, so a
+# source that stays down doesn't leave its last hours on the site for good.
+MAX_HOURS_AGE = timedelta(days=21)
 
 
 def add_coordinates(locations: list[Location]) -> None:
@@ -43,7 +48,13 @@ def load_previous(path: Path) -> list[Location]:
         previous: DiningData = json.loads(path.read_text(encoding="utf-8"))
     except (FileNotFoundError, json.JSONDecodeError):
         return []
-    return previous["restaurants"] + previous["markets"]
+    locations = previous["restaurants"] + previous["markets"]
+    # Files from before hours were dated: assume they were checked that day.
+    for location in locations:
+        if "hours_checked_on" not in location:
+            has_hours = location["weekly_hours"] or location["hours_text"]
+            location["hours_checked_on"] = previous["retrieved_on"] if has_hours else None
+    return locations
 
 
 def keep_previous_data(locations: list[Location], previous: list[Location], day: date) -> None:
@@ -65,10 +76,21 @@ def keep_previous_data(locations: list[Location], previous: list[Location], day:
             location["hours_source"] = (
                 source if "previous scrape" in source else f"{source}, kept from a previous scrape"
             )
+            location["hours_checked_on"] = old["hours_checked_on"]
         if location["latitude"] is None and old["latitude"] is not None:
             location["latitude"], location["longitude"] = old["latitude"], old["longitude"]
         if not location.get("menu_url") and old.get("menu_url"):
             location["menu_url"] = old["menu_url"]
+
+
+def expire_stale_hours(locations: list[Location], today: date) -> None:
+    """Drop kept hours that no scrape has confirmed within ``MAX_HOURS_AGE``."""
+    for location in locations:
+        checked = location["hours_checked_on"]
+        if checked and today - date.fromisoformat(checked) > MAX_HOURS_AGE:
+            print(f"  Dropping {location['name']}'s hours, last confirmed {checked}.")
+            location["hours"] = location["weekly_hours"] = location["hours_text"] = None
+            location["hours_source"] = location["hours_checked_on"] = None
 
 
 def scrape_source(
@@ -76,7 +98,7 @@ def scrape_source(
 ) -> list[Location]:
     """Run one source's scraper, falling back to its previous results if its site is down."""
     try:
-        return scrape()
+        locations = scrape()
     except FetchError as error:
         kept = [location for location in previous if location["source"] == source]
         print(f"  Warning: {error}\n  Keeping {len(kept)} locations from the previous scrape.")
@@ -84,6 +106,11 @@ def scrape_source(
             weekly = location["weekly_hours"]
             location["hours"] = weekly.get(WEEKDAYS[day.weekday()]) if weekly else None
         return kept
+    today = boston_today().isoformat()
+    for location in locations:
+        has_hours = location["weekly_hours"] or location["hours_text"]
+        location["hours_checked_on"] = today if has_hours else None
+    return locations
 
 
 def build_dataset(day: date, use_browser: bool, previous: list[Location]) -> DiningData:
@@ -113,6 +140,7 @@ def build_dataset(day: date, use_browser: bool, previous: list[Location]) -> Din
     add_menu_links(locations, use_browser)
     # Only after geocoding and menu lookups, so stale data never overrides fresh.
     keep_previous_data(locations, previous, day)
+    expire_stale_hours(locations, boston_today())
     return group_locations(
         locations,
         day,
@@ -136,6 +164,7 @@ def build_oakland_dataset(day: date, previous: list[Location]) -> DiningData:
     locations.sort(key=lambda location: location["name"].casefold())
     add_menu_links(locations, use_browser=False)
     keep_previous_data(locations, previous, day)
+    expire_stale_hours(locations, boston_today())
     return group_locations(locations, day, [dine_on_campus.page_url("oakland")])
 
 

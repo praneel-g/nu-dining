@@ -45,6 +45,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://www.ameliacluckandsmash.com/",
       "menu_url": "https://www.ameliacluckandsmash.com/menu"
@@ -83,6 +84,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://bakalaokitchenette.com/",
       "menu_url": "https://bakalaokitchenette.com/menu/"
@@ -127,6 +129,7 @@
         "Sun-Mon : Closed"
       ],
       "hours_source": "vendor website (page text)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "http://www.bangkok-pinto.com/",
       "menu_url": "https://ordering.chownow.com/order/4168/locations"
@@ -169,6 +172,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "http://www.bostonshawarma.net/",
       "menu_url": "http://www.bostonshawarma.net/menu"
@@ -212,6 +216,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/campus-roots-at-60-belvidere",
       "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/campus-roots-at-60-belvidere"
@@ -246,6 +251,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/choolaah",
       "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/choolaah"
@@ -280,6 +286,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/d-angelo-grilled-sandwiches",
       "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/d-angelo-grilled-sandwiches"
@@ -322,6 +329,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (embedded hours data)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://www.davincigelatowaffle.com/",
       "menu_url": "https://www.davincigelatowaffle.com/menu"
@@ -356,6 +364,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/dunkin-hayden-hall",
       "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/dunkin-hayden-hall"
@@ -390,6 +399,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/dunkin-shillman",
       "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/dunkin-shillman"
@@ -434,6 +444,7 @@
         "Open Daily 8 am - 3 am"
       ],
       "hours_source": "vendor website (page text)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://www.eljefestaqueria.com/",
       "menu_url": "https://eljefestaqueria.com/menu/"
@@ -476,6 +487,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://energizeboston.com/",
       "menu_url": null
@@ -510,6 +522,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/equator-coffees",
       "menu_url": null
@@ -552,6 +565,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://restaurants.fiveguys.com/263-huntington-ave",
       "menu_url": "https://www.fiveguys.com/menu/"
@@ -590,6 +604,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://www.fuelamericacoffee.com/",
       "menu_url": "https://www.fuelamericacoffee.com/menu/"
@@ -632,6 +647,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "http://www.gyroscopeboston.com/",
       "menu_url": "https://gyroscopeboston.com/menu/"
@@ -666,6 +682,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/juicygreens",
       "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/juicygreens"
@@ -717,6 +734,7 @@
         "Tuesday - Saturday 5:00 PM - 10:00 PM"
       ],
       "hours_source": "vendor website (page text)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://www.luciebackbay.com/",
       "menu_url": "https://www.luciebackbay.com/menu"
@@ -759,6 +777,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data), kept from a previous scrape",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": null,
       "menu_url": null
@@ -793,6 +812,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/modern-market",
       "menu_url": "https://modernmarket.com/menus/restaurant-menu/"
@@ -831,6 +851,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://www.nubianmarkets.com/kitchen-cafe",
       "menu_url": null
@@ -873,6 +894,7 @@
       },
       "hours_text": null,
       "hours_source": "OpenStreetMap",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://www.panerabread.com/en-us/home.html",
       "menu_url": "https://www.panerabread.com/en-us/menu.html"
@@ -907,6 +929,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/pizza-to-go",
       "menu_url": null
@@ -949,6 +972,7 @@
       },
       "hours_text": null,
       "hours_source": "OpenStreetMap",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": null,
       "menu_url": "https://places.singleplatform.com/poke-station-and-kitchen/menu"
@@ -985,6 +1009,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/popeyes",
       "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/popeyes"
@@ -1027,6 +1052,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://locations.qdoba.com/us/ma/boston/279-massachusetts-ave",
       "menu_url": "https://www.qdoba.com/menu"
@@ -1063,6 +1089,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/sal-s-pizza",
       "menu_url": null
@@ -1103,6 +1130,7 @@
         "Saturday & Sunday: Closed"
       ],
       "hours_source": "vendor website (page text)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://www.saxbyscoffee.com/",
       "menu_url": "https://www.saxbyscoffee.com/menus/"
@@ -1145,6 +1173,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://www.sproutboston.com/",
       "menu_url": "https://www.sproutboston.com/menu"
@@ -1179,6 +1208,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/starbucks-at-churchill-hall",
       "menu_url": "https://www.starbucks.com/menu"
@@ -1221,6 +1251,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/starbucks-at-curry-student-center",
       "menu_url": "https://www.starbucks.com/menu"
@@ -1255,6 +1286,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/subway",
       "menu_url": "https://www.subway.com/en-us/menunutrition/menu"
@@ -1297,6 +1329,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://restaurants.subway.com/united-states/ma/boston/393-massachusetts-ave",
       "menu_url": "https://www.subway.com/en-us/menunutrition/menu"
@@ -1347,6 +1380,7 @@
         "Saturday: 7AM-6PM"
       ],
       "hours_source": "vendor website (page text)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://tattebakery.com/menus/",
       "menu_url": "https://tattebakery.com/menus/"
@@ -1392,6 +1426,7 @@
         "Sat–Sun: 12:00 PM – 11:00 PM"
       ],
       "hours_source": "vendor website (page text)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://www.teadocafe.com/",
       "menu_url": null
@@ -1435,6 +1470,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/the-eatery-at-stetson-east",
       "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/the-eatery-at-stetson-east"
@@ -1469,6 +1505,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/the-faculty-club",
       "menu_url": null
@@ -1503,6 +1540,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/the-halal-shack",
       "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/the-halal-shack"
@@ -1546,6 +1584,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/united-table-at-international-village",
       "menu_url": "https://dineoncampus.com/public/whats-on-the-menu/united-table-at-international-village"
@@ -1588,6 +1627,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "http://www.bostonuhop.com/",
       "menu_url": "http://www.bostonuhop.com/menu"
@@ -1630,6 +1670,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://wingsover.com/location/ma-boston/",
       "menu_url": "https://wingsover.com/menu/"
@@ -1674,6 +1715,7 @@
       },
       "hours_text": null,
       "hours_source": "OpenStreetMap",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "http://www.cvs.com/",
       "menu_url": null
@@ -1716,6 +1758,7 @@
       },
       "hours_text": null,
       "hours_source": "OpenStreetMap",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": null,
       "menu_url": null
@@ -1766,6 +1809,7 @@
         "Saturday: 09:00am - 09:00am"
       ],
       "hours_source": "vendor website (page text)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://www.hmart.com/store/brookline-ma-02446/3ad29903-231d-49b9-8ff2-d4b588c12256?has_food_court=true&message=",
       "menu_url": null
@@ -1802,6 +1846,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/outtakes-at-stetson-west",
       "menu_url": null
@@ -1852,6 +1897,7 @@
         "Saturday: 7:00 AM - 11:00 PM"
       ],
       "hours_source": "vendor website (page text)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://local.starmarket.com/ma/boston/53-huntington-ave.html",
       "menu_url": null
@@ -1897,6 +1943,7 @@
         "Sunday: 7:00 AM - 2:00 AM"
       ],
       "hours_source": "archived copy of vendor website (page text), may be outdated",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "http://www.symphonymarket.net/",
       "menu_url": null
@@ -1939,6 +1986,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/the-market",
       "menu_url": null
@@ -1982,6 +2030,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/the-market-at-60-belvidere",
       "menu_url": null
@@ -2016,6 +2065,7 @@
       },
       "hours_text": null,
       "hours_source": "Dine On Campus",
+      "hours_checked_on": "2026-10-11",
       "status": "closed",
       "url": "https://dineoncampus.com/public/locations/the-market-cafe",
       "menu_url": null
@@ -2060,6 +2110,7 @@
         "7AM - 1AM"
       ],
       "hours_source": "vendor website (page text)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://www.wollastonsmarket.com/",
       "menu_url": null
@@ -2104,6 +2155,7 @@
         "7AM - 12AM"
       ],
       "hours_source": "vendor website (page text)",
+      "hours_checked_on": "2026-10-11",
       "status": null,
       "url": "https://www.wollastonsmarket.com/",
       "menu_url": null

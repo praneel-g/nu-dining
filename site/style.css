@@ -444,6 +444,12 @@ nav a {
   margin: 0 0 0.5rem;
 }
 
+.stale {
+  color: var(--soon);
+  font-size: 0.8rem;
+  margin: -0.25rem 0 0.5rem;
+}
+
 .menu-link {
   font-size: 0.88rem;
   font-weight: 600;
