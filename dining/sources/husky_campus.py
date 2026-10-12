@@ -208,6 +208,7 @@ def to_record(item: CampusItem, place: Place, found: VendorHours | None, day: da
         **hours_fields(found, day),
         "status": None,
         "url": item.url,
+        "menu_url": None,
     }
 
 

@@ -71,6 +71,7 @@ class HoursFields(TypedDict):
     weekly_hours: WeeklyHours | None
     hours_text: list[str] | None
     hours_source: str | None
+    hours_checked_on: str | None
 
 
 @dataclass
@@ -90,6 +91,8 @@ def hours_fields(found: VendorHours | None, day: date) -> HoursFields:
         "weekly_hours": weekly,
         "hours_text": found.text if found else None,
         "hours_source": found.source if found else None,
+        # Stamped by the scraper once the whole source has succeeded.
+        "hours_checked_on": None,
     }
 
 

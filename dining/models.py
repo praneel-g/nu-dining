@@ -5,7 +5,9 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Literal, TypedDict
 
-DATA_FILE = Path(__file__).resolve().parent.parent / "site" / "data" / "dining_locations.json"
+DATA_DIR = Path(__file__).resolve().parent.parent / "site" / "data"
+DATA_FILE = DATA_DIR / "dining_locations.json"
+OAKLAND_DATA_FILE = DATA_DIR / "oakland_dining_locations.json"
 
 
 # Full weekday names indexed like ``date.weekday()`` (Monday is 0).
@@ -41,8 +43,12 @@ class Location(TypedDict):
     weekly_hours: WeeklyHours | None
     hours_text: list[str] | None
     hours_source: str | None
+    # When a scrape last found these hours (ISO date); older than the file's
+    # retrieved_on when they were kept from a previous scrape.
+    hours_checked_on: str | None
     status: str | None
     url: str | None
+    menu_url: str | None
 
 
 class DiningData(TypedDict):
