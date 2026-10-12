@@ -36,6 +36,18 @@ HOURS_URLS = {
     "http://symphonymarket.net/index.html",
 }
 
+# Replacements for Husky Card website links that are dead or unsafe (checked
+# 2026-10-11); None drops a link that has no working replacement. Dropped
+# sites are neither linked nor visited by the scraper.
+WEBSITE_FIXES: dict[str, str | None] = {
+    "Wings Over Boston": "https://wingsover.com/location/ma-boston/",
+    # Its Google Business site was shut down; it has no website now.
+    "Poke Station": None,
+    # Hacked: the page loads scripts from look-alike ad domains
+    # (ak.akam60800.net, async.gsyndication.com) and renders blank.
+    "Mamacita Mexican Eats": None,
+}
+
 # The Husky Card page lists restaurants and stores together.
 MARKETS = {"CVS", "Giovanni’s Market", "H Mart", "Star Market", "Symphony Market"}
 
@@ -46,6 +58,11 @@ class Vendor(NamedTuple):
     name: str
     address: str
     url: str | None
+
+
+def website(vendor: Vendor) -> str | None:
+    """A vendor's website: the Husky Card link unless it has been fixed or dropped."""
+    return WEBSITE_FIXES.get(vendor.name, vendor.url)
 
 
 class VendorListParser(HTMLParser):
@@ -97,7 +114,7 @@ def find_all_hours(
     OpenStreetMap fills in whatever is still missing.
     """
 
-    urls = [HOURS_URLS.get(vendor.name, vendor.url) for vendor in vendors]
+    urls = [HOURS_URLS.get(vendor.name, website(vendor)) for vendor in vendors]
 
     def lookup(index: int) -> VendorHours | None:
         url = urls[index]
@@ -151,7 +168,7 @@ def scrape_off_campus(day: date, use_browser: bool = True) -> list[Location]:
                 "payment": ["dining_dollars"],
                 **hours_fields(found, day),
                 "status": None,
-                "url": vendor.url,
+                "url": website(vendor),
                 "menu_url": None,
             }
         )
