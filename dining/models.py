@@ -45,6 +45,7 @@ class Location(TypedDict):
     hours_source: str | None
     status: str | None
     url: str | None
+    menu_url: str | None
 
 
 class DiningData(TypedDict):

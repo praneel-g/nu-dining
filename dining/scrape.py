@@ -15,6 +15,7 @@ from pathlib import Path
 from .models import DATA_FILE, OAKLAND_DATA_FILE, PAYMENTS, WEEKDAYS, DiningData, Location, Payment
 from .net import FetchError
 from .sources import dine_on_campus, husky_campus, husky_vendors
+from .sources.menus import add_menu_links
 from .sources.geocode import geocode, in_boston
 
 
@@ -46,7 +47,7 @@ def load_previous(path: Path) -> list[Location]:
 
 
 def keep_previous_data(locations: list[Location], previous: list[Location], day: date) -> None:
-    """Fill hours and coordinates that this run couldn't get from the last run.
+    """Fill hours, coordinates, and menus that this run couldn't get from the last run.
 
     Sources such as Overpass and vendor sites fail intermittently; a
     location shouldn't lose its hours just because one run hit an outage.
@@ -66,6 +67,8 @@ def keep_previous_data(locations: list[Location], previous: list[Location], day:
             )
         if location["latitude"] is None and old["latitude"] is not None:
             location["latitude"], location["longitude"] = old["latitude"], old["longitude"]
+        if not location.get("menu_url") and old.get("menu_url"):
+            location["menu_url"] = old["menu_url"]
 
 
 def scrape_source(
@@ -106,7 +109,9 @@ def build_dataset(day: date, use_browser: bool, previous: list[Location]) -> Din
     )
     locations.sort(key=lambda location: location["name"].casefold())
     add_coordinates(locations)
-    # Only after geocoding, so a stale pin never overrides a fresh lookup.
+    print("Looking for menus on vendor websites…")
+    add_menu_links(locations, use_browser)
+    # Only after geocoding and menu lookups, so stale data never overrides fresh.
     keep_previous_data(locations, previous, day)
     return group_locations(
         locations,
@@ -129,6 +134,7 @@ def build_oakland_dataset(day: date, previous: list[Location]) -> DiningData:
         day,
     )
     locations.sort(key=lambda location: location["name"].casefold())
+    add_menu_links(locations, use_browser=False)
     keep_previous_data(locations, previous, day)
     return group_locations(locations, day, [dine_on_campus.page_url("oakland")])
 

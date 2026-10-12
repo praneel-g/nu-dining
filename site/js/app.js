@@ -200,6 +200,11 @@ function hoursHtml(item, day) {
   return `${statusTag}<span class="day">${escape(day.slice(0, 3))}</span> ${hours}`;
 }
 
+const menuLink = (loc) =>
+  loc.menu_url
+    ? `<a class="menu-link" href="${escape(loc.menu_url)}" target="_blank" rel="noopener">Menu</a>`
+    : "";
+
 function cardHtml(item, day) {
   const loc = item.location;
   const onCampus = loc.source !== "Husky Card off-campus vendors";
@@ -230,6 +235,7 @@ function cardHtml(item, day) {
     </div>
     ${loc.address || distance ? `<p class="address">${escape(loc.address)}${distance}</p>` : ""}
     <p class="today">${hoursHtml(item, day)}</p>
+    ${loc.menu_url ? `<p class="menu">${menuLink(loc)}</p>` : ""}
     ${payments}
     ${weekly}
   </article>`;
@@ -243,7 +249,7 @@ function popupHtml(item, day) {
   const payments =
     loc.payment.map((method) => PAYMENTS[method]).join(", ") ||
     (hasPayments() ? "Payment methods unknown" : "");
-  return `<strong>${name}</strong><br>${escape(loc.address)}<br>${hoursHtml(item, day)}${payments ? `<br><small>${escape(payments)}</small>` : ""}`;
+  return `<strong>${name}</strong><br>${escape(loc.address)}<br>${hoursHtml(item, day)}${payments ? `<br><small>${escape(payments)}</small>` : ""}${loc.menu_url ? `<br>${menuLink(loc)}` : ""}`;
 }
 
 /** Whether this campus's data says anything about payments (Oakland's doesn't). */

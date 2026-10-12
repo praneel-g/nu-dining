@@ -3,13 +3,13 @@
 from __future__ import annotations
 
 import re
-from datetime import date
+from datetime import date, timedelta
 from typing import Any
 from urllib.parse import urlencode
 
 from ..models import WEEKDAYS, Category, Location, Payment, WeeklyHours
 from ..matching import with_building
-from ..net import fetch_json
+from ..net import FetchError, fetch_json
 
 SOURCE_NAME = "Dine On Campus"
 # Each campus is its own Dine On Campus site: (site id, URL slug).
@@ -92,6 +92,44 @@ def fetch_places(campus: str) -> dict[str, dict[str, Any]]:
     return {location["id"]: location for location in locations}
 
 
+def weekly_hours(location: dict[str, Any]) -> WeeklyHours:
+    """A schedule record's opening periods for each weekday."""
+    # The API numbers days from Sunday (0) to Saturday (6).
+    return {
+        WEEKDAYS[(entry["day"] - 1) % 7]: day_hours(entry)
+        for entry in location.get("week", [])
+    }
+
+
+def menu_days(weekly: WeeklyHours, day: date) -> list[date]:
+    """Days to look for a menu on: the next open day, or the whole week if none.
+
+    The API lists no menus on days a location is closed. A listing with no
+    hours at all may still carry the menu of a duplicate that has them.
+    """
+    week = [day + timedelta(days=offset) for offset in range(7)]
+    open_days = [candidate for candidate in week if weekly.get(WEEKDAYS[candidate.weekday()])]
+    return open_days[:1] or week
+
+
+def has_menu(location_id: str, day: date) -> bool:
+    """Whether a location publishes a menu (dining halls and some counters do).
+
+    The API lists no menus on days a location is closed, so ``day`` should be
+    one it is open.
+    """
+    query = urlencode({"platform": 0, "date": day.isoformat()})
+    try:
+        payload = fetch_json(
+            f"{API_ROOT}/locations/{location_id}/periods/?{query}",
+            referer="https://dineoncampus.com/",
+        )
+    except FetchError:
+        # A missing link is better than failing the whole campus.
+        return False
+    return bool(payload.get("periods"))
+
+
 def scrape_on_campus(day: date, campus: str = "boston") -> list[Location]:
     """Return every location on ``campus`` with its hours for the week of ``day``."""
     site_id, slug = SITES[campus]
@@ -115,16 +153,23 @@ def scrape_on_campus(day: date, campus: str = "boston") -> list[Location]:
         if location.get("is_building")
     }
 
+    # Keyed by slug: a location listed twice may have its menu on either copy.
+    menu_slugs = {
+        location["slug"]
+        for location in schedule.get("theLocations", [])
+        if not location.get("is_building")
+        and any(
+            has_menu(location["id"], candidate)
+            for candidate in menu_days(weekly_hours(location), day)
+        )
+    }
+
     records: list[Location] = []
     for location in schedule.get("theLocations", []):
         if location.get("is_building"):
             continue
         name = location.get("display_name") or location["name"]
-        # The API numbers days from Sunday (0) to Saturday (6).
-        weekly: WeeklyHours = {
-            WEEKDAYS[(entry["day"] - 1) % 7]: day_hours(entry)
-            for entry in location.get("week", [])
-        }
+        weekly = weekly_hours(location)
         category: Category = "market" if MARKET_PATTERN.search(name) else "restaurant"
         place = places.get(location["id"], {})
         if not (place.get("address") or {}).get("street"):
@@ -153,6 +198,12 @@ def scrape_on_campus(day: date, campus: str = "boston") -> list[Location]:
                 "hours_source": SOURCE_NAME,
                 "status": (location.get("status") or {}).get("label"),
                 "url": f"https://dineoncampus.com/{slug}/locations/{location['slug']}",
+                # Without a date, the menu page opens on today's menu.
+                "menu_url": (
+                    f"https://dineoncampus.com/{slug}/whats-on-the-menu/{location['slug']}"
+                    if location["slug"] in menu_slugs
+                    else None
+                ),
             }
         )
     return without_duplicates(records)

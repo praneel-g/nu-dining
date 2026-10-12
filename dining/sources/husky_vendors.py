@@ -152,6 +152,7 @@ def scrape_off_campus(day: date, use_browser: bool = True) -> list[Location]:
                 **hours_fields(found, day),
                 "status": None,
                 "url": vendor.url,
+                "menu_url": None,
             }
         )
     return records

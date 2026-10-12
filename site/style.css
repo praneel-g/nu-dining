@@ -440,6 +440,19 @@ nav a {
   color: var(--accent);
 }
 
+.menu {
+  margin: 0 0 0.5rem;
+}
+
+.menu-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.menu-link::after {
+  content: " ↗";
+}
+
 .status {
   background: var(--on-campus-soft);
   border-radius: 0.4rem;
