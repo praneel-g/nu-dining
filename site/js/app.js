@@ -14,6 +14,7 @@ import {
   toLocalValue,
   weekdayName,
 } from "./hours.js";
+import { initAnalytics, trackEvent } from "./analytics.js";
 import { watchLocation } from "./location.js";
 import { createMap } from "./map.js";
 import { initSettings, settings } from "./settings.js";
@@ -214,7 +215,7 @@ function staleHoursHtml(loc) {
 
 const menuLink = (loc) =>
   loc.menu_url
-    ? `<a class="menu-link" href="${escape(loc.menu_url)}" target="_blank" rel="noopener">Menu</a>`
+    ? `<a class="menu-link" href="${escape(loc.menu_url)}" target="_blank" rel="noopener" data-place="${escape(loc.name)}">Menu</a>`
     : "";
 
 function cardHtml(item, day) {
@@ -388,6 +389,7 @@ form.addEventListener("change", (event) => {
     state.at = value;
   } else if (name in FILTERS) {
     state[name] = value;
+    trackEvent(`${name}/${value || "all"}`);
     // Choosing "Open at…" enables the time picker; results update once a time is picked.
     if (name === "when" && value === "at") {
       state.at ||= form.elements.at.value;
@@ -402,6 +404,7 @@ form.addEventListener("submit", (event) => event.preventDefault());
 
 campusForm.addEventListener("change", (event) => {
   state.campus = event.target.value;
+  trackEvent(`campus/${state.campus}`);
   saveCampus();
   writeState();
   loadCampus();
@@ -472,6 +475,13 @@ function showData(result) {
 }
 
 loadCampus();
+
+// Visits are counted per campus; menu links live in cards and map popups.
+initAnalytics(state.campus === "boston" ? "/" : `/${state.campus}`);
+document.addEventListener("click", (event) => {
+  const link = event.target.closest?.(".menu-link");
+  if (link) trackEvent(`menu/${link.dataset.place}`);
+});
 
 // Make the site installable and work offline.
 if ("serviceWorker" in navigator) {

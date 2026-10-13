@@ -3,12 +3,13 @@
 // soon as they're deployed, with the cached copy as an offline fallback.
 // Versioned CDN files (Leaflet) are cache-first. Map tiles aren't cached.
 
-const CACHE = "nu-dining-v2";
+const CACHE = "nu-dining-v3";
 const SHELL = [
   "./",
   "index.html",
   "style.css",
   "manifest.webmanifest",
+  "js/analytics.js",
   "js/app.js",
   "js/hours.js",
   "js/location.js",
