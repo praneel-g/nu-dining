@@ -1,11 +1,23 @@
 // Shared current-location handling for the map and the distance sort.
 // Shows a notice in #location-notice whenever the location isn't available,
-// including a button to ask for permission.
+// including a button to ask for permission. Returns a controller whose
+// setVisible() hides the notice while no view needs the location; the
+// notice comes back, if still relevant, when one does again.
 export function watchLocation(onPosition, { watch = false } = {}) {
   const notice = document.getElementById("location-notice");
+  // Whether a view needs the location, and whether there's a problem to report.
+  let visible = true;
+  let pending = false;
+  const controller = {
+    setVisible(value) {
+      visible = value;
+      notice.hidden = !(visible && pending);
+    },
+  };
 
   const show = (message, withButton = false) => {
-    notice.hidden = false;
+    pending = true;
+    notice.hidden = !visible;
     notice.replaceChildren(document.createTextNode(message));
     if (withButton) {
       const button = document.createElement("button");
@@ -17,6 +29,7 @@ export function watchLocation(onPosition, { watch = false } = {}) {
     }
   };
   const hide = () => {
+    pending = false;
     notice.hidden = true;
   };
 
@@ -49,15 +62,15 @@ export function watchLocation(onPosition, { watch = false } = {}) {
 
   if (!window.isSecureContext) {
     show("Location only works over HTTPS or on localhost.");
-    return;
+    return controller;
   }
   if (!("geolocation" in navigator)) {
     show("This browser can't share its location.");
-    return;
+    return controller;
   }
   if (!navigator.permissions) {
     start();
-    return;
+    return controller;
   }
   navigator.permissions
     .query({ name: "geolocation" })
@@ -78,4 +91,5 @@ export function watchLocation(onPosition, { watch = false } = {}) {
       react();
     })
     .catch(start);
+  return controller;
 }

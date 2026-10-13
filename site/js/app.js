@@ -75,7 +75,7 @@ const loaded = {};
 let data = null;
 let map = null;
 let coords = null;
-let locating = false;
+let locator = null;
 let lastReference = null;
 
 const state = readState();
@@ -272,9 +272,8 @@ const hasMarkets = () => data.markets.length > 0;
 
 /** Ask for the visitor's location once, the first time a view needs it. */
 function ensureLocation() {
-  if (locating) return;
-  locating = true;
-  watchLocation(
+  if (locator) return;
+  locator = watchLocation(
     (position) => {
       // Small GPS jitter only moves the map dot; re-rendering the list would
       // also collapse any open "Weekly hours" panels.
@@ -346,6 +345,8 @@ function render() {
   const needsLocation = state.sort === "distance" || state.view === "map";
   if (needsLocation) ensureLocation();
 
+  // Only views that use the location show problems getting it.
+  locator?.setVisible(needsLocation);
   elements.list.hidden = state.view !== "list";
   elements.mapView.hidden = state.view !== "map";
   if (state.view === "list") {
