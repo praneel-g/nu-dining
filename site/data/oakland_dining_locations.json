@@ -1,6 +1,6 @@
 {
-  "retrieved_on": "2026-10-12",
-  "hours_for_date": "2026-10-12",
+  "retrieved_on": "2026-10-13",
+  "hours_for_date": "2026-10-13",
   "sources": [
     "https://dineoncampus.com/dining/hours-of-operation"
   ],
@@ -14,7 +14,7 @@
       "longitude": -122.1816,
       "payment": [],
       "hours": [
-        "11:00-21:00"
+        "11:00-22:00"
       ],
       "weekly_hours": {
         "Sunday": [
@@ -55,7 +55,7 @@
       "longitude": -122.181387,
       "payment": [],
       "hours": [
-        "11:00-22:00"
+        "10:00-23:00"
       ],
       "weekly_hours": {
         "Sunday": [
@@ -162,7 +162,7 @@
       "longitude": -122.1816,
       "payment": [],
       "hours": [
-        "09:00-21:00"
+        "07:00-21:00"
       ],
       "weekly_hours": {
         "Sunday": [
@@ -203,7 +203,7 @@
       "longitude": -122.179237,
       "payment": [],
       "hours": [
-        "10:00-20:00"
+        "07:00-20:30"
       ],
       "weekly_hours": {
         "Sunday": [
@@ -243,7 +243,9 @@
       "latitude": 37.780854,
       "longitude": -122.1816,
       "payment": [],
-      "hours": [],
+      "hours": [
+        "11:00-20:00"
+      ],
       "weekly_hours": {
         "Sunday": [],
         "Monday": [],
@@ -276,7 +278,9 @@
       "latitude": 37.780854,
       "longitude": -122.1816,
       "payment": [],
-      "hours": [],
+      "hours": [
+        "11:00-20:00"
+      ],
       "weekly_hours": {
         "Sunday": [],
         "Monday": [],
@@ -309,7 +313,9 @@
       "latitude": 37.780854,
       "longitude": -122.1816,
       "payment": [],
-      "hours": [],
+      "hours": [
+        "20:00-23:00"
+      ],
       "weekly_hours": {
         "Sunday": [],
         "Monday": [],
@@ -365,7 +371,9 @@
       "latitude": 37.780854,
       "longitude": -122.1816,
       "payment": [],
-      "hours": [],
+      "hours": [
+        "11:00-20:00"
+      ],
       "weekly_hours": {
         "Sunday": [],
         "Monday": [],
@@ -428,7 +436,7 @@
       "longitude": -122.1816,
       "payment": [],
       "hours": [
-        "10:30-21:00"
+        "10:30-22:00"
       ],
       "weekly_hours": {
         "Sunday": [
