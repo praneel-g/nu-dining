@@ -176,8 +176,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
-      "hours_checked_on": "2026-10-12",
+      "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-13",
       "status": null,
       "url": "http://www.bostonshawarma.net/",
       "menu_url": "http://www.bostonshawarma.net/menu"
@@ -1205,8 +1205,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
-      "hours_checked_on": "2026-10-12",
+      "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-13",
       "status": null,
       "url": "https://www.sproutboston.com/",
       "menu_url": "https://www.sproutboston.com/menu"
@@ -1663,12 +1663,12 @@
           "10:30-00:30"
         ],
         "Sunday": [
-          "12:00-21:30"
+          "12:00-21:00"
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
-      "hours_checked_on": "2026-10-12",
+      "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-13",
       "status": null,
       "url": "http://www.bostonuhop.com/",
       "menu_url": "http://www.bostonuhop.com/menu"
