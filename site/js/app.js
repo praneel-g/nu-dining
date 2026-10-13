@@ -62,6 +62,7 @@ const elements = {
   paymentFilter: document.getElementById("payment-filter"),
   categoryFilter: document.getElementById("category-filter"),
   marketLegend: document.getElementById("market-legend"),
+  loadStatus: document.getElementById("load-status"),
   sources: document.getElementById("sources"),
   summary: document.getElementById("summary"),
   list: document.getElementById("list-view"),
@@ -344,9 +345,9 @@ function render() {
 
   const needsLocation = state.sort === "distance" || state.view === "map";
   if (needsLocation) ensureLocation();
-
   // Only views that use the location show problems getting it.
   locator?.setVisible(needsLocation);
+
   elements.list.hidden = state.view !== "list";
   elements.mapView.hidden = state.view !== "map";
   if (state.view === "list") {
@@ -435,7 +436,9 @@ function loadCampus() {
     return;
   }
   data = null;
-  elements.sources.textContent = "Loading dining data…";
+  elements.loadStatus.hidden = false;
+  elements.loadStatus.textContent = "Loading dining data…";
+  elements.sources.hidden = true;
   fetch(url, { cache: "no-cache" })
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -448,14 +451,22 @@ function loadCampus() {
     })
     .catch((error) => {
       if (state.campus === campus) {
-        elements.sources.textContent = `Couldn't load the dining data (${error.message}).`;
+        elements.loadStatus.textContent = `Couldn't load the dining data (${error.message}).`;
       }
     });
 }
 
 function showData(result) {
   data = result;
-  elements.sources.innerHTML = `Data scraped ${escape(data.retrieved_on)} from ${sourceLinks(data.sources)}.`;
+  const updated = new Date(`${data.retrieved_on}T00:00Z`).toLocaleDateString("en-US", {
+    timeZone: "UTC",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+  elements.sources.innerHTML = `Last updated ${escape(updated)} from ${sourceLinks(data.sources)}.`;
+  elements.sources.hidden = false;
+  elements.loadStatus.hidden = true;
   form.hidden = false;
   render();
 }
