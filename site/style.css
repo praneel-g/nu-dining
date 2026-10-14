@@ -473,6 +473,17 @@ nav a {
   margin: 0.35rem 0 0;
 }
 
+.address a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 0.15em;
+}
+
+.address a:hover {
+  text-decoration-color: currentColor;
+}
+
 .today {
   font-weight: 600;
   margin: 0.75rem 0 0.5rem;
@@ -483,6 +494,9 @@ nav a {
 }
 
 .menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
   margin: 0 0 0.5rem;
 }
 
@@ -492,12 +506,14 @@ nav a {
   margin: -0.25rem 0 0.5rem;
 }
 
-.menu-link {
+.menu-link,
+.directions-link {
   font-size: 0.88rem;
   font-weight: 600;
 }
 
-.menu-link::after {
+.menu-link::after,
+.directions-link::after {
   content: " ↗";
 }
 
