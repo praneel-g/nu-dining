@@ -25,11 +25,13 @@ const CAMPUSES = {
     data: "data/dining_locations.json",
     timeZone: "America/New_York",
     center: [42.3398, -71.0892],
+    city: "Boston, MA",
   },
   oakland: {
     data: "data/oakland_dining_locations.json",
     timeZone: "America/Los_Angeles",
     center: [37.7802, -122.1809],
+    city: "Oakland, CA",
   },
 };
 const CAMPUS_KEY = "campus";
@@ -218,6 +220,37 @@ const menuLink = (loc) =>
     ? `<a class="menu-link" href="${escape(loc.menu_url)}" target="_blank" rel="noopener" data-place="${escape(loc.name)}">Menu</a>`
     : "";
 
+/** The address with its city, which many leave out but Google needs. */
+function fullAddress(loc) {
+  const { city } = CAMPUSES[state.campus];
+  return loc.address.includes(city.split(",")[0]) ? loc.address : `${loc.address}, ${city}`;
+}
+
+/** The address as a link that opens the place in Google Maps. */
+function addressHtml(loc) {
+  if (!loc.address) return "";
+  const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${loc.name}, ${fullAddress(loc)}`)}`;
+  return `<a href="${escape(url)}" target="_blank" rel="noopener">${escape(loc.address)}</a>`;
+}
+
+/** A link to Google Maps directions from wherever the visitor is. */
+function directionsLink(loc) {
+  // The scraped coordinates pin the right building better than the addresses,
+  // several of which name only a street number shared by many buildings.
+  let destination;
+  if (loc.latitude != null && loc.longitude != null) destination = `${loc.latitude},${loc.longitude}`;
+  else if (loc.address) destination = fullAddress(loc);
+  else return "";
+  const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`;
+  return `<a class="directions-link" href="${escape(url)}" target="_blank" rel="noopener" data-place="${escape(loc.name)}">Directions</a>`;
+}
+
+/** The menu and directions links under a card's hours. */
+function actionsHtml(loc) {
+  const links = [menuLink(loc), directionsLink(loc)].filter(Boolean);
+  return links.length ? `<p class="menu">${links.join("")}</p>` : "";
+}
+
 function cardHtml(item, day) {
   const loc = item.location;
   const onCampus = loc.source !== "Husky Card off-campus vendors";
@@ -246,10 +279,10 @@ function cardHtml(item, day) {
       <h3>${name}</h3>
       <span class="tag ${onCampus ? "tag-on" : "tag-off"}">${onCampus ? "On campus" : "Off campus"}</span>
     </div>
-    ${loc.address || distance ? `<p class="address">${escape(loc.address)}${distance}</p>` : ""}
+    ${loc.address || distance ? `<p class="address">${addressHtml(loc)}${distance}</p>` : ""}
     <p class="today">${hoursHtml(item, day)}</p>
     ${staleHoursHtml(loc)}
-    ${loc.menu_url ? `<p class="menu">${menuLink(loc)}</p>` : ""}
+    ${actionsHtml(loc)}
     ${payments}
     ${weekly}
   </article>`;
@@ -263,7 +296,8 @@ function popupHtml(item, day) {
   const payments =
     loc.payment.map((method) => PAYMENTS[method]).join(", ") ||
     (hasPayments() ? "Payment methods unknown" : "");
-  return `<strong>${name}</strong><br>${escape(loc.address)}<br>${hoursHtml(item, day)}${payments ? `<br><small>${escape(payments)}</small>` : ""}${loc.menu_url ? `<br>${menuLink(loc)}` : ""}`;
+  const actions = [menuLink(loc), directionsLink(loc)].filter(Boolean).join(" · ");
+  return `<strong>${name}</strong>${loc.address ? `<br>${addressHtml(loc)}` : ""}<br>${hoursHtml(item, day)}${payments ? `<br><small>${escape(payments)}</small>` : ""}${actions ? `<br>${actions}` : ""}`;
 }
 
 /** Whether this campus's data says anything about payments (Oakland's doesn't). */
@@ -476,11 +510,15 @@ function showData(result) {
 
 loadCampus();
 
-// Visits are counted per campus; menu links live in cards and map popups.
+// Visits are counted per campus; menu and directions links live in cards and
+// map popups.
 initAnalytics(state.campus === "boston" ? "/" : `/${state.campus}`);
 document.addEventListener("click", (event) => {
-  const link = event.target.closest?.(".menu-link");
-  if (link) trackEvent(`menu/${link.dataset.place}`);
+  const link = event.target.closest?.(".menu-link, .directions-link");
+  if (link) {
+    const kind = link.classList.contains("menu-link") ? "menu" : "directions";
+    trackEvent(`${kind}/${link.dataset.place}`);
+  }
 });
 
 // Make the site installable and work offline.
