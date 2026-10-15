@@ -1,6 +1,6 @@
 {
-  "retrieved_on": "2026-10-14",
-  "hours_for_date": "2026-10-14",
+  "retrieved_on": "2026-10-15",
+  "hours_for_date": "2026-10-15",
   "sources": [
     "https://dineoncampus.com/public/hours-of-operation",
     "https://huskycard.northeastern.edu/off-campus-vendors/",
@@ -45,7 +45,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://www.ameliacluckandsmash.com/",
       "menu_url": "https://www.ameliacluckandsmash.com/menu"
@@ -86,7 +86,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://bakalaokitchenette.com/",
       "menu_url": "https://bakalaokitchenette.com/menu/"
@@ -134,7 +134,7 @@
         "Sun-Mon : Closed"
       ],
       "hours_source": "vendor website (page text)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "http://www.bangkok-pinto.com/",
       "menu_url": "https://ordering.chownow.com/order/4168/locations"
@@ -177,7 +177,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "http://www.bostonshawarma.net/",
       "menu_url": "http://www.bostonshawarma.net/menu"
@@ -339,7 +339,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (embedded hours data)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://www.davincigelatowaffle.com/",
       "menu_url": "https://www.davincigelatowaffle.com/menu"
@@ -458,7 +458,7 @@
         "Open Daily 8 am - 3 am"
       ],
       "hours_source": "vendor website (page text)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://www.eljefestaqueria.com/",
       "menu_url": "https://eljefestaqueria.com/menu/"
@@ -501,7 +501,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://energizeboston.com/",
       "menu_url": null
@@ -554,7 +554,7 @@
         "dining_dollars"
       ],
       "hours": [
-        "07:00-22:00"
+        "07:00-23:30"
       ],
       "weekly_hours": {
         "Monday": [
@@ -581,7 +581,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://restaurants.fiveguys.com/263-huntington-ave",
       "menu_url": "https://www.fiveguys.com/menu/"
@@ -622,7 +622,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://www.fuelamericacoffee.com/",
       "menu_url": "https://www.fuelamericacoffee.com/menu/"
@@ -665,7 +665,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "http://www.gyroscopeboston.com/",
       "menu_url": "https://gyroscopeboston.com/menu/"
@@ -755,7 +755,7 @@
         "Tuesday - Saturday 5:00 PM - 10:00 PM"
       ],
       "hours_source": "vendor website (page text)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://www.luciebackbay.com/",
       "menu_url": "https://www.luciebackbay.com/menu"
@@ -876,7 +876,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://www.nubianmarkets.com/kitchen-cafe",
       "menu_url": null
@@ -918,7 +918,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-10-14",
       "status": null,
       "url": "https://www.panerabread.com/en-us/home.html",
@@ -998,7 +998,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-10-14",
       "status": null,
       "url": null,
@@ -1081,7 +1081,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://locations.qdoba.com/us/ma/boston/279-massachusetts-ave",
       "menu_url": "https://www.qdoba.com/menu"
@@ -1163,7 +1163,7 @@
         "Saturday & Sunday: Closed"
       ],
       "hours_source": "vendor website (page text)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://www.saxbyscoffee.com/",
       "menu_url": "https://www.saxbyscoffee.com/menus/"
@@ -1205,7 +1205,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "hours_checked_on": "2026-10-14",
       "status": null,
       "url": "https://www.sproutboston.com/",
@@ -1366,7 +1366,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://restaurants.subway.com/united-states/ma/boston/393-massachusetts-ave",
       "menu_url": "https://www.subway.com/en-us/menunutrition/menu"
@@ -1417,7 +1417,7 @@
         "Saturday: 7AM-6PM"
       ],
       "hours_source": "vendor website (page text)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://tattebakery.com/menus/",
       "menu_url": "https://tattebakery.com/menus/"
@@ -1463,7 +1463,7 @@
         "Sat–Sun: 12:00 PM – 11:00 PM"
       ],
       "hours_source": "vendor website (page text)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://www.teadocafe.com/",
       "menu_url": null
@@ -1668,7 +1668,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "http://www.bostonuhop.com/",
       "menu_url": "http://www.bostonuhop.com/menu"
@@ -1711,7 +1711,7 @@
       },
       "hours_text": null,
       "hours_source": "vendor website (schema.org data)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://wingsover.com/location/ma-boston/",
       "menu_url": "https://wingsover.com/menu/"
@@ -1755,7 +1755,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-10-14",
       "status": null,
       "url": "http://www.cvs.com/",
@@ -1798,7 +1798,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-10-14",
       "status": null,
       "url": null,
@@ -1850,7 +1850,7 @@
         "Saturday: 09:00am - 09:00am"
       ],
       "hours_source": "vendor website (page text)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://www.hmart.com/store/brookline-ma-02446/3ad29903-231d-49b9-8ff2-d4b588c12256?has_food_court=true&message=",
       "menu_url": null
@@ -1931,16 +1931,16 @@
         ]
       },
       "hours_text": [
-        "Wednesday: 7:00 AM - 11:00 PM",
         "Thursday: 7:00 AM - 11:00 PM",
         "Friday: 7:00 AM - 11:00 PM",
         "Saturday: 7:00 AM - 11:00 PM",
         "Sunday: 7:00 AM - 11:00 PM",
         "Monday: 7:00 AM - 11:00 PM",
-        "Tuesday: 7:00 AM - 11:00 PM"
+        "Tuesday: 7:00 AM - 11:00 PM",
+        "Wednesday: 7:00 AM - 11:00 PM"
       ],
       "hours_source": "vendor website (page text)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://local.starmarket.com/ma/boston/53-huntington-ave.html",
       "menu_url": null
@@ -1986,7 +1986,7 @@
         "Sunday: 7:00 AM - 2:00 AM"
       ],
       "hours_source": "archived copy of vendor website (page text), may be outdated",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "http://www.symphonymarket.net/",
       "menu_url": null
@@ -2155,7 +2155,7 @@
         "7AM - 1AM"
       ],
       "hours_source": "vendor website (page text)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://www.wollastonsmarket.com/",
       "menu_url": null
@@ -2200,7 +2200,7 @@
         "7AM - 12AM"
       ],
       "hours_source": "vendor website (page text)",
-      "hours_checked_on": "2026-10-14",
+      "hours_checked_on": "2026-10-15",
       "status": null,
       "url": "https://www.wollastonsmarket.com/",
       "menu_url": null
