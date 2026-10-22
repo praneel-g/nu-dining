@@ -176,8 +176,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
-      "hours_checked_on": "2026-10-17",
+      "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-22",
       "status": null,
       "url": "http://www.bostonshawarma.net/",
       "menu_url": "http://www.bostonshawarma.net/menu"
@@ -918,7 +918,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-10-22",
       "status": null,
       "url": "https://www.panerabread.com/en-us/home.html",
@@ -998,7 +998,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-10-22",
       "status": null,
       "url": null,
@@ -1755,7 +1755,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-10-22",
       "status": null,
       "url": "http://www.cvs.com/",
@@ -1798,7 +1798,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-10-22",
       "status": null,
       "url": null,
@@ -1985,8 +1985,8 @@
         "Monday to Saturday: 6:00 AM - 2:00 AM",
         "Sunday: 7:00 AM - 2:00 AM"
       ],
-      "hours_source": "archived copy of vendor website (page text), may be outdated, kept from a previous scrape",
-      "hours_checked_on": "2026-10-21",
+      "hours_source": "archived copy of vendor website (page text), may be outdated",
+      "hours_checked_on": "2026-10-22",
       "status": null,
       "url": "http://www.symphonymarket.net/",
       "menu_url": null
