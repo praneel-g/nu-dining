@@ -176,7 +176,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "hours_checked_on": "2026-10-23",
       "status": null,
       "url": "http://www.bostonshawarma.net/",
@@ -1662,7 +1662,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "hours_checked_on": "2026-10-23",
       "status": null,
       "url": "http://www.bostonuhop.com/",
@@ -1941,52 +1941,6 @@
       "menu_url": null
     },
     {
-      "source": "Husky Card off-campus vendors",
-      "name": "Symphony Market",
-      "category": "market",
-      "address": "291 Huntington Ave",
-      "latitude": 42.341539576809,
-      "longitude": -71.086811782367,
-      "payment": [
-        "dining_dollars"
-      ],
-      "hours": [
-        "06:00-02:00"
-      ],
-      "weekly_hours": {
-        "Monday": [
-          "06:00-02:00"
-        ],
-        "Tuesday": [
-          "06:00-02:00"
-        ],
-        "Wednesday": [
-          "06:00-02:00"
-        ],
-        "Thursday": [
-          "06:00-02:00"
-        ],
-        "Friday": [
-          "06:00-02:00"
-        ],
-        "Saturday": [
-          "06:00-02:00"
-        ],
-        "Sunday": [
-          "07:00-02:00"
-        ]
-      },
-      "hours_text": [
-        "Monday to Saturday: 6:00 AM - 2:00 AM",
-        "Sunday: 7:00 AM - 2:00 AM"
-      ],
-      "hours_source": "archived copy of vendor website (page text), may be outdated",
-      "hours_checked_on": "2026-10-23",
-      "status": null,
-      "url": "http://www.symphonymarket.net/",
-      "menu_url": null
-    },
-    {
       "source": "Dine On Campus",
       "name": "the Market",
       "category": "market",
@@ -2247,7 +2201,6 @@
       "Starbucks at Curry Student Center",
       "Subway",
       "Subway",
-      "Symphony Market",
       "Tatte Bakery and Cafe",
       "TeaDo",
       "The Eatery at Stetson East",
