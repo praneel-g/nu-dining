@@ -176,8 +176,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
-      "hours_checked_on": "2026-10-23",
+      "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-24",
       "status": null,
       "url": "http://www.bostonshawarma.net/",
       "menu_url": "http://www.bostonshawarma.net/menu"
@@ -901,8 +901,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap, kept from a previous scrape",
-      "hours_checked_on": "2026-10-22",
+      "hours_source": "OpenStreetMap",
+      "hours_checked_on": "2026-10-24",
       "status": null,
       "url": "https://www.panerabread.com/en-us/home.html",
       "menu_url": "https://www.panerabread.com/en-us/menu.html"
@@ -979,8 +979,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap, kept from a previous scrape",
-      "hours_checked_on": "2026-10-22",
+      "hours_source": "OpenStreetMap",
+      "hours_checked_on": "2026-10-24",
       "status": null,
       "url": null,
       "menu_url": "https://places.singleplatform.com/poke-station-and-kitchen/menu"
@@ -1634,8 +1634,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
-      "hours_checked_on": "2026-10-23",
+      "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-24",
       "status": null,
       "url": "http://www.bostonuhop.com/",
       "menu_url": "http://www.bostonuhop.com/menu"
@@ -1722,8 +1722,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap, kept from a previous scrape",
-      "hours_checked_on": "2026-10-22",
+      "hours_source": "OpenStreetMap",
+      "hours_checked_on": "2026-10-24",
       "status": null,
       "url": "http://www.cvs.com/",
       "menu_url": null
@@ -1765,8 +1765,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap, kept from a previous scrape",
-      "hours_checked_on": "2026-10-22",
+      "hours_source": "OpenStreetMap",
+      "hours_checked_on": "2026-10-24",
       "status": null,
       "url": null,
       "menu_url": null
