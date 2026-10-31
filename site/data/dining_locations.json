@@ -135,8 +135,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
-      "hours_checked_on": "2026-10-30",
+      "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-31",
       "status": null,
       "url": "http://www.bostonshawarma.net/",
       "menu_url": "http://www.bostonshawarma.net/menu"
@@ -1139,7 +1139,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "hours_checked_on": "2026-10-31",
       "status": null,
       "url": "https://www.sproutboston.com/",
@@ -1593,8 +1593,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
-      "hours_checked_on": "2026-10-30",
+      "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-10-31",
       "status": null,
       "url": "http://www.bostonuhop.com/",
       "menu_url": "http://www.bostonuhop.com/menu"
