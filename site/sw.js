@@ -54,7 +54,9 @@ self.addEventListener("fetch", (event) => {
 async function networkFirst(request) {
   const cache = await caches.open(CACHE);
   try {
-    const response = await fetch(request);
+    // Revalidate with the server, so a stale HTTP-cached app.js can't run
+    // against a newer index.html.
+    const response = await fetch(request, { cache: "no-cache" });
     if (response.ok) cache.put(request, response.clone());
     return response;
   } catch (error) {
