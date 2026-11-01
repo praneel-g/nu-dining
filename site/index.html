@@ -117,6 +117,13 @@
             <input id="search-input" type="search" placeholder="Search locations" autocomplete="off" />
           </label>
           <form class="filters" id="filters" hidden>
+            <fieldset class="filter-group">
+              <legend class="filter-label">Sort</legend>
+              <label class="pill"><input type="radio" name="sort" value="name" />A–Z</label>
+              <label class="pill"><input type="radio" name="sort" value="opening" />Opening time</label>
+              <label class="pill"><input type="radio" name="sort" value="closing" />Closing time</label>
+              <label class="pill"><input type="radio" name="sort" value="distance" />Distance</label>
+            </fieldset>
             <fieldset class="filter-group" id="category-filter">
               <legend class="filter-label">Type</legend>
               <label class="pill"><input type="radio" name="category" value="" />All</label>
@@ -135,13 +142,6 @@
               <label class="pill"><input type="radio" name="when" value="now" />Open now</label>
               <label class="pill"><input type="radio" name="when" value="at" />Open at…</label>
               <input class="time-input" type="datetime-local" name="at" step="900" aria-label="Date and time" disabled />
-            </fieldset>
-            <fieldset class="filter-group">
-              <legend class="filter-label">Sort</legend>
-              <label class="pill"><input type="radio" name="sort" value="name" />A–Z</label>
-              <label class="pill"><input type="radio" name="sort" value="opening" />Opening time</label>
-              <label class="pill"><input type="radio" name="sort" value="closing" />Closing time</label>
-              <label class="pill"><input type="radio" name="sort" value="distance" />Distance</label>
             </fieldset>
             <button class="toolbar-button" id="filters-close" type="button">Done</button>
           </form>

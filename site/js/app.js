@@ -420,7 +420,34 @@ function render() {
     );
     map.render(places, JSON.stringify(state), CAMPUSES[state.campus].center);
   }
+  fitFilters();
 }
+
+/**
+ * On wide screens, end the filter panel at the bottom of the window, so all of
+ * it scrolls into view without scrolling the page. CSS can't do this alone:
+ * the panel sits lower at the top of the page than once it sticks.
+ */
+function fitFilters() {
+  if (mobileQuery.matches || form.hidden) {
+    form.style.maxHeight = "";
+    return;
+  }
+  const top = Math.max(form.getBoundingClientRect().top, 0);
+  form.style.maxHeight = `${window.innerHeight - top - 16}px`;
+}
+
+let fitQueued = false;
+function queueFitFilters() {
+  if (fitQueued) return;
+  fitQueued = true;
+  requestAnimationFrame(() => {
+    fitQueued = false;
+    fitFilters();
+  });
+}
+window.addEventListener("scroll", queueFitFilters, { passive: true });
+window.addEventListener("resize", queueFitFilters);
 
 function sourceLinks(sources) {
   // One link per site, even when several pages of a site were scraped.
@@ -459,6 +486,8 @@ form.addEventListener("submit", (event) => event.preventDefault());
 function setSearchOpen(open) {
   searchField.hidden = !open;
   searchButton.setAttribute("aria-expanded", String(open));
+  // The search field sits above the filters and moves them down.
+  fitFilters();
 }
 
 /** Filters are always shown on wide screens and collapse behind a button on phones. */
