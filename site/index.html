@@ -58,9 +58,6 @@
         GitHub
       </a>
       <div class="header-tools">
-        <nav aria-label="Main navigation">
-          <a href="data/dining_locations.json" id="raw-json">Raw JSON</a>
-        </nav>
         <form class="settings" id="settings">
           <label class="switch" title="12- or 24-hour clock">
             <span class="clock-12" aria-hidden="true">12h</span>
@@ -101,70 +98,74 @@
         <noscript><p>This site needs JavaScript to filter and show locations.</p></noscript>
       </section>
 
-      <form class="filters" id="filters" hidden>
-        <fieldset class="filter-group" id="category-filter">
-          <legend class="filter-label">Type</legend>
-          <label class="pill"><input type="radio" name="category" value="" />All</label>
-          <label class="pill"><input type="radio" name="category" value="restaurants" />Restaurants &amp; cafés</label>
-          <label class="pill"><input type="radio" name="category" value="markets" />Markets</label>
-        </fieldset>
-
-        <fieldset class="filter-group" id="payment-filter">
-          <legend class="filter-label">Pay with</legend>
-          <label class="pill"><input type="radio" name="payment" value="" />Anything</label>
-          <label class="pill"><input type="radio" name="payment" value="meal_swipes" />Meal swipes</label>
-          <label class="pill"><input type="radio" name="payment" value="dining_dollars" />Dining Dollars</label>
-        </fieldset>
-
-        <fieldset class="filter-group">
-          <legend class="filter-label">Hours</legend>
-          <label class="pill"><input type="radio" name="when" value="any" />Any time</label>
-          <label class="pill"><input type="radio" name="when" value="now" />Open now</label>
-          <label class="pill"><input type="radio" name="when" value="at" />Open at…</label>
-          <input
-            class="time-input"
-            type="datetime-local"
-            name="at"
-            step="900"
-            aria-label="Date and time"
-            disabled
-          />
-        </fieldset>
-
-        <fieldset class="filter-group">
-          <legend class="filter-label">View</legend>
-          <label class="pill"><input type="radio" name="view" value="list" />List</label>
-          <label class="pill"><input type="radio" name="view" value="map" />Map</label>
-        </fieldset>
-
-        <fieldset class="filter-group">
-          <legend class="filter-label">Sort</legend>
-          <label class="pill"><input type="radio" name="sort" value="name" />A–Z</label>
-          <label class="pill"><input type="radio" name="sort" value="opening" />Opening time</label>
-          <label class="pill"><input type="radio" name="sort" value="closing" />Closing time</label>
-          <label class="pill"><input type="radio" name="sort" value="distance" />Distance</label>
-        </fieldset>
-
-      </form>
-
-      <p class="summary" id="summary" aria-live="polite"></p>
-      <p class="notice" id="location-notice" role="status" hidden></p>
-
-      <div id="list-view"></div>
-
-      <section class="map-wrap" id="map-view" hidden>
-        <div id="map" aria-label="Map of matching locations"></div>
-        <p class="legend">
-          <span><i class="dot dot-restaurant"></i>Restaurants &amp; cafés</span>
-          <span id="market-legend"><i class="dot dot-market"></i>Markets</span>
-          <span><i class="dot dot-you"></i>You</span>
-        </p>
-        <p class="muted map-note" id="map-note"></p>
-      </section>
+      <div class="content-layout">
+        <aside class="filter-panel">
+          <div class="filter-toolbar">
+            <button class="toolbar-button" id="search-button" type="button" aria-expanded="false" aria-controls="search-field">Search</button>
+            <button class="toolbar-button" id="filters-button" type="button" aria-expanded="false" aria-controls="filters">
+              Filters <span class="filter-count" id="filter-count" hidden></span>
+            </button>
+            <!-- Outside the form for layout; the form attribute keeps them in its elements. -->
+            <fieldset class="segmented segmented-text view-toggle">
+              <legend class="visually-hidden">View</legend>
+              <label><input type="radio" name="view" value="list" form="filters" />List</label>
+              <label><input type="radio" name="view" value="map" form="filters" />Map</label>
+            </fieldset>
+          </div>
+          <label class="search-field" id="search-field" hidden>
+            <span class="visually-hidden">Search locations</span>
+            <input id="search-input" type="search" placeholder="Search locations" autocomplete="off" />
+          </label>
+          <form class="filters" id="filters" hidden>
+            <fieldset class="filter-group" id="category-filter">
+              <legend class="filter-label">Type</legend>
+              <label class="pill"><input type="radio" name="category" value="" />All</label>
+              <label class="pill"><input type="radio" name="category" value="restaurants" />Restaurants &amp; cafés</label>
+              <label class="pill"><input type="radio" name="category" value="markets" />Markets</label>
+            </fieldset>
+            <fieldset class="filter-group" id="payment-filter">
+              <legend class="filter-label">Pay with</legend>
+              <label class="pill"><input type="radio" name="payment" value="" />Anything</label>
+              <label class="pill"><input type="radio" name="payment" value="meal_swipes" />Meal swipes</label>
+              <label class="pill"><input type="radio" name="payment" value="dining_dollars" />Dining Dollars</label>
+            </fieldset>
+            <fieldset class="filter-group">
+              <legend class="filter-label">Hours</legend>
+              <label class="pill"><input type="radio" name="when" value="any" />Any time</label>
+              <label class="pill"><input type="radio" name="when" value="now" />Open now</label>
+              <label class="pill"><input type="radio" name="when" value="at" />Open at…</label>
+              <input class="time-input" type="datetime-local" name="at" step="900" aria-label="Date and time" disabled />
+            </fieldset>
+            <fieldset class="filter-group">
+              <legend class="filter-label">Sort</legend>
+              <label class="pill"><input type="radio" name="sort" value="name" />A–Z</label>
+              <label class="pill"><input type="radio" name="sort" value="opening" />Opening time</label>
+              <label class="pill"><input type="radio" name="sort" value="closing" />Closing time</label>
+              <label class="pill"><input type="radio" name="sort" value="distance" />Distance</label>
+            </fieldset>
+            <button class="toolbar-button" id="filters-close" type="button">Done</button>
+          </form>
+        </aside>
+        <div class="results">
+          <p class="summary" id="summary" aria-live="polite"></p>
+          <p class="notice" id="location-notice" role="status" hidden></p>
+          <div id="list-view"></div>
+          <section class="map-wrap" id="map-view" hidden>
+            <div id="map" aria-label="Map of matching locations"></div>
+            <p class="legend">
+              <span><i class="dot dot-restaurant"></i>Restaurants &amp; cafés</span>
+              <span id="market-legend"><i class="dot dot-market"></i>Markets</span>
+              <span><i class="dot dot-you"></i>You</span>
+            </p>
+            <p class="muted map-note" id="map-note"></p>
+          </section>
+        </div>
+      </div>
     </main>
 
     <footer class="site-footer">
       <p id="sources" hidden></p>
+      <p><a href="data/dining_locations.json" id="raw-json">Raw JSON</a></p>
       <p>
         Wrong hours, a broken link, or something else off?
         <a href="https://github.com/praneel-g/nu-dining/issues">Report a problem on GitHub</a>.

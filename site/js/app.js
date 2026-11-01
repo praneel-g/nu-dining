@@ -59,12 +59,18 @@ const FILTERS = {
 
 const form = document.getElementById("filters");
 const campusForm = document.getElementById("campus");
+const searchInput = document.getElementById("search-input");
+const searchField = document.getElementById("search-field");
+const searchButton = document.getElementById("search-button");
+const filtersButton = document.getElementById("filters-button");
+const mobileQuery = window.matchMedia("(max-width: 700px)");
 const elements = {
   intro: document.getElementById("intro"),
   rawJson: document.getElementById("raw-json"),
   paymentFilter: document.getElementById("payment-filter"),
   categoryFilter: document.getElementById("category-filter"),
   marketLegend: document.getElementById("market-legend"),
+  filterCount: document.getElementById("filter-count"),
   loadStatus: document.getElementById("load-status"),
   sources: document.getElementById("sources"),
   summary: document.getElementById("summary"),
@@ -92,6 +98,7 @@ function readState() {
     result[name] = allowed.includes(value) ? value : allowed[0];
   }
   result.at = params.get("at") ?? "";
+  result.search = params.get("search") ?? "";
   // A shared link names its campus; otherwise use the one chosen last time.
   const campus = params.get("campus") ?? readSaved(CAMPUS_KEY);
   result.campus = campus in CAMPUSES ? campus : "boston";
@@ -122,6 +129,7 @@ function writeState() {
     if (state[name] !== allowed[0]) params.set(name, state[name]);
   }
   if (state.when === "at" && state.at) params.set("at", state.at);
+  if (state.search) params.set("search", state.search);
   const query = params.toString();
   history.replaceState(null, "", query ? `?${query}` : window.location.pathname);
 }
@@ -336,6 +344,13 @@ function syncForm(reference) {
   // With no markets, "Restaurants & cafés" is the same as "All".
   elements.categoryFilter.hidden = !hasMarkets();
   elements.marketLegend.hidden = !hasMarkets();
+  // Filters are collapsed on phones, so show how many narrow the results.
+  // A campus without payment or market data ignores those filters, so skip them.
+  const applies = { category: hasMarkets(), payment: hasPayments(), when: true };
+  const active = Object.keys(applies).filter((name) => applies[name] && state[name] !== FILTERS[name][0]).length;
+  elements.filterCount.textContent = active;
+  elements.filterCount.hidden = active === 0;
+  elements.filterCount.setAttribute("aria-label", `${active} active`);
 }
 
 function render() {
@@ -348,6 +363,7 @@ function render() {
   syncForm(reference);
 
   const sections = [];
+  const search = state.search.toLocaleLowerCase();
   let unknownHours = 0;
   for (const [key, label] of Object.entries(CATEGORIES)) {
     if (key === "markets" && !hasMarkets()) continue;
@@ -355,6 +371,7 @@ function render() {
     const items = [];
     for (const location of data[key]) {
       if (state.payment && hasPayments() && !location.payment.includes(state.payment)) continue;
+      if (search && !location.name.toLocaleLowerCase().includes(search)) continue;
       const item = describe(location, reference);
       if (moment && !OPEN_STATUSES.has(item.status)) {
         if (item.status === null) unknownHours += 1;
@@ -417,7 +434,7 @@ function sourceLinks(sources) {
     .join(" and ");
 }
 
-form.addEventListener("change", (event) => {
+function onFilterChange(event) {
   const { name, value } = event.target;
   if (name === "at") {
     state.at = value;
@@ -433,8 +450,57 @@ form.addEventListener("change", (event) => {
   }
   writeState();
   render();
-});
+}
+form.addEventListener("change", onFilterChange);
+// The List/Map toggle sits in the toolbar, so its changes bubble there instead.
+document.querySelector(".filter-toolbar").addEventListener("change", onFilterChange);
 form.addEventListener("submit", (event) => event.preventDefault());
+
+function setSearchOpen(open) {
+  searchField.hidden = !open;
+  searchButton.setAttribute("aria-expanded", String(open));
+}
+
+/** Filters are always shown on wide screens and collapse behind a button on phones. */
+function setFiltersOpen(open) {
+  form.hidden = !open;
+  filtersButton.setAttribute("aria-expanded", String(open));
+}
+
+// A search from a shared link stays visible, so it's clear why results are filtered.
+searchInput.value = state.search;
+setSearchOpen(Boolean(state.search));
+searchButton.addEventListener("click", () => {
+  const open = searchField.hidden;
+  setSearchOpen(open);
+  if (open) searchInput.focus();
+});
+searchInput.addEventListener("input", () => {
+  state.search = searchInput.value.trim();
+  writeState();
+  render();
+});
+searchInput.addEventListener("blur", (event) => {
+  // Clicking the Search button blurs the input first; let the click close it instead.
+  if (!state.search && event.relatedTarget !== searchButton) setSearchOpen(false);
+});
+searchInput.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  searchInput.value = "";
+  state.search = "";
+  writeState();
+  render();
+  setSearchOpen(false);
+  searchButton.focus();
+});
+filtersButton.addEventListener("click", () => setFiltersOpen(form.hidden));
+document.getElementById("filters-close").addEventListener("click", () => {
+  setFiltersOpen(false);
+  filtersButton.focus();
+});
+mobileQuery.addEventListener("change", ({ matches }) => {
+  if (data) setFiltersOpen(!matches);
+});
 
 campusForm.addEventListener("change", (event) => {
   state.campus = event.target.value;
@@ -504,7 +570,11 @@ function showData(result) {
   elements.sources.innerHTML = `Last updated ${escape(updated)} from ${sourceLinks(data.sources)}.`;
   elements.sources.hidden = false;
   elements.loadStatus.hidden = true;
-  form.hidden = false;
+  // The form waits for data; after that, switching campus keeps it open or closed.
+  if (form.dataset.ready === undefined) {
+    form.dataset.ready = "";
+    setFiltersOpen(!mobileQuery.matches);
+  }
   render();
 }
 
