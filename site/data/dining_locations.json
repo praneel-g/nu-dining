@@ -146,8 +146,8 @@
       "name": "Campus Roots at 60 Belvidere",
       "category": "restaurant",
       "address": "60 Belvidere Street, Boston, MA, 02115",
-      "latitude": 42.3460429,
-      "longitude": -71.0834488,
+      "latitude": 42.346117,
+      "longitude": -71.085515,
       "payment": [
         "meal_swipes",
         "dining_dollars"
@@ -166,8 +166,8 @@
       "name": "Choolaah",
       "category": "restaurant",
       "address": "Curry Student Center, 360 Huntington Avenue, Boston, MA, 02115",
-      "latitude": 42.3403691,
-      "longitude": -71.089389,
+      "latitude": 42.339114,
+      "longitude": -71.087561,
       "payment": [
         "dining_dollars"
       ],
@@ -185,8 +185,8 @@
       "name": "D'Angelo Grilled Sandwiches",
       "category": "restaurant",
       "address": "Curry Student Center, 360 Huntington Avenue, Boston, MA, 02115",
-      "latitude": 42.3403691,
-      "longitude": -71.089389,
+      "latitude": 42.339114,
+      "longitude": -71.087561,
       "payment": [
         "dining_dollars"
       ],
@@ -247,8 +247,8 @@
       "name": "Dunkin' Hayden Hall",
       "category": "restaurant",
       "address": "360 Huntington Avenue, Boston, MA, 02115",
-      "latitude": 42.3403691,
-      "longitude": -71.089389,
+      "latitude": 42.339284,
+      "longitude": -71.088447,
       "payment": [
         "dining_dollars"
       ],
@@ -373,8 +373,8 @@
       "name": "Equator Coffees",
       "category": "restaurant",
       "address": "Snell Library, 306 Hunting Ave, Boston, MA, 02115",
-      "latitude": 42.3409148,
-      "longitude": -71.08699159999999,
+      "latitude": 42.338341,
+      "longitude": -71.087954,
       "payment": [
         "dining_dollars"
       ],
@@ -518,9 +518,9 @@
       "source": "Dine On Campus",
       "name": "JUICYGREENS",
       "category": "restaurant",
-      "address": "Curry Student Center, 1175 Tremont Street, Boston, MA, 02120",
-      "latitude": 42.3352444,
-      "longitude": -71.0889143,
+      "address": "Curry Student Center, 360 Huntington Avenue, Boston, MA, 02115",
+      "latitude": 42.339114,
+      "longitude": -71.087561,
       "payment": [
         "dining_dollars"
       ],
@@ -610,8 +610,8 @@
       "name": "Modern Market",
       "category": "restaurant",
       "address": "Churchill Hall, 360 Huntington Avenue, Boston, MA, 02115",
-      "latitude": 42.3392591,
-      "longitude": -71.08681349999999,
+      "latitude": 42.33877,
+      "longitude": -71.088903,
       "payment": [
         "dining_dollars"
       ],
@@ -713,8 +713,8 @@
       "name": "Pizza To-Go",
       "category": "restaurant",
       "address": "60 Belvidere Street, Boston, MA, 02115",
-      "latitude": 42.3461167,
-      "longitude": -71.0855153,
+      "latitude": 42.346117,
+      "longitude": -71.085515,
       "payment": [
         "dining_dollars"
       ],
@@ -775,8 +775,8 @@
       "name": "Popeyes",
       "category": "restaurant",
       "address": "Curry Student Center, 360 Huntington Ave, Boston, MA, 02115",
-      "latitude": 42.338333750000004,
-      "longitude": -71.08794163506803,
+      "latitude": 42.339114,
+      "longitude": -71.087561,
       "payment": [
         "dining_dollars"
       ],
@@ -837,8 +837,8 @@
       "name": "Sal's Pizza",
       "category": "restaurant",
       "address": "Curry Student Center, 360 Huntington Avenue, Boston, MA, 02115",
-      "latitude": 42.33902973997924,
-      "longitude": -71.0872331703266,
+      "latitude": 42.339114,
+      "longitude": -71.087561,
       "payment": [
         "dining_dollars"
       ],
@@ -942,8 +942,8 @@
       "name": "Starbucks at Churchill Hall",
       "category": "restaurant",
       "address": "360 Huntington Avenue, Boston, MA, 02115",
-      "latitude": 42.3392591,
-      "longitude": -71.08681349999999,
+      "latitude": 42.33877,
+      "longitude": -71.088903,
       "payment": [
         "dining_dollars"
       ],
@@ -961,8 +961,8 @@
       "name": "Starbucks at Curry Student Center",
       "category": "restaurant",
       "address": "360 Huntington Avenue, Boston, MA, 02115",
-      "latitude": 42.33902973997924,
-      "longitude": -71.0872331703266,
+      "latitude": 42.339114,
+      "longitude": -71.087561,
       "payment": [
         "dining_dollars"
       ],
@@ -1158,9 +1158,9 @@
       "source": "Dine On Campus",
       "name": "The Faculty Club",
       "category": "restaurant",
-      "address": null,
-      "latitude": null,
-      "longitude": null,
+      "address": "EXP, 815 Columbus Ave., Boston, MA, 02120",
+      "latitude": 42.337062,
+      "longitude": -71.08761,
       "payment": [
         "dining_dollars"
       ],
@@ -1178,8 +1178,8 @@
       "name": "The Halal Shack",
       "category": "restaurant",
       "address": "Curry Student Center, 360 Huntington Avenue, Boston, MA, 02115",
-      "latitude": 42.3403691,
-      "longitude": -71.089389,
+      "latitude": 42.339114,
+      "longitude": -71.087561,
       "payment": [
         "dining_dollars"
       ],
@@ -1512,8 +1512,8 @@
       "name": "the Market",
       "category": "market",
       "address": "Curry Student Center, 360 Huntington Avenue, Boston, MA, 02115",
-      "latitude": 42.339170849322564,
-      "longitude": -71.08785688877106,
+      "latitude": 42.339114,
+      "longitude": -71.087561,
       "payment": [
         "dining_dollars"
       ],
@@ -1531,8 +1531,8 @@
       "name": "the Market at 60 Belvidere",
       "category": "market",
       "address": "60 Belvidere Street, Boston, MA, 02115",
-      "latitude": 42.3461167,
-      "longitude": -71.0855153,
+      "latitude": 42.346117,
+      "longitude": -71.085515,
       "payment": [
         "meal_swipes",
         "dining_dollars"

@@ -29,8 +29,44 @@ OAKLAND_BUILDINGS = {
     "Founders Commons": (37.781278, -122.179237),
 }
 
+# Boston's pins are right for most buildings, but not these: several Curry
+# Student Center places sit at the Marino Center, Churchill Hall's sit east of
+# Curry, Snell Library's sits across Huntington Avenue, and one at 60 Belvidere
+# sits a block east. Pins come from the building named in the location's name
+# or address instead, from OpenStreetMap: ways 88150271, 29618540, 29865738,
+# 29566437, and 997766227, and Nominatim for 60 Belvidere Street.
+BOSTON_BUILDINGS = {
+    "Curry Student Center": (42.339114, -71.087561),
+    "Churchill Hall": (42.338770, -71.088903),
+    "Hayden Hall": (42.339284, -71.088447),
+    "Snell Library": (42.338341, -71.087954),
+    "60 Belvidere": (42.346117, -71.085515),
+    "EXP": (42.337062, -71.087610),
+}
+
+# Addresses the source gets wrong or leaves out: JUICYGREENS is listed in
+# Curry Student Center but at 1175 Tremont Street, and The Faculty Club has none.
+ADDRESS_FIXES = {
+    "JUICYGREENS": "Curry Student Center, 360 Huntington Avenue, Boston, MA, 02115",
+    "The Faculty Club": "EXP, 815 Columbus Ave., Boston, MA, 02120",
+}
+
 # Convenience stores; everything else on campus is a restaurant or café.
 MARKET_PATTERN = re.compile(r"^the market\b|\bouttakes\b", re.IGNORECASE)
+
+
+def boston_building(name: str, address: str | None) -> tuple[float, float] | None:
+    """The pin of a building in ``BOSTON_BUILDINGS`` named by a location, if any.
+
+    "Starbucks at Churchill Hall" names its building only in its name, and
+    "Popeyes" only in its address ("Curry Student Center, 360 Huntington…").
+    Whole words only, so "EXP" doesn't match "Express".
+    """
+    text = f"{name} {address or ''}"
+    for building, point in BOSTON_BUILDINGS.items():
+        if re.search(rf"\b{re.escape(building)}\b", text, re.IGNORECASE):
+            return point
+    return None
 
 
 def page_url(campus: str = "boston") -> str:
@@ -176,19 +212,20 @@ def scrape_on_campus(day: date, campus: str = "boston") -> list[Location]:
             place = building_places.get(location.get("building_id"), place)
         address = place.get("address") or {}
         building = building_names.get(location.get("building_id"))
+        full_address = ADDRESS_FIXES.get(name) or with_building(
+            format_address(place), building or address.get("metadata"), name
+        )
         latitude, longitude = address.get("lat"), address.get("lon")
         if campus == "oakland":
             latitude, longitude = OAKLAND_BUILDINGS.get(building or name, (None, None))
+        else:
+            latitude, longitude = boston_building(name, full_address) or (latitude, longitude)
         records.append(
             {
                 "source": SOURCE_NAME,
                 "name": name,
                 "category": category,
-                "address": with_building(
-                    format_address(place),
-                    building or address.get("metadata"),
-                    name,
-                ),
+                "address": full_address,
                 "latitude": latitude,
                 "longitude": longitude,
                 "payment": accepted_payments(location),
