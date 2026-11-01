@@ -132,8 +132,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
-      "hours_checked_on": "2026-10-31",
+      "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-11-01",
       "status": null,
       "url": "http://www.bostonshawarma.net/",
       "menu_url": "http://www.bostonshawarma.net/menu"
