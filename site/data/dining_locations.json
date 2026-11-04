@@ -997,9 +997,9 @@
       "source": "Husky Card dining locations",
       "name": "Saxbys",
       "category": "restaurant",
-      "address": "EXP, 815 Columbus Ave.",
-      "latitude": 42.33716878823443,
-      "longitude": -71.0875902149536,
+      "address": "EXP, 815 Columbus Ave., Boston, MA, 02120",
+      "latitude": 42.337062,
+      "longitude": -71.08761,
       "payment": [
         "dining_dollars"
       ],
@@ -1073,8 +1073,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
-      "hours_checked_on": "2026-11-02",
+      "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-11-04",
       "status": null,
       "url": "https://www.sproutboston.com/",
       "menu_url": "https://www.sproutboston.com/menu"
