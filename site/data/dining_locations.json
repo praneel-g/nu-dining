@@ -1901,7 +1901,7 @@
       "hours_text": [
         "7AM - 1AM"
       ],
-      "hours_source": "vendor website (page text)",
+      "hours_source": "vendor website (page text), kept from a previous scrape",
       "hours_checked_on": "2026-11-04",
       "status": null,
       "url": "https://www.wollastonsmarket.com/",
@@ -1946,7 +1946,7 @@
       "hours_text": [
         "7AM - 12AM"
       ],
-      "hours_source": "vendor website (page text)",
+      "hours_source": "vendor website (page text), kept from a previous scrape",
       "hours_checked_on": "2026-11-04",
       "status": null,
       "url": "https://www.wollastonsmarket.com/",
