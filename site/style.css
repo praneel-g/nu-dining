@@ -303,6 +303,11 @@ code {
   line-height: 1.6;
 }
 
+.intro .unofficial {
+  font-size: 0.88rem;
+  margin: 0 0 0.75rem;
+}
+
 .content-layout {
   align-items: start;
   display: grid;
