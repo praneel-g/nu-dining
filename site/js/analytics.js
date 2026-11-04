@@ -4,7 +4,7 @@
 // is set, and GoatCounter itself ignores localhost and bots.
 
 // The site code chosen when signing up: https://<code>.goatcounter.com
-const GOATCOUNTER_CODE = "";
+const GOATCOUNTER_CODE = "praneel";
 const SCRIPT = {
   src: "https://gc.zgo.at/count.v5.js",
   integrity: "sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ",
