@@ -8,6 +8,7 @@ the workflow run fails and GitHub sends a notification.
 
 from __future__ import annotations
 
+import errno
 import json
 import os
 import re
@@ -24,8 +25,13 @@ from .net import BROWSER_USER_AGENT
 # Cloudflare blocks automated visits, and these links are built from slugs
 # that come straight from the Dine On Campus API.
 SKIPPED_HOSTS = ("dineoncampus.com",)
-# Responses that mean "go away, robot" rather than "this page is gone".
-BLOCKED_STATUSES = {401, 403, 429}
+# Responses that mean "go away, robot" rather than "this page is gone". Some
+# restaurant site hosts answer GitHub's runners with 400 while serving the
+# same pages to everyone else; a missing page is 404 or 410.
+BLOCKED_STATUSES = {400, 401, 403, 429}
+# Connection errors that say the checking machine has no route out, not that
+# the site is down: GitHub's runners have no IPv6.
+NO_ROUTE_ERRNOS = {errno.ENETUNREACH, errno.EHOSTUNREACH}
 PARKED_HOSTS = re.compile(r"(^|\.)(forsale\.godaddy|sedo|dan|afternic|hugedomains)\.com$")
 PARKED_TEXT = re.compile(
     r"domain (?:name )?(?:\S+ )?is for sale|buy this domain|this domain may be for sale",
@@ -84,11 +90,16 @@ def check(url: str, used_by: list[str], fetch_url: str | None = None) -> Result:
     except URLError as error:
         if isinstance(error.reason, TimeoutError):
             result.unchecked = "timed out"
+        elif getattr(error.reason, "errno", None) in NO_ROUTE_ERRNOS:
+            result.unchecked = f"no route from this machine ({error.reason})"
         else:
             result.problem = f"unreachable ({error.reason})"
         return result
     except OSError as error:
-        result.problem = f"unreachable ({error})"
+        if error.errno in NO_ROUTE_ERRNOS:
+            result.unchecked = f"no route from this machine ({error})"
+        else:
+            result.problem = f"unreachable ({error})"
         return result
 
     redirect = SCRIPT_REDIRECT.search(html)
