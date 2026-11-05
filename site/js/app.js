@@ -159,7 +159,8 @@ function describe(location, reference) {
     status,
     changes,
     opens: weekly ? periodStart(weekly, reference) : null,
-    dayHours: weekly ? (weekly[weekdayName(reference)] ?? []) : null,
+    // A day missing from the weekly hours is unknown, not closed.
+    dayHours: weekly?.[weekdayName(reference)] ?? null,
     distance:
       coords && hasCoords
         ? miles(coords.latitude, coords.longitude, location.latitude, location.longitude)
@@ -210,6 +211,12 @@ function hoursHtml(item, day) {
     hours = '<span class="closed">Closed</span>';
   }
   return `${statusTag}<span class="day">${escape(day.slice(0, 3))}</span> ${hours}`;
+}
+
+/** One day of the weekly hours table: periods, "Closed", or unknown when the source left it out. */
+function weekdayHtml(periods) {
+  if (periods === undefined) return '<span class="muted">Unknown</span>';
+  return periods.length ? periodsHtml(periods) : "Closed";
 }
 
 /** A note for hours kept from an earlier scrape, which may be out of date. */
@@ -277,7 +284,7 @@ function cardHtml(item, day) {
         <summary>Weekly hours</summary>
         <table>${WEEKDAYS.map(
           (weekday) => `<tr><th scope="row">${weekday.slice(0, 3)}</th>
-            <td>${loc.weekly_hours[weekday]?.length ? periodsHtml(loc.weekly_hours[weekday]) : "Closed"}</td></tr>`,
+            <td>${weekdayHtml(loc.weekly_hours[weekday])}</td></tr>`,
         ).join("")}</table>
         ${loc.hours_source ? `<p class="source">Source: ${escape(loc.hours_source)}</p>` : ""}
       </details>`

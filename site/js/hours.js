@@ -144,7 +144,9 @@ export function periodStart(weekly, moment) {
 /**
  * Status at `moment` and when it next changes:
  * "open" | "closes_soon" (with the closing time), "opens_soon" (with the
- * opening time), "closed", or null when the hours are unknown.
+ * opening time), "closed", or null when the hours are unknown. A day missing
+ * from `weekly` is unknown, not closed: sources leave out days they don't
+ * have, while a day listed with no periods is closed.
  */
 export function statusAt(weekly, moment, soonMs) {
   if (!weekly) return { status: null, changes: null };
@@ -153,6 +155,8 @@ export function statusAt(weekly, moment, soonMs) {
     const status = closes - moment <= soonMs ? "closes_soon" : "open";
     return { status, changes: closes };
   }
+  // Checked after closingTime, which also sees a late night from the day before.
+  if (!(weekdayName(moment) in weekly)) return { status: null, changes: null };
   const opens = openingTime(weekly, moment, soonMs);
   if (opens) return { status: "opens_soon", changes: opens };
   return { status: "closed", changes: null };
