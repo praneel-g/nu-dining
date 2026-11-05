@@ -103,3 +103,8 @@ When a source is wrong, fix it in the scraper so the next scrape keeps it:
 Fork the repository, then in **Settings → Pages** set **Source** to **GitHub
 Actions**. The workflow runs on its schedule, on manual dispatch, and on
 pushes to `main` that touch `site/` or the workflow.
+
+## License
+
+The code is [MIT licensed](LICENSE). The dining data belongs to its
+sources (see [How it works](#how-it-works)).
