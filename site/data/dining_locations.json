@@ -1,6 +1,6 @@
 {
-  "retrieved_on": "2026-11-09",
-  "hours_for_date": "2026-11-09",
+  "retrieved_on": "2026-11-10",
+  "hours_for_date": "2026-11-10",
   "sources": [
     "https://dineoncampus.com/public/hours-of-operation",
     "https://huskycard.northeastern.edu/off-campus-vendors/",
@@ -60,7 +60,10 @@
       "payment": [
         "dining_dollars"
       ],
-      "hours": [],
+      "hours": [
+        "11:00-15:00",
+        "16:00-21:00"
+      ],
       "weekly_hours": {
         "Monday": [],
         "Tuesday": [
@@ -618,7 +621,8 @@
         "dining_dollars"
       ],
       "hours": [
-        "07:00-10:30"
+        "07:00-10:30",
+        "17:00-22:00"
       ],
       "weekly_hours": {
         "Monday": [
