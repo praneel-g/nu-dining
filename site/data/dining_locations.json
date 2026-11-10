@@ -132,7 +132,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "hours_checked_on": "2026-11-09",
       "status": null,
       "url": "http://www.bostonshawarma.net/",
@@ -1447,7 +1447,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "hours_checked_on": "2026-11-09",
       "status": null,
       "url": "http://www.bostonuhop.com/",
