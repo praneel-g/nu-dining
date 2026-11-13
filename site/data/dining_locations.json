@@ -135,8 +135,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
-      "hours_checked_on": "2026-11-12",
+      "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-11-13",
       "status": null,
       "url": "http://www.bostonshawarma.net/",
       "menu_url": "http://www.bostonshawarma.net/menu"
@@ -804,7 +804,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-11-13",
       "status": null,
       "url": "https://www.panerabread.com/en-us/home.html",
@@ -875,7 +875,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-11-13",
       "status": null,
       "url": null,
@@ -1068,8 +1068,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
-      "hours_checked_on": "2026-11-12",
+      "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-11-13",
       "status": null,
       "url": "https://www.sproutboston.com/",
       "menu_url": "https://www.sproutboston.com/menu"
@@ -1483,8 +1483,8 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
-      "hours_checked_on": "2026-11-11",
+      "hours_source": "vendor website (schema.org data)",
+      "hours_checked_on": "2026-11-13",
       "status": null,
       "url": "http://www.bostonuhop.com/",
       "menu_url": "http://www.bostonuhop.com/menu"
@@ -1571,7 +1571,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-11-13",
       "status": null,
       "url": "http://www.cvs.com/",
@@ -1614,7 +1614,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-11-13",
       "status": null,
       "url": null,
