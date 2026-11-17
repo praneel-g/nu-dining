@@ -132,7 +132,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "hours_checked_on": "2026-11-16",
       "status": null,
       "url": "http://www.bostonshawarma.net/",
@@ -653,7 +653,7 @@
         "Saturday & Sunday 8:00 AM - 2:00 PM",
         "Tuesday - Saturday 5:00 PM - 10:00 PM"
       ],
-      "hours_source": "vendor website (page text)",
+      "hours_source": "vendor website (page text), kept from a previous scrape",
       "hours_checked_on": "2026-11-16",
       "status": null,
       "url": "https://www.luciebackbay.com/",
@@ -786,7 +786,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-11-16",
       "status": null,
       "url": "https://www.panerabread.com/en-us/home.html",
@@ -857,7 +857,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-11-16",
       "status": null,
       "url": null,
@@ -998,12 +998,8 @@
         "Saturday": [],
         "Sunday": []
       },
-      "hours_text": [
-        "Monday - Thursday: 7:30am - 6pm",
-        "Friday: 7:30am - 4pm",
-        "Saturday & Sunday: Closed"
-      ],
-      "hours_source": "vendor website (page text)",
+      "hours_text": null,
+      "hours_source": "vendor website (schema.org data)",
       "hours_checked_on": "2026-11-16",
       "status": null,
       "url": "https://www.saxbyscoffee.com/",
@@ -1046,7 +1042,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "hours_checked_on": "2026-11-16",
       "status": null,
       "url": "https://www.sproutboston.com/",
@@ -1447,7 +1443,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "vendor website (schema.org data)",
+      "hours_source": "vendor website (schema.org data), kept from a previous scrape",
       "hours_checked_on": "2026-11-16",
       "status": null,
       "url": "http://www.bostonuhop.com/",
@@ -1535,7 +1531,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-11-16",
       "status": null,
       "url": "http://www.cvs.com/",
@@ -1578,7 +1574,7 @@
         ]
       },
       "hours_text": null,
-      "hours_source": "OpenStreetMap",
+      "hours_source": "OpenStreetMap, kept from a previous scrape",
       "hours_checked_on": "2026-11-16",
       "status": null,
       "url": null,
