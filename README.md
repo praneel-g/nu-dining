@@ -95,8 +95,8 @@ When a source is wrong, fix it in the scraper so the next scrape keeps it:
 - **Menu links:** the tables in `dining/sources/menus.py`.
 - **Addresses and map pins** for campus places:
   `ADDRESS_FIXES` and `BOSTON_BUILDINGS` in `dining/sources/dine_on_campus.py`.
-- **Hours** for campus places: `CHECKED_HOURS` in the same file, copied
-  from the public hours page and keyed by the page's "Week of" date.
+- **Hours** for campus places: `dining/checked_hours.json`, copied from the
+  public hours page and keyed by the page's "Week of" date.
 
 ### Running your own copy
 

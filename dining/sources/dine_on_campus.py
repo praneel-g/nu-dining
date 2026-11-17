@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import json
 import re
 from datetime import date, timedelta
+from pathlib import Path
 from typing import Any
 from urllib.parse import urlencode
 
@@ -51,51 +53,18 @@ ADDRESS_FIXES = {
     "The Faculty Club": "EXP, 815 Columbus Ave., Boston, MA, 02120",
 }
 
-# Hours copied by hand from the public Boston hours page, for weeks when the
-# schedule API disagrees with it (the week of November 1, 2026, it showed most
-# places closed on Monday). Keyed by the page's "Week of" Sunday; each place
-# lists Sunday through Saturday, as the page does, with [] for closed.
-_CLOSED: list[str] = []
+# Hours copied by hand from the public Boston hours page
+# (https://nudining.com/public/hours-of-operation), for weeks when the schedule
+# API disagrees with it: the week of November 1, 2026 it showed most places
+# closed on Monday, and from mid-November it returned hours shifted by an hour
+# or two with open days marked closed. They replace the API's hours for those
+# days. Keyed by the page's "Week of" Sunday; each place lists Sunday through
+# Saturday, as the page does, with [] for closed.
+CHECKED_HOURS_FILE = Path(__file__).resolve().parent.parent / "checked_hours.json"
 CHECKED_HOURS: dict[date, dict[str, list[list[str]]]] = {
-    date(2026, 11, 1): {
-        "The Eatery at Stetson East": [
-            ["08:00-22:00"],
-            *[["07:00-22:00"]] * 4,
-            ["07:00-21:00"],
-            ["08:00-21:00"],
-        ],
-        "Outtakes at Stetson West": [_CLOSED, *[["11:00-19:00"]] * 6],
-        "Campus Roots at 60 Belvidere": [
-            ["10:00-14:00", "16:00-20:00"],
-            *[["08:00-10:00", "16:00-20:00"]] * 4,
-            _CLOSED,
-            _CLOSED,
-        ],
-        "the Market at 60 Belvidere": [*[["10:00-20:00"]] * 5, ["10:00-18:00"], ["10:00-18:00"]],
-        "Pizza To-Go": [_CLOSED, *[["11:00-19:00"]] * 4, _CLOSED, _CLOSED],
-        "The Faculty Club": [_CLOSED, *[["11:30-14:00"]] * 5, _CLOSED],
-        "United Table at International Village": [
-            ["08:00-21:00"],
-            *[["08:00-22:00"]] * 4,
-            ["08:00-21:00"],
-            ["08:00-21:00"],
-        ],
-        "The Market Café": [_CLOSED, *[["07:30-14:30"]] * 5, _CLOSED],
-        "Modern Market": [_CLOSED, *[["07:00-14:00"]] * 5, _CLOSED],
-        "Starbucks at Churchill Hall": [_CLOSED, *[["07:00-20:00"]] * 5, _CLOSED],
-        "Choolaah": [_CLOSED, *[["11:00-19:00"]] * 4, ["11:00-16:00"], _CLOSED],
-        "JUICYGREENS": [_CLOSED, *[["09:00-16:00"]] * 5, _CLOSED],
-        "D'Angelo Grilled Sandwiches": [_CLOSED, *[["11:00-19:00"]] * 5, _CLOSED],
-        "The Halal Shack": [_CLOSED, *[["11:00-19:00"]] * 4, ["11:00-16:00"], _CLOSED],
-        "the Market": [["10:00-18:00"], *[["07:30-20:00"]] * 5, ["09:00-18:00"]],
-        "Popeyes": [_CLOSED, *[["11:00-19:00"]] * 5, _CLOSED],
-        "Starbucks at Curry Student Center": [["09:00-17:30"]] * 7,
-        "Sal's Pizza": [_CLOSED, *[["11:00-18:00"]] * 4, ["11:00-17:00"], _CLOSED],
-        "Equator Coffees": [_CLOSED, *[["07:30-19:00"]] * 4, ["07:30-17:00"], _CLOSED],
-        "Subway": [_CLOSED, *[["11:00-18:00"]] * 4, ["11:00-16:00"], _CLOSED],
-        "Dunkin' Hayden Hall": [_CLOSED, *[["06:30-19:00"]] * 4, ["06:30-17:00"], _CLOSED],
-        "Dunkin' Shillman": [_CLOSED, *[["07:30-15:00"]] * 5, _CLOSED],
-    },
+    date.fromisoformat(week): places
+    for week, places in json.loads(CHECKED_HOURS_FILE.read_text(encoding="utf-8")).items()
+    if not week.startswith("_")
 }
 
 # Convenience stores; everything else on campus is a restaurant or café.
@@ -116,8 +85,13 @@ def boston_building(name: str, address: str | None) -> tuple[float, float] | Non
     return None
 
 
-def with_checked_hours(name: str, weekly: WeeklyHours, day: date) -> WeeklyHours:
-    """``weekly`` for the week from ``day``, with any days in ``CHECKED_HOURS`` replaced."""
+def with_checked_hours(
+    name: str, weekly: WeeklyHours, day: date, disagreements: list[str] | None = None
+) -> WeeklyHours:
+    """``weekly`` for the week from ``day``, with any days in ``CHECKED_HOURS`` replaced.
+
+    Days where the API said something else are added to ``disagreements``.
+    """
     fixed = dict(weekly)
     for offset in range(7):
         when = day + timedelta(days=offset)
@@ -125,8 +99,19 @@ def with_checked_hours(name: str, weekly: WeeklyHours, day: date) -> WeeklyHours
         from_sunday = (when.weekday() + 1) % 7
         checked = CHECKED_HOURS.get(when - timedelta(days=from_sunday), {}).get(name)
         if checked is not None:
-            fixed[WEEKDAYS[when.weekday()]] = list(checked[from_sunday])
+            weekday = WEEKDAYS[when.weekday()]
+            if disagreements is not None and sorted(weekly.get(weekday) or []) != sorted(checked[from_sunday]):
+                disagreements.append(
+                    f"{name} {when:%a %b %d}: API {weekly.get(weekday) or 'closed'}, checked {checked[from_sunday] or 'closed'}"
+                )
+            fixed[weekday] = list(checked[from_sunday])
     return fixed
+
+
+def checked_names(day: date) -> set[str]:
+    """Places with hand-checked hours in the week from ``day``."""
+    weeks = {when - timedelta(days=(when.weekday() + 1) % 7) for when in (day + timedelta(days=i) for i in range(7))}
+    return {name for week in weeks for name in CHECKED_HOURS.get(week, {})}
 
 
 def page_url(campus: str = "boston") -> str:
@@ -261,13 +246,16 @@ def scrape_on_campus(day: date, campus: str = "boston") -> list[Location]:
     }
 
     records: list[Location] = []
+    disagreements: list[str] = []
+    seen: set[str] = set()
     for location in schedule.get("theLocations", []):
         if location.get("is_building"):
             continue
         name = location.get("display_name") or location["name"]
         weekly = weekly_hours(location)
         if campus == "boston":
-            weekly = with_checked_hours(name, weekly, day)
+            seen.add(name)
+            weekly = with_checked_hours(name, weekly, day, disagreements)
         category: Category = "market" if MARKET_PATTERN.search(name) else "restaurant"
         place = places.get(location["id"], {})
         if not (place.get("address") or {}).get("street"):
@@ -306,6 +294,14 @@ def scrape_on_campus(day: date, campus: str = "boston") -> list[Location]:
                 ),
             }
         )
+    if campus == "boston":
+        if disagreements:
+            print(f"  Using hand-checked hours for {len(disagreements)} days where the schedule API disagreed, e.g.")
+            for line in disagreements[:3]:
+                print(f"    {line}")
+        missing = sorted(checked_names(day) - seen)
+        if missing:
+            print(f"  warning: hand-checked hours for places the API no longer lists: {', '.join(missing)}")
     return without_duplicates(records)
 
 
